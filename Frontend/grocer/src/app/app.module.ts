@@ -14,6 +14,7 @@ import { EmpSigninComponent } from './emp-signin/emp-signin.component';
 import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 import { EmpHomeComponent } from './emp-home/emp-home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { UserSignupComponent } from './user-signup/user-signup.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     EmpSigninComponent,
     AdminSigninComponent,
     EmpHomeComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    UserSignupComponent
   ],
   imports: [
     BrowserModule,
