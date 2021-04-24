@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmpSigninComponent } from './emp-signin/emp-signin.component';
 
-const routes: Routes = [
-  {path:"\EmpLogin",component:EmpSigninComponent}
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -12,8 +12,4 @@ export class EmpSigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Login(EmpRef:any){
-    console.log(EmpRef);
-  }
-
 }
