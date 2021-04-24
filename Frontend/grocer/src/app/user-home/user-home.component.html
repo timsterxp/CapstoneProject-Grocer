@@ -5,11 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
+
+    <!--Testing Branch-->
+    <!--Place code into a for loop for item list, append item name, item price, and throw it onto a (click) function by id-->
+    <!--Example item card-->
+    <div class="container-fluid">
+        <form action="" class="form-group">
+            <div class="row">
+                <div class="col-2">
+                    <div class="col-sm-offset-12">
+                        <div class=< div class="card">
+                            <img class="card-img-top" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title" id="itemOne">Special Laptop</h5>
+                                <p class="card-text" id="itemOnePrice">$19999</p>
+                                <input type="button " id="itemOneAdd" class="btn btn-primary " style="float:right; " value="Add to Cart" />
+                                <!--this.value='Sold Out';this.disabled=true; "> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+        </form>
+        </div>
+
+        <div>
+            "Cart Items here!"
+            <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
+
+            <!--Set up delete buttons on an item to delete it from cart-->
+            <!-- Example Delete button -->
+            <input type="button" (click)="deleteItem(**take value from array*)" />
+            <!--Quantity update -->
+            <input type="text" #quantityRef/><br/>
+            <input type="button" value="Update Quantity" (click)="updateQuantity(quantityRef.value, **itemID in cart**)" /> </div>
  <p>It just a test @neel</p>
+
 </body>
 
 </html>
