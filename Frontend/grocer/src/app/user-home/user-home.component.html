@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-2">
                     <div class="col-sm-offset-12">
-                        <div class=< div class="card">
+                        <div class="card">
                             <img class="card-img-top" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title" id="itemOne">Special Laptop</h5>
@@ -31,25 +31,25 @@
 
                     </div>
                 </div>
-
+            </div>
 
 
 
 
         </form>
-        </div>
+    </div>
 
-        <div>
-            "Cart Items here!"
-            <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
+    <div>
+        "Cart Items here!"
+        <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
 
-            <!--Set up delete buttons on an item to delete it from cart-->
-            <!-- Example Delete button -->
-            <input type="button" (click)="deleteItem(**take value from array*)" />
-            <!--Quantity update -->
-            <input type="text" #quantityRef/><br/>
-            <input type="button" value="Update Quantity" (click)="updateQuantity(quantityRef.value, **itemID in cart**)" /> </div>
- <p>It just a test @neel</p>
+        <!--Set up delete buttons on an item to delete it from cart-->
+        <!-- Example Delete button -->
+        <input type="button" (click)="deleteItem(1)" />
+        <!--Quantity update -->
+        <input type="text" #quantityRef/><br/>
+        <input type="button" value="Update Quantity" (click)="updateQuantity(quantityRef.value, 1)" /> </div>
+    <p>It just a test @neel</p>
 
 </body>
 
