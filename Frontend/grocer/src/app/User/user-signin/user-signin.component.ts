@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-signin',
@@ -8,13 +7,17 @@ import { Router } from '@angular/router';
 })
 export class UserSigninComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   signUp(){
-    this.router.navigate(["signup"]);
+
   }
 
+  getHelp(){
+    var showNow=document.getElementById("hideToggle");
+    showNow.style.display="";
+  }
 }

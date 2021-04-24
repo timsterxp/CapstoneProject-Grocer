@@ -9,14 +9,18 @@
 </head>
 
 <body>
+
+
     <div>
         <h2> User Login Page</h2>
         <form>
             <label>User ID:</label>
-            <input type="text" name="userName" formControlName="user" />
+            <input type="text" name="userName" />
+            <!--formControlName="user" -->
             <br/>
             <label>Password</label>
-            <input type="text" name="pass" formControlName="pass" />
+            <input type="text" name="pass" />
+            <!--- formControlName="pass" /> -->
             <br/>
             <input type="submit" name="submit" />
             <input type="reset" name="reset" />
@@ -24,8 +28,14 @@
         <div>
             <h4> Don't have an account?
                 <input type="button" value="Sign Up" (click)="signUp()" /></h4>
+
+            <br/>
+            <input type="button" value="Raise a ticket" (click)="getHelp()" />
+
+
         </div>
     </div>
+    <app-raise-ticket></app-raise-ticket>
     <!---    <p style="font-size:larger;"> {{msg}} </p> -->
 </body>
 
