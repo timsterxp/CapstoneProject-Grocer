@@ -15,6 +15,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {HttpClientModule} from '@angular/common/http';
+import { EmpPassChangeComponent } from './emp-pass-change/emp-pass-change.component';
+import { EmpDashboardComponent } from './emp-dashboard/emp-dashboard.component';
+import { MyAuthGuard } from './myauthguard';
 
 @NgModule({
   declarations: [
@@ -25,14 +29,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     EmpSigninComponent,
     AdminSigninComponent,
     EmpHomeComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    EmpPassChangeComponent,
+    EmpDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule
+    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule,HttpClientModule
   ],
-  providers: [],
+  providers: [MyAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
