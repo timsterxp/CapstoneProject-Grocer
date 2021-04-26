@@ -11,5 +11,7 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  create(employeeRef:any){
+    console.log(employeeRef);
+  }
 }
