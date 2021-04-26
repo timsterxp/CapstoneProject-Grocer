@@ -1,4 +1,12 @@
-<div id="hideToggle" style="display:none">
+<div id="hideToggleTicket" style="display:none">
     Here you can raise a ticket!
     <!--Sorry broke my code when i was merging peoples... will resubmit this later on -_--->
+
+    <form>
+        <label>Username</label>
+        <input type="text" />
+        <label>Reason</label>
+        <input type="text" />
+        <input type="button" (click)="submitTicket()" />
+    </form>
 </div>
