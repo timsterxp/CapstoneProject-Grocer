@@ -17,10 +17,28 @@ export class UserSigninComponent implements OnInit {
     showNow.style.display="";
   }
 
-  getHelp(){
-    var showNow=document.getElementById("hideToggleTicket");
-    showNow.style.display="";
-  }
+
+
+  checkUser(userRef: any) {
 
   
-}
+    // Values from Login Form
+    //  console.log(userRef.inputEmail) ;
+    //  console.log(userRef.inputPassword) ;
+     
+
+  }
+  ridirect() {
+    console.log("Hello9") ;
+  }
+
+
+
+
+  // getHelp(){
+  //   var showNow=document.getElementById("hideToggle");
+  //   showNow.style.display="";
+  // }
+
+
+

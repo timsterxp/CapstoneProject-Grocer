@@ -11,7 +11,28 @@ export class UserSignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  signUp(signUpRef:any){
-    console.log(signUpRef);
+
+  storeUser(userRef:any) {
+
+    // Values received from the form 
+
+    // console.log(userRef.firstName) ;
+    // console.log(userRef.lastName) ;
+    // console.log(userRef.email) ;
+    // console.log(userRef.dob) ;
+    // console.log(userRef.address) ;
+    // console.log(userRef.address2) ;
+    // console.log(userRef.country) ;
+    // console.log(userRef.state) ;
+    // console.log(userRef.zip) ;
+    // console.log(userRef.ccname) ;
+    // console.log(userRef.ccnumber) ;
+    // console.log(userRef.cccvv) ;
+    // console.log(userRef.ccexpiration) ;
+
+
   }
+
+
 }
+
