@@ -12,4 +12,9 @@ export class DeleteEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  delete(empID:any){
+    console.log(empID);
+    //Retrieve from database and delete
+  }
+
 }

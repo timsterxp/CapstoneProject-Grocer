@@ -17,7 +17,6 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { RaiseTicketComponent } from './User/raise-ticket/raise-ticket.component';
-//import { AddProductsComponent } from './Admin/add-products/add-products.component';
 import { AddItemComponent } from './Admin/add-item/add-item.component';
 import { DeleteItemComponent } from './Admin/delete-item/delete-item.component';
 import { UpdateItemComponent } from './Admin/update-item/update-item.component';
@@ -47,7 +46,6 @@ import { FundsComponent } from './User/funds/funds.component';
     AdminHomeComponent,
     UserSignupComponent,
     RaiseTicketComponent,
-   // AddProductsComponent,
     AddItemComponent,
     DeleteItemComponent,
     UpdateItemComponent,

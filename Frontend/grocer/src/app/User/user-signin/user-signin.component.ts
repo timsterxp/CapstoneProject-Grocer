@@ -13,8 +13,10 @@ export class UserSigninComponent implements OnInit {
   }
 
   signUp(){
-
+    var showNow=document.getElementById("hideSignUp");
+    showNow.style.display="";
   }
+
 
 
   checkUser(userRef: any) {
@@ -40,5 +42,3 @@ export class UserSigninComponent implements OnInit {
 
 
 
-
-}
