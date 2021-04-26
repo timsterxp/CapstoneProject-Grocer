@@ -18,7 +18,9 @@ export class UserSigninComponent implements OnInit {
   }
 
   getHelp(){
-    var showNow=document.getElementById("hideToggle");
+    var showNow=document.getElementById("hideToggleTicket");
     showNow.style.display="";
   }
+
+  
 }

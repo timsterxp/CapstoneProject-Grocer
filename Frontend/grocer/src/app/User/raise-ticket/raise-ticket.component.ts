@@ -12,11 +12,7 @@ export class RaiseTicketComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  showForm(){
-    console.log("Button Clicked");
-    var buttonToggle= document.getElementById("hideToggle");
-    buttonToggle.style.display="";
-
-}
-
+ submitTicket(){
+   //implement submission to database
+ }
 }
