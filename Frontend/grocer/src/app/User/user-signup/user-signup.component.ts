@@ -11,5 +11,7 @@ export class UserSignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  signUp(signUpRef:any){
+    console.log(signUpRef);
+  }
 }

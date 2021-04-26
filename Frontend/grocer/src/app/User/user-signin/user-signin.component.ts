@@ -13,7 +13,8 @@ export class UserSigninComponent implements OnInit {
   }
 
   signUp(){
-
+    var showNow=document.getElementById("hideSignUp");
+    showNow.style.display="";
   }
 
   getHelp(){
