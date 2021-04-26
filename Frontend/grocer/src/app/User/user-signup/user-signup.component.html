@@ -9,7 +9,49 @@
 </head>
 
 <body>
-    <!-- Sign up form here-->
+    <div id="hideSignUp" style="display:none">
+        <!-- Sign up form here-->
+        <br/>
+        <form #signUpRef="ngForm" (ngSubmit)="signUp(signUpRef.value)">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" name="first" ngModel/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" name="last" ngModel/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" name="email" ngModel/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="pass" ngModel/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>DOB</mat-label>
+                <input matInput type="date" name="dob" ngModel/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput type="text" name="phone" ngModel/>
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput type="text" name="address" ngModel/>
+            </mat-form-field>
+            <br/>
+            <input type="submit" value="Register" />
+
+        </form>
+    </div>
 </body>
 
 </html>
