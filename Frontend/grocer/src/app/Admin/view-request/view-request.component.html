@@ -1,2 +1,25 @@
 <p>view-request works!</p>
 <!-- Similar to generate-reports, get from database-->
+
+<!--The following code is dependent on what service format is used and will be edited afterwards
+
+
+-->
+<!--Must add source which will be done after receiving information about requests-->
+<table mat-table class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Employee Id">
+        <th mat-header-cell *matHeaderCellDef>Employee Id</th>
+        <td mat-cell>Placeholder text</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Request">
+        <th mat-header-cell *matHeaderCellDef>Request</th>
+        <td mat-cell>Placeholder text</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row></tr>
+
+    <!--To do: Input the row names after we retrieve-->
+</table>
