@@ -18,6 +18,10 @@ export class EmployeeService {
   updatePassword(PassRef:any):any{
     return this.http.put("http://localhost:9090/employee/updateEmployeePassword",PassRef,{responseType:'text'});
   }
+
+  sendRequest(ProdRef:any){
+    return this.http.post("http://localhost:9090/employee/sendRequest",ProdRef,{responseType:'text'});
+  }
   
 }
 

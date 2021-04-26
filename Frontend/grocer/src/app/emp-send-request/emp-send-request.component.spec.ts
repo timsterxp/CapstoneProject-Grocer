@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmpDashboardComponent } from './emp-dashboard.component';
+import { EmpSendRequestComponent } from './emp-send-request.component';
 
-describe('EmpDashboardComponent', () => {
-  let component: EmpDashboardComponent;
-  let fixture: ComponentFixture<EmpDashboardComponent>;
+describe('EmpSendRequestComponent', () => {
+  let component: EmpSendRequestComponent;
+  let fixture: ComponentFixture<EmpSendRequestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmpDashboardComponent ]
+      declarations: [ EmpSendRequestComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EmpDashboardComponent);
+    fixture = TestBed.createComponent(EmpSendRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

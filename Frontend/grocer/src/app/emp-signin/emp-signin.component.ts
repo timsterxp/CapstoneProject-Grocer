@@ -38,6 +38,7 @@ export class EmpSigninComponent implements OnInit {
             let tokenArray = new Uint32Array(1);
             crypto.getRandomValues(tokenArray);
             sessionStorage.setItem('token',tokenArray[0].toString());
+            sessionStorage.setItem('id',result[passFinder]._id.toString());
             this.router.navigate(["EmpDashboard"]);
           }
         }else{

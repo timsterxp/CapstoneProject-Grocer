@@ -5,7 +5,9 @@ let EmployeeSchema = mongoose.Schema({
     _id:Number,
     password:String
 })
-let EmployeeModel = mongoose.model("",EmployeeSchema,"Employee");
+let EmployeeModel = mongoose.model("Employee",EmployeeSchema,"Employee");
+
+
 
 
 module.exports = EmployeeModel;

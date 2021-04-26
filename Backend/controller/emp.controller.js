@@ -1,6 +1,5 @@
 let EmployeeModel = require("../model/emp.model.js");
-
-
+let SendRequestModel = require("../model/sendReq.model.js");
 //Get all employees
 let getAllEmployees =(req,res)=>{
     EmployeeModel.find({},(err,result)=>{
@@ -24,5 +23,20 @@ let updateEmployeePassword = (req,res)=>{
     })
 }
 
+let sendRequest = (req,res)=>{
+    let request = new SendRequestModel({
+        _id:req.body.id,
+        pname:req.body.pname,
+        quantity:req.body.quantity
+    });
+    request.save((err,result)=>{
+        if(!err){
+            res.send("Request sent");
+        }else{
+            res.send("Error!");
+        }
+    })
+}
 
-module.exports={getAllEmployees,updateEmployeePassword};
+
+module.exports={getAllEmployees,updateEmployeePassword,sendRequest};

@@ -17,8 +17,18 @@ import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {HttpClientModule} from '@angular/common/http';
 import { EmpPassChangeComponent } from './emp-pass-change/emp-pass-change.component';
-import { EmpDashboardComponent } from './emp-dashboard/emp-dashboard.component';
 import { MyAuthGuard } from './myauthguard';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { EmpSendRequestComponent } from './emp-send-request/emp-send-request.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +41,13 @@ import { MyAuthGuard } from './myauthguard';
     EmpHomeComponent,
     AdminHomeComponent,
     EmpPassChangeComponent,
-    EmpDashboardComponent
+    NavComponent,
+    EmpSendRequestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule,HttpClientModule
+    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule,HttpClientModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, RouterModule, MatGridListModule, MatCardModule, MatMenuModule
   ],
   providers: [MyAuthGuard],
   bootstrap: [AppComponent]
