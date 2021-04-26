@@ -13,11 +13,14 @@ export class UserSigninComponent implements OnInit {
   }
 
   signUp(){
-
+    var showNow=document.getElementById("hideSignUp");
+    showNow.style.display="";
   }
 
   getHelp(){
-    var showNow=document.getElementById("hideToggle");
+    var showNow=document.getElementById("hideToggleTicket");
     showNow.style.display="";
   }
+
+  
 }

@@ -46,7 +46,6 @@ import { FundsComponent } from './User/funds/funds.component';
     AdminHomeComponent,
     UserSignupComponent,
     RaiseTicketComponent,
-
     AddItemComponent,
     DeleteItemComponent,
     UpdateItemComponent,
