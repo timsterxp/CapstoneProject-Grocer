@@ -1,8 +1,9 @@
 // load all modules 
 let app = require('express')();
-let bodyParser = require('body-parser') ;
-let mongoose = require('mongoose') ;
+let bodyParser = require('body-parser');
+let mongoose = require('mongoose');
 let cors = require('cors');
+
 
 
 var User = require('./router/grocer.router.js') ;
@@ -10,9 +11,10 @@ let Employee = require("./router/emp.router.js");
 
 
 
+
 const mongooseDB = {
-    useNewUrlParser : true ,
-    useUnifiedTopology : true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 }
 
 
@@ -22,24 +24,22 @@ const uri = "mongodb+srv://admin:admin@cluster0.lb81w.mongodb.net/grocer-db?retr
 
 
 
-app.use(bodyParser.urlencoded({extended:true})) ;
-app.use(bodyParser.json()) ;
-app.use(cors()) ;
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors());
 
 
-mongoose.connect(uri , mongooseDB ) ;
+mongoose.connect(uri, mongooseDB);
 
 mongoose.connection;
 
-app.use("/employee",Employee);
-app.use("/user" , User) ;
+app.use("/employee", Employee);
+app.use("/user", User);
+
+let testTicket = require("./router/ticket.router.js");
+app.use("/UserLogin", testTicket);
 
 
 app.listen(9090, () => {
-    console.log('Server Running on Port Number : 9090' ) ;
+    console.log('Server Running on Port Number : 9090');
 })
-
-
-
-
-

@@ -12,12 +12,6 @@ export class UserSigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signUp(){
-    var showNow=document.getElementById("hideSignUp");
-    showNow.style.display="";
-  }
-
-
 
   checkUser(userRef: any) {
 

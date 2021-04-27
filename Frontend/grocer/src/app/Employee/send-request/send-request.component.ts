@@ -8,9 +8,13 @@ import { EmployeeService } from 'src/app/employee.service';
 })
 export class SendRequestComponent implements OnInit {
   Msg?:String;
+  ID?:Number;
+  Status="Pending";
   constructor(public empService:EmployeeService) { }
 
   ngOnInit(): void {
+    let Emp = sessionStorage.getItem('Emp');
+    this.ID = parseInt(Emp);
   }
 
   SendRequest(ProdRef:any){

@@ -7,27 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Document</title>
+
 </head>
 
 <body>
+
     <div style="padding-left:30px">
-        <br/>
-        <button class="btn  btn-primary btn-block" type="button" (click)="showItems()">Display Items</button> <br /><br /><br />
-        <br/>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-offset 1 col-xs-11 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+                    <div class="btn-toolbar" role="toolbar">
+                        <div class="btn-group btn-group-justified" role="group">
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Refreshr" (click)="showItems()">Display Items</button>
+                            </div>
+
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Password Reset" (click)="showCart()">Show Cart</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Deactivate" (click)="showQuantity()">Update Quantity</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary disabled" data-original-title="Activate">Checkout</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-warning" data-original-title="Delete" (click)="showDelete()">Delete Item</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
         <app-view-item></app-view-item>
+
         <br/>
         <br/>
-        <button class="btn  btn-primary btn-block" type="button" (click)="showCart()">Show Cart</button> <br /><br /><br />
+
         <app-show-cart></app-show-cart>
         <br/><br/>
-        <div>
 
-            <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
 
-            <app-delete-item-cart></app-delete-item-cart>
-            <br/>
-            <app-update-quantity></app-update-quantity>
-        </div>
+        <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
+
+        <app-delete-item-cart></app-delete-item-cart>
+        <br/>
+        <app-update-quantity></app-update-quantity>
+
+
+
     </div>
 </body>
 

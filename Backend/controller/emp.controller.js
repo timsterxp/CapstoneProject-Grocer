@@ -25,9 +25,10 @@ let updateEmployeePassword = (req,res)=>{
 
 let sendRequest = (req,res)=>{
     let request = new SendRequestModel({
-        _id:req.body.id,
+        Empid:req.body.Empid,
         pname:req.body.pname,
-        quantity:req.body.quantity
+        request:req.body.request,
+        status:req.body.status
     });
     request.save((err,result)=>{
         if(!err){
