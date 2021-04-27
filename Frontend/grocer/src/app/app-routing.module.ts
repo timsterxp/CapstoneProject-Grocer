@@ -9,6 +9,7 @@ import { EmpPasswordResetComponent } from './Employee/emp-password-reset/emp-pas
 import { NavComponent } from './nav/nav.component';
 import { SendRequestComponent } from './Employee/send-request/send-request.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { UserHomeComponent } from './User/user-home/user-home.component';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   
   // User Sign Up
   {path:"\UserSignUp",component: UserSignupComponent} ,
+  {path:"\UserHome",component:UserHomeComponent},
 
   // User Sign Up
   { path: "\login" ,  component : UserSigninComponent}
