@@ -43,6 +43,9 @@ import { MatListModule } from '@angular/material/list';
 import {HttpClientModule} from '@angular/common/http';
 import { MyAuthGuard } from './myauthguard';
 import { DeleteItemCartComponent } from './User/delete-item-cart/delete-item-cart.component';
+import { ShowCartComponent } from './User/show-cart/show-cart.component';
+import { UpdateQuantityComponent } from './User/update-quantity/update-quantity.component';
+import { MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -74,12 +77,14 @@ import { DeleteItemCartComponent } from './User/delete-item-cart/delete-item-car
     FundsComponent,
     EmpPasswordResetComponent,
     NavComponent,
-    DeleteItemCartComponent
+    DeleteItemCartComponent,
+    ShowCartComponent,
+    UpdateQuantityComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,HttpClientModule
+    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,HttpClientModule,MatTableModule
   ],
   providers: [MyAuthGuard],
   bootstrap: [AppComponent]
