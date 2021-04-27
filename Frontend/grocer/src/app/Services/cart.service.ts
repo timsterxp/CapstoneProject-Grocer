@@ -17,8 +17,8 @@ export class CartService {
     return this.http.delete("http://localhost:9090/user-home/deleteItem",id) // to do, add code in back end
   }
 
-  updateQuantity(id:any,quantity:any):any{
-    return this.http.put("http://localhost:9090/user-home/update",{id,quantity}) // to do, add code in back end
+  updateQuantity(updateRef:any){
+    return this.http.put("http://localhost:9090/user-home/update",updateRef) // to do, add code in back end
   }
 
 }
