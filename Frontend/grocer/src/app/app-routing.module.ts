@@ -10,6 +10,9 @@ import { NavComponent } from './nav/nav.component';
 import { SendRequestComponent } from './Employee/send-request/send-request.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserHomeComponent } from './User/user-home/user-home.component';
+import {AddItemComponent} from './Admin/add-item/add-item.component';
+import {DeleteItemComponent} from './Admin/delete-item/delete-item.component'
+import {UpdateItemComponent} from './Admin/update-item/update-item.component'
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -30,7 +33,10 @@ const routes: Routes = [
   {path:"\UserHome",component:UserHomeComponent},
 
   // User Sign Up
-  { path: "\login" ,  component : UserSigninComponent}
+  { path: "\login" ,  component : UserSigninComponent},
+  {path:"\AddItem",component:AddItemComponent},
+  {path:"\DeleteItem",component:DeleteItemComponent},
+  {path:"\UpdateItem",component:UpdateItemComponent}
 
 
   

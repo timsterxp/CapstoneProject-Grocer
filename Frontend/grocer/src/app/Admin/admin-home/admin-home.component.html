@@ -6,9 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        button {
+          background-color: black;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 25%;
+        }
+        
+        button:hover {
+          opacity: 0.8;
+        }
+    </style>
 </head>
 
 <body>
+    <form  (ngSubmit)="addProduct()">
+        <button type="submit">Add Products</button><br/>
+    </form>
+    <form  (ngSubmit)="deleteProduct()">
+        <button type="submit">Delete Products</button><br/>
+    </form>
+    <form  (ngSubmit)="updateProduct()">
+        <button type="submit">Update Products</button><br/>
+    </form>
+    <form  (ngSubmit)="viewRequests()">
+        <button type="submit">View Requests</button><br/>
+    </form>
+
 
 </body>
 
