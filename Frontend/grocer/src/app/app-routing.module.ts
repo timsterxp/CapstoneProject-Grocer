@@ -4,6 +4,9 @@ import { EmpSigninComponent } from './Employee/emp-signin/emp-signin.component';
 import { AdminSigninComponent } from './Admin/admin-signin/admin-signin.component';
 import { UserSigninComponent } from './User/user-signin/user-signin.component';
 import { UserSignupComponent } from './User/user-signup/user-signup.component';
+import { CheckoutComponent } from './User/checkout/checkout.component';
+import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
+import { OrderStatusComponent } from './User/order-status/order-status.component';
 import { MyAuthGuard } from './myauthguard';
 import { EmpPasswordResetComponent } from './Employee/emp-password-reset/emp-password-reset.component';
 import { NavComponent } from './nav/nav.component';
@@ -37,7 +40,11 @@ const routes: Routes = [
   // User Sign Up
   {path:"\AddItem",component:AddItemComponent},
   {path:"\DeleteItem",component:DeleteItemComponent},
-  {path:"\UpdateItem",component:UpdateItemComponent},
+  { path: "\UpdateItem", component: UpdateItemComponent },
+  { path: "\UserCheckout", component: CheckoutComponent },
+  { path: "\UserEditProfile", component: UserEditProfileComponent },
+  { path: "\OrderStatus", component: OrderStatusComponent },
+
   {path:"\AdminAddEmployee",component:AddEmployeeComponent}
 
 

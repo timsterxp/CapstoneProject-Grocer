@@ -46,6 +46,7 @@ import { DeleteItemCartComponent } from './User/delete-item-cart/delete-item-car
 import { ShowCartComponent } from './User/show-cart/show-cart.component';
 import { UpdateQuantityComponent } from './User/update-quantity/update-quantity.component';
 import { MatTableModule} from '@angular/material/table';
+import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { MatTableModule} from '@angular/material/table';
     NavComponent,
     DeleteItemCartComponent,
     ShowCartComponent,
-    UpdateQuantityComponent
+    UpdateQuantityComponent,
+    UserEditProfileComponent
   ],
   imports: [
     BrowserModule,
