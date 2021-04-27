@@ -2,11 +2,12 @@ let mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 let SendRequestSchema = mongoose.Schema({
-    _id:Number,
+    Empid:Number,
     pname:String,
-    quantity:Number
+    request:String,
+    status:String
 })
-let SendRequestModel = mongoose.model("Request",SendRequestSchema,"Request");
+let SendRequestModel = mongoose.model("EmployeeRequest",SendRequestSchema,"EmployeeRequest");
 
 
 module.exports = SendRequestModel;

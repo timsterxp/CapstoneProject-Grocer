@@ -19,10 +19,7 @@ export class NavComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
   ngOnInit(): void {
     this.ID = sessionStorage.getItem('id');
-  }
-
-  sendID(){
-    sessionStorage.setItem('EmpID',this.ID.toString());
+    sessionStorage.setItem('Emp',this.ID.toString());
   }
 }
 
