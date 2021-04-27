@@ -29,8 +29,9 @@ app.use(cors()) ;
 mongoose.connect(uri , mongooseDB ) ;
 
 mongoose.connection;
+let Employee = require("./router/emp.router.js");
 
-
+app.use("/employee",Employee);
 app.use("/user" , User) ;
 
 
