@@ -42,6 +42,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {HttpClientModule} from '@angular/common/http';
 import { MyAuthGuard } from './myauthguard';
+import { DeleteItemCartComponent } from './User/delete-item-cart/delete-item-cart.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { MyAuthGuard } from './myauthguard';
     OrderStatusComponent,
     FundsComponent,
     EmpPasswordResetComponent,
-    NavComponent
+    NavComponent,
+    DeleteItemCartComponent
   ],
   imports: [
     BrowserModule,
