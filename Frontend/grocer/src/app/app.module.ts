@@ -33,6 +33,7 @@ import { ViewItemComponent } from './User/view-item/view-item.component';
 import { CheckoutComponent } from './User/checkout/checkout.component';
 import { OrderStatusComponent } from './User/order-status/order-status.component';
 import { FundsComponent } from './User/funds/funds.component';
+import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { FundsComponent } from './User/funds/funds.component';
     ViewItemComponent,
     CheckoutComponent,
     OrderStatusComponent,
-    FundsComponent
+    FundsComponent,
+    UserEditProfileComponent
   ],
   imports: [
     BrowserModule,
