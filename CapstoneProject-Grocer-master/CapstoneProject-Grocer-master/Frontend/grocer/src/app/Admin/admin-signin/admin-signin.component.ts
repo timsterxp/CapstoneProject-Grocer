@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-signin',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminSigninComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  login(loginRef:any){
+    //console.log("Event generated");
+    //console.log(loginRef)
+    let user1 = loginRef.user;
+    let pass1 = loginRef.pass;
+    if(user1 == "Admin" && pass1 == "12345"){
+      this.router.navigate(["AdminHome"]);
+    }else{
+      this.router.navigate(["AdminLogin"]);
+    }
   }
 
 }
