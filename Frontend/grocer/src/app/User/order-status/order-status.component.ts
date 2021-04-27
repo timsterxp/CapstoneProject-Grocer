@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderStatusComponent implements OnInit {
 
+  orders = [];
   constructor() { }
 
   ngOnInit(): void {
