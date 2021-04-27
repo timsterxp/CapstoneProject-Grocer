@@ -5,7 +5,7 @@ let UserModel = require('../model/user.model') ;
 let storeUserDetails = (req,res)=> {
    
     var UserIDtem = req.body.FirstName + req.body.LastName ;
-    let user = new UserModel({
+    let User = new UserModel({
   
         UserID : UserIDtem ,
         FirstName : req.body.FirstName ,
@@ -19,7 +19,7 @@ let storeUserDetails = (req,res)=> {
   
     });
 
-    user.save((err,result)=> {
+    User.save((err,result)=> {
         if(!err){
             res.send("Record stored successfully "+result)
         }else {

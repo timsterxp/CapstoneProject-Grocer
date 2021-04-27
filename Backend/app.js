@@ -6,6 +6,7 @@ let cors = require('cors');
 
 
 var User = require('./router/grocer.router.js') ;
+let Employee = require("./router/emp.router.js");
 
 
 
@@ -29,7 +30,6 @@ app.use(cors()) ;
 mongoose.connect(uri , mongooseDB ) ;
 
 mongoose.connection;
-let Employee = require("./router/emp.router.js");
 
 app.use("/employee",Employee);
 app.use("/user" , User) ;
