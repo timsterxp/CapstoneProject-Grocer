@@ -1,12 +1,15 @@
 <div id="hideToggleTicket" style="display:none">
-    Here you can raise a ticket!
-    <!--Sorry broke my code when i was merging peoples... will resubmit this later on -_--->
-
-    <form>
-        <label>Username</label>
-        <input type="text" />
-        <label>Reason</label>
-        <input type="text" />
-        <input type="button" (click)="submitTicket()" />
+    <form class="form-signin" #ticketRef="ngForm" (ngSubmit)="sendTicket(ticketRef.value)">
+        <input type="email" class="form-control" placeholder="Email" ngModel/>
+        <br/>
+        <input type="text" class="form-control" placeholder="Reason" ngModel />
+        <br/>
+        <div class="btn-toolbar pull-right form-group row">
+            <button class="btn btn-lg btn-primary btn-block " type="submit">Send</button>
+        </div>
+        <br/>
+        <div class="btn-toolbar pull-right form-group row">
+            <button class="btn btn-lg btn-primary btn-block " type="button" (click)="hideMe()">Close</button>
+        </div>
     </form>
 </div>

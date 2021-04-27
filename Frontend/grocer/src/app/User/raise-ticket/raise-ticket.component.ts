@@ -12,7 +12,12 @@ export class RaiseTicketComponent implements OnInit {
   ngOnInit(): void {
   }
   
- submitTicket(){
-   //implement submission to database
+ sendTicket(ticketRef:any){
+  console.log(ticketRef);
+ }
+
+ hideMe(){
+  var showNow=document.getElementById("hideToggleTicket");
+  showNow.style.display="none";
  }
 }

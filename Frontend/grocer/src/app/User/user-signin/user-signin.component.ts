@@ -35,10 +35,10 @@ export class UserSigninComponent implements OnInit {
 
 
 
-  // getHelp(){
-  //   var showNow=document.getElementById("hideToggle");
-  //   showNow.style.display="";
-  // }
+     getHelp(){
+     var showNow=document.getElementById("hideToggleTicket");
+     showNow.style.display="";
+  }
 
 
 
