@@ -8,8 +8,10 @@ import { MyAuthGuard } from './myauthguard';
 import { EmpPasswordResetComponent } from './Employee/emp-password-reset/emp-password-reset.component';
 import { NavComponent } from './nav/nav.component';
 import { SendRequestComponent } from './Employee/send-request/send-request.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
+  {path:"",component:HomePageComponent},
   {path:"EmpLogin",component:EmpSigninComponent},
   {path:"PassChange",component:EmpPasswordResetComponent,canActivate:[MyAuthGuard]},
   {path:"EmpDashboard",component:NavComponent,canActivate:[MyAuthGuard],
