@@ -33,6 +33,15 @@ import { ViewItemComponent } from './User/view-item/view-item.component';
 import { CheckoutComponent } from './User/checkout/checkout.component';
 import { OrderStatusComponent } from './User/order-status/order-status.component';
 import { FundsComponent } from './User/funds/funds.component';
+import { EmpPasswordResetComponent } from './Employee/emp-password-reset/emp-password-reset.component';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import {HttpClientModule} from '@angular/common/http';
+import { MyAuthGuard } from './myauthguard';
 
 @NgModule({
   declarations: [
@@ -61,14 +70,16 @@ import { FundsComponent } from './User/funds/funds.component';
     ViewItemComponent,
     CheckoutComponent,
     OrderStatusComponent,
-    FundsComponent
+    FundsComponent,
+    EmpPasswordResetComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule
+    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,HttpClientModule
   ],
-  providers: [],
+  providers: [MyAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

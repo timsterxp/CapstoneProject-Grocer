@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from 'src/app/employee.service';
 
 @Component({
   selector: 'app-send-request',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./send-request.component.css']
 })
 export class SendRequestComponent implements OnInit {
-
-  constructor() { }
+  Msg?:String;
+  constructor(public empService:EmployeeService) { }
 
   ngOnInit(): void {
+  }
+
+  SendRequest(ProdRef:any){
+    this.empService.sendRequest(ProdRef).subscribe(result=>{
+        this.Msg=result;
+    })
   }
 
 }
