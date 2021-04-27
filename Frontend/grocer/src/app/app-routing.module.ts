@@ -23,7 +23,7 @@ const routes: Routes = [
   {path:"",component:HomePageComponent},
   {path:"EmpLogin",component:EmpSigninComponent},
   {path:"PassChange",component:EmpPasswordResetComponent,canActivate:[MyAuthGuard]},
-  {path:"EmpDashboard",component:NavComponent,canActivate:[MyAuthGuard],
+  {path:"EmpDashboard",component:NavComponent,
   children:[
     {path:'SendRequest',component:SendRequestComponent}
   ]
