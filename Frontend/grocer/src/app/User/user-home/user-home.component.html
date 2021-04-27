@@ -10,24 +10,25 @@
 </head>
 
 <body>
-    <input type="button" value="Display Items" (click)="showItems()" />
-    <br/>
-    <app-view-item></app-view-item>
-    <br/>
-    <br/>
-
-    <input type="button" value="Show Cart" (click)="showCart()" />
-    <app-show-cart></app-show-cart>
-    <br/><br/>
-    <div>
-
-        <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
-
-        <app-delete-item-cart></app-delete-item-cart>
+    <div style="padding-left:30px">
         <br/>
-        <app-update-quantity></app-update-quantity>
-    </div>
+        <button class="btn  btn-primary btn-block" type="button" (click)="showItems()">Display Items</button> <br /><br /><br />
+        <br/>
+        <app-view-item></app-view-item>
+        <br/>
+        <br/>
+        <button class="btn  btn-primary btn-block" type="button" (click)="showCart()">Show Cart</button> <br /><br /><br />
+        <app-show-cart></app-show-cart>
+        <br/><br/>
+        <div>
 
+            <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
+
+            <app-delete-item-cart></app-delete-item-cart>
+            <br/>
+            <app-update-quantity></app-update-quantity>
+        </div>
+    </div>
 </body>
 
 </html>

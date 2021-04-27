@@ -34,13 +34,6 @@ export class UserHomeComponent implements OnInit {
     })
   }
 
-  //updateQuantity to change quantity in cart (as well as double check that groceryList has enough quantity)
-  updateQuantity(id:any,quantity:any){
-    this.cartSer.updateQuantity(id,quantity).subscribe((result:string)=>{
-      
-    })
-  }
-
   showItems(){
     var toDisplay=document.getElementById("hideItems");
     toDisplay.style.display="";
