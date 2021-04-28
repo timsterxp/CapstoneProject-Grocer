@@ -8,7 +8,7 @@ export class TicketService {
  
   constructor(public http:HttpClient) { }
 
-  storeTicketDetails(ticketRef){
-    this.http.post("http://localhost:4200/UserLogin/Ticket",ticketRef,{responseType:"text"}).subscribe(result=>console.log(result),error=>console.log(error));
+  storeTicketDetails(TicketRef:any){
+    return this.http.post("http://localhost:9090/userTest/ticket",TicketRef,{responseType:'text'});
   }
 }

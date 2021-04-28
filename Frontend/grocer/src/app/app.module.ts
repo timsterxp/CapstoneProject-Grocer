@@ -25,7 +25,6 @@ import { AddEmployeeComponent } from './Admin/add-employee/add-employee.componen
 import { DeleteEmployeeComponent } from './Admin/delete-employee/delete-employee.component';
 import { GenerateReportsComponent } from './Admin/generate-reports/generate-reports.component';
 import { SendRequestComponent } from './Employee/send-request/send-request.component';
-import { UpdateOrderComponent } from './Employee/update-order/update-order.component';
 import { UnlockUserComponent } from './Employee/unlock-user/unlock-user.component';
 import { EditProfileComponent } from './Employee/edit-profile/edit-profile.component';
 import { SelectItemComponent } from './User/select-item/select-item.component';
@@ -47,6 +46,9 @@ import { ShowCartComponent } from './User/show-cart/show-cart.component';
 import { UpdateQuantityComponent } from './User/update-quantity/update-quantity.component';
 import { MatTableModule} from '@angular/material/table';
 import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
+import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,6 @@ import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-pro
     DeleteEmployeeComponent,
     GenerateReportsComponent,
     SendRequestComponent,
-    UpdateOrderComponent,
     UnlockUserComponent,
     EditProfileComponent,
     SelectItemComponent,
@@ -81,12 +82,13 @@ import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-pro
     DeleteItemCartComponent,
     ShowCartComponent,
     UpdateQuantityComponent,
-    UserEditProfileComponent
+    UserEditProfileComponent,
+    EmpUpdateOrderStatusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,HttpClientModule,MatTableModule
+    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,HttpClientModule,MatTableModule, MatGridListModule, MatCardModule 
   ],
   providers: [MyAuthGuard],
   bootstrap: [AppComponent]

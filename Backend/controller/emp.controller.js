@@ -1,5 +1,6 @@
 let EmployeeModel = require("../model/emp.model.js");
 let SendRequestModel = require("../model/sendReq.model.js");
+let OrderModel = require("../model/order.model.js");
 //Get all employees
 
 let getAllEmployees =(req,res)=>{
@@ -42,6 +43,43 @@ let sendRequest = (req,res)=>{
     })
 }
 
+let updateOrderStatus = (req,res)=>{
+    let orderNumber = req.body.ordernumber;
+    let status = req.body.status;
+    if(!req.body.reason){
+    OrderModel.updateOne({OrderNumber:orderNumber},{$set:{Status:status}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("Status Updated!");
+            }
+        }else{
+            res.send("Error"+err);
+        }
+    });
+}else{
+    let orderNumber = req.body.ordernumber;
+    let status = req.body.status;
+    let reason = req.body.reason;
+    OrderModel.updateOne({OrderNumber:orderNumber},{$set:{Status:status,Reason:reason}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("Status Updated!");
+            }
+        }else{
+            res.send("Error"+err);
+        }
+    });
+}
+}
+
+let getAllOrders = (req,res)=>{
+    OrderModel.find({},(err,result)=>{
+        if(!err){
+            res.json(result);
+        }
+    })
+}
+
 
 
 let getAllRequest =(req,res)=>{
@@ -54,3 +92,6 @@ let getAllRequest =(req,res)=>{
 
 
 module.exports={getAllEmployees,updateEmployeePassword,sendRequest , getAllRequest};
+
+module.exports={getAllEmployees,updateEmployeePassword,sendRequest,updateOrderStatus,getAllOrders, getAllRequest};
+

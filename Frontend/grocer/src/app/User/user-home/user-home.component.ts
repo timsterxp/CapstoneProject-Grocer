@@ -17,11 +17,6 @@ export class UserHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(id:any,gname:string,price:number){
-    this.cartSer.addToCart(id,gname,price).subscribe((result:string)=>{
-      this.addedMsg=result;
-    })
-  }
 
   //groceryList will be retrieved from database to set up list of items to select
 

@@ -6,12 +6,12 @@ let cors = require('cors');
 
 
 
-var User = require('./router/grocer.router.js') ;
+var User = require('./router/grocer.router.js');
 let Employee = require("./router/emp.router.js");
 
-
-
-
+let testTicket = require("./router/ticket.router.js");
+let employeeDB = require("./router/employee.router.js");
+let cartDB = require("./router/cart.router.js");
 const mongooseDB = {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -36,8 +36,10 @@ mongoose.connection;
 app.use("/employee", Employee);
 app.use("/user", User);
 
-let testTicket = require("./router/ticket.router.js");
-app.use("/UserLogin", testTicket);
+
+app.use("/userTest", testTicket);
+app.use("/employeedb", employeeDB);
+app.use("/userCart", cartDB);
 
 
 app.listen(9090, () => {

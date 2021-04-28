@@ -17,7 +17,9 @@ import {AddItemComponent} from './Admin/add-item/add-item.component';
 import {DeleteItemComponent} from './Admin/delete-item/delete-item.component';
 import {UpdateItemComponent} from './Admin/update-item/update-item.component';
 import { AddEmployeeComponent } from './Admin/add-employee/add-employee.component';
-
+import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
+import { EditProfileComponent } from './Employee/edit-profile/edit-profile.component';
+import { DeleteEmployeeComponent } from './Admin/delete-employee/delete-employee.component';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -25,7 +27,9 @@ const routes: Routes = [
   {path:"PassChange",component:EmpPasswordResetComponent,canActivate:[MyAuthGuard]},
   {path:"EmpDashboard",component:NavComponent,
   children:[
-    {path:'SendRequest',component:SendRequestComponent}
+    {path:'SendRequest',component:SendRequestComponent},
+    {path:'UpdateOrderStatus',component:EmpUpdateOrderStatusComponent},
+    {path:'EditProfile',component:EditProfileComponent}
   ]
 
 },
@@ -45,7 +49,8 @@ const routes: Routes = [
   { path: "\UserEditProfile", component: UserEditProfileComponent },
   { path: "\OrderStatus", component: OrderStatusComponent },
 
-  {path:"\AdminAddEmployee",component:AddEmployeeComponent}
+  {path:"\AdminAddEmployee",component:AddEmployeeComponent},
+  {path:"\AdminDeleteEmployee",component:DeleteEmployeeComponent}
 
 
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/Services/admin.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public adminSer:AdminService) { }
 
   ngOnInit(): void {
   }
-  create(employeeRef:any){
-    console.log(employeeRef);
+  addEmployee(employeeRef:any){
+   this.adminSer.addEmployee(employeeRef).subscribe(result=>{
+     console.log(result);
+   });
   }
 }
