@@ -19,6 +19,7 @@ import {UpdateItemComponent} from './Admin/update-item/update-item.component';
 import { AddEmployeeComponent } from './Admin/add-employee/add-employee.component';
 import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
 import { EditProfileComponent } from './Employee/edit-profile/edit-profile.component';
+import { DeleteEmployeeComponent } from './Admin/delete-employee/delete-employee.component';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -48,7 +49,8 @@ const routes: Routes = [
   { path: "\UserEditProfile", component: UserEditProfileComponent },
   { path: "\OrderStatus", component: OrderStatusComponent },
 
-  {path:"\AdminAddEmployee",component:AddEmployeeComponent}
+  {path:"\AdminAddEmployee",component:AddEmployeeComponent},
+  {path:"\AdminDeleteEmployee",component:DeleteEmployeeComponent}
 
 
   

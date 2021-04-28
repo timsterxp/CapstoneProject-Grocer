@@ -4,6 +4,7 @@ let EmployeeController = require("../controller/employee.controller.js");
 
 //router.post("/Ticket", TicketController.sendTicket);
 router.post("/addEmployee", EmployeeController.addEmployee);
+router.delete("/deleteEmployee/:email", EmployeeController.deleteEmployee);
 
 
 

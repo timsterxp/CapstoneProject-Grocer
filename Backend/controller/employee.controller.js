@@ -17,4 +17,19 @@ let addEmployee = (req, res) => {
     })
 }
 
-module.exports = { addEmployee };
+let deleteEmployee = (req, res) => {
+    let empEmail = req.params.email
+    EmployeeModel.deleteOne({ Email: empEmail }, (err, result) => {
+        if (!err) {
+            if (result.deletedCount > 0) {
+                res.send("Successful removal of employee")
+            } else {
+                res.send("Cannot find employee");
+            }
+        } else {
+            res.send("Error: " + err);
+        }
+    })
+}
+
+module.exports = { addEmployee, deleteEmployee };
