@@ -1,0 +1,60 @@
+<div class="container">
+  <mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-tile cols="3" rows="8">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Order Status</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form #OrderRef="ngForm" (ngSubmit)="Update(OrderRef.value)">
+                <mat-form-field>
+                    <mat-label>Order Number</mat-label>
+                    <input matInput type="text" name="ordernumber" ngModel/>
+                </mat-form-field><br/>
+                <mat-form-field>
+                    <mat-label>Status</mat-label>
+                    <select matNativeControl name="status" [(ngModel)]="Option" (change)="selected()">
+                    <option value="Shipped">Shipped</option>
+                    <option value="Out for Delivery">Out for Delivery</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Cancelled">Cancelled</option>
+                    </select>
+                </mat-form-field><br/>
+                <mat-form-field *ngIf="Cancelled">
+                    <mat-label>Reason</mat-label>
+                    <textarea matInput name="reason" cols="10" rows="3" placeholder="NA" ngModel></textarea>
+                </mat-form-field><br/>
+<pre><button mat-raised-button color="primary" type="submit">Update</button>  <button mat-raised-button color="primary" type="reset">Reset</button></pre>
+    </form>
+    {{Msg}}
+    </mat-card-content>
+   </mat-card>
+ </mat-grid-tile>
+ <mat-grid-tile>
+    <mat-card >
+        <mat-card-header>
+            <mat-card-title>Orders</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <table class="myTable" id="orders">
+                <thead>
+                    <tr>
+                    <th>Order Number</th>
+                    <th>User Name</th>
+                    <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of Orders">
+                        <td>{{order.OrderNumber}}</td>
+                        <td>{{order.UserName}}</td>
+                        <td>{{order.Status}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </mat-card-content>
+    </mat-card>
+ </mat-grid-tile>
+</mat-grid-list>
+</div>
