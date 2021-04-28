@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Grocery } from './model.grocery';
 
 
 @Injectable({
@@ -19,6 +21,11 @@ export class CartService {
 
   updateQuantity(updateRef:any){
     return this.http.put("http://localhost:9090/user-home/update",updateRef) // to do, add code in back end
+  }
+
+  retrieveItems():Observable<Grocery[]>{
+    return this.http.get<Grocery[]>("http://localhost:9090/userCart/showItems")
+
   }
 
 }

@@ -1,5 +1,5 @@
 const CartModel = require("../model/cart.model")
-
+let ProductModel = require("../model/product.model.js")
 let addToCart = (req, res) => {
     let newItem = new CartModel({
         UserEmail: "N/ATesting@email.com",
@@ -18,4 +18,12 @@ let addToCart = (req, res) => {
     })
 }
 
-module.exports = { addToCart };
+let getAllItems = (req, res) => {
+    ProductModel.find({}, (err, result) => {
+        if (!err) {
+            res.json(result);
+        }
+    })
+}
+
+module.exports = { addToCart, getAllItems };

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/Services/cart.service';
+import { Grocery } from 'src/app/Services/model.grocery';
 
 
 @Component({
@@ -7,43 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-item.component.css']
 })
 export class ViewItemComponent implements OnInit {
-  cart = [];
-  constructor() {
+  cart?:Array<Grocery>
+  constructor(public cartSer:CartService) {
  
    }
 
   ngOnInit(): void {
-    let prevCart = JSON.parse(localStorage.getItem("cartItems"));
-    if  (prevCart==null){
-      return;
-    }else{
-      this.cart=prevCart;
-    }
+   this.cartSer.retrieveItems().subscribe(result=>this.cart=result);
+   console.log(this.cart);
   }
 
-  addToCart(itemName:string,itemPrice:Number,itemQuantity:Number){
-    let alreadyExists:boolean=false;
-    for (let i = 0; i <this.cart.length;i++){
-      if (this.cart[i].Name==itemName){
-        
-        alreadyExists=true;
-        this.cart[i].Quantity+=1;
-        localStorage.setItem("cartItems",JSON.stringify(this.cart));
-        break;
-      }
-    }
-
-    if  (!alreadyExists){
-    var item  = {
-      Name:itemName,
-      Price:itemPrice,
-      Quantity:itemQuantity
-    }
-    
-    this.cart.push(item);
-    localStorage.setItem("cartItems",JSON.stringify(this.cart));
-  }
+  
+  displayedColumns=['ProductId','ProductName','ProductDescription','ProductPrice','Inventory'];
 }
-
-}
-

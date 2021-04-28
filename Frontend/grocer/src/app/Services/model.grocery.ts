@@ -1,8 +1,3 @@
 export class Grocery{
-    constructor (public _id:number,public gname:string,public price:number, public quantity:number){}
-}
-
-// Cart contains an array of grocery items
-export class Cart{
-    constructor (cartItems:Grocery[]){}
+    constructor (public ProductName:string,public ProductDescription:String,public ProductPrice:Number,public Inventory:Number,public ProductId:number){}
 }
