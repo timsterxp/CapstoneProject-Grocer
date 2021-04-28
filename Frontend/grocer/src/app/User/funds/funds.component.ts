@@ -11,5 +11,8 @@ export class FundsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  addFunds() {
+
+  }
 
 }
