@@ -17,6 +17,7 @@ import {AddItemComponent} from './Admin/add-item/add-item.component';
 import {DeleteItemComponent} from './Admin/delete-item/delete-item.component';
 import {UpdateItemComponent} from './Admin/update-item/update-item.component';
 import { AddEmployeeComponent } from './Admin/add-employee/add-employee.component';
+import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path:"PassChange",component:EmpPasswordResetComponent,canActivate:[MyAuthGuard]},
   {path:"EmpDashboard",component:NavComponent,
   children:[
-    {path:'SendRequest',component:SendRequestComponent}
+    {path:'SendRequest',component:SendRequestComponent},
+    {path:'UpdateOrderStatus',component:EmpUpdateOrderStatusComponent}
   ]
 
 },
