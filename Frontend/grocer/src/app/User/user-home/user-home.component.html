@@ -29,7 +29,7 @@
                                 <button class="btn btn-primary" data-original-title="Deactivate" (click)="showQuantity()">Update Quantity</button>
                             </div>
                             <div class="btn-group" role="group">
-                                <button class="btn btn-primary disabled" data-original-title="Activate">Checkout</button>
+                                <button class="btn btn-primary" data-original-title="Activate" (click)="showCheckout()">Checkout</button>
                             </div>
                             <div class="btn-group" role="group">
                                 <button class="btn btn-warning" data-original-title="Delete" (click)="showDelete()">Delete Item</button>
@@ -59,6 +59,7 @@
         <br/>
         <app-update-quantity></app-update-quantity>
 
+        <app-checkout></app-checkout>
 
 
     </div>

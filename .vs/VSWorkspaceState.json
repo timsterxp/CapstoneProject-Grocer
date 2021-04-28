@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Backend",
+    "\\Backend\\model",
+    "\\Frontend",
+    "\\Frontend\\grocer",
+    "\\Frontend\\grocer\\src",
+    "\\Frontend\\grocer\\src\\app",
+    "\\Frontend\\grocer\\src\\app\\Admin",
+    "\\Frontend\\grocer\\src\\app\\User",
+    "\\Frontend\\grocer\\src\\app\\User\\user-home",
+    "\\Frontend\\grocer\\src\\app\\User\\user-signin"
+  ],
+  "SelectedNode": "\\Frontend\\grocer\\src\\app\\Services",
+  "PreviewInSolutionExplorer": false
+}

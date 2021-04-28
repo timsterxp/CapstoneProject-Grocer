@@ -48,4 +48,9 @@ export class UserHomeComponent implements OnInit {
     var toDisplay=document.getElementById("hideDelete");
     toDisplay.style.display="";
   }
+
+  showCheckout() {
+    var toDisplay = document.getElementById("hideCheckout");
+    toDisplay.style.display = "";
+  }
 }
