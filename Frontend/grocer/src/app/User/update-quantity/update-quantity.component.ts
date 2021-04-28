@@ -17,7 +17,7 @@ export class UpdateQuantityComponent implements OnInit {
   //updateQuantity to change quantity in cart (as well as double check that groceryList has enough quantity)
   updateQuantity(updateRef:any){
     this.cartSer.updateQuantity(updateRef).subscribe((result:string)=>{
-      
+      console.log(result);
     })
   }
 }

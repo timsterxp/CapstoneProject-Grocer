@@ -13,16 +13,12 @@ export class DeleteItemCartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteItem(deleteRef:any){
-    console.log(deleteRef);
-    
-  }
-/*
+
 
   deleteItem(id:any){
     this.cartSer.deleteItem(id).subscribe((result:string)=>{
-      
+      console.log(result);
     })
   }
-  */
+  
 }
