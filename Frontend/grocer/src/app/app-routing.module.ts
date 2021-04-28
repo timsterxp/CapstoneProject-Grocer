@@ -18,7 +18,7 @@ import {DeleteItemComponent} from './Admin/delete-item/delete-item.component';
 import {UpdateItemComponent} from './Admin/update-item/update-item.component';
 import { AddEmployeeComponent } from './Admin/add-employee/add-employee.component';
 import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
-
+import { EditProfileComponent } from './Employee/edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -27,7 +27,8 @@ const routes: Routes = [
   {path:"EmpDashboard",component:NavComponent,
   children:[
     {path:'SendRequest',component:SendRequestComponent},
-    {path:'UpdateOrderStatus',component:EmpUpdateOrderStatusComponent}
+    {path:'UpdateOrderStatus',component:EmpUpdateOrderStatusComponent},
+    {path:'EditProfile',component:EditProfileComponent}
   ]
 
 },

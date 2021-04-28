@@ -8,7 +8,7 @@
       <a mat-list-item [routerLink]="['SendRequest']" routerLinkActive="active">Send Request</a>
       <a mat-list-item [routerLink]="['UpdateOrderStatus']" routerLinkActive="active">Update Order Status</a>
       <a mat-list-item href="#">Unlock Users</a>
-      <a mat-list-item href="#">Edit Profile</a>
+      <a mat-list-item [routerLink]="['EditProfile']" routerLinkActive="active">Edit Profile</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,6 +22,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Welcome {{ID}}</span>
+      <button mat-icon-button class="logout" (click)="Logout();"><mat-icon>logout</mat-icon>Logout</button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

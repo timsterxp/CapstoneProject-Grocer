@@ -25,7 +25,6 @@ import { AddEmployeeComponent } from './Admin/add-employee/add-employee.componen
 import { DeleteEmployeeComponent } from './Admin/delete-employee/delete-employee.component';
 import { GenerateReportsComponent } from './Admin/generate-reports/generate-reports.component';
 import { SendRequestComponent } from './Employee/send-request/send-request.component';
-import { UpdateOrderComponent } from './Employee/update-order/update-order.component';
 import { UnlockUserComponent } from './Employee/unlock-user/unlock-user.component';
 import { EditProfileComponent } from './Employee/edit-profile/edit-profile.component';
 import { SelectItemComponent } from './User/select-item/select-item.component';
@@ -71,7 +70,6 @@ import {MatCardModule} from '@angular/material/card';
     DeleteEmployeeComponent,
     GenerateReportsComponent,
     SendRequestComponent,
-    UpdateOrderComponent,
     UnlockUserComponent,
     EditProfileComponent,
     SelectItemComponent,
