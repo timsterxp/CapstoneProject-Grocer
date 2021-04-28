@@ -2,9 +2,9 @@ let TicketModel = require("../model/ticket.model.js");
 
 let sendTicket = (req, res) => {
     let newTicket = new TicketModel({
-        _id: req.body.userid,
-        Description: req.body.description
-    })
+        UserName: req.body.UserName,
+        Description: req.body.Description
+    });
     newTicket.save((err, result) => {
         if (!err) {
             res.send("Sent Ticket");
@@ -15,5 +15,4 @@ let sendTicket = (req, res) => {
 }
 
 
-module.exports={sendTicket};
-
+module.exports = { sendTicket };

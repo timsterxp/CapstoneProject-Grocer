@@ -14,9 +14,11 @@ export class RaiseTicketComponent implements OnInit {
     //Pull saved cart if logout early?
   }
   
- sendTicket(ticketRef:any){
-  console.log(ticketRef);
-  this.ticketSer.storeTicketDetails(ticketRef);
+ sendTicket(TicketRef:any){
+  console.log(TicketRef);
+  this.ticketSer.storeTicketDetails(TicketRef).subscribe(result=>{
+    console.log(result);
+  });
  }
 
  hideMe(){
