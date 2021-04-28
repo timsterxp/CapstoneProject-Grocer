@@ -6,6 +6,10 @@ router.put("/updateEmployeePassword",EmpController.updateEmployeePassword);
 router.post("/sendRequest",EmpController.sendRequest);
 
 
+router.get("/allrequest",EmpController.getAllRequest);
+
+
+
 
 
 module.exports = router;

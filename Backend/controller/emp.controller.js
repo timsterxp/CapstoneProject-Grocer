@@ -1,6 +1,7 @@
 let EmployeeModel = require("../model/emp.model.js");
 let SendRequestModel = require("../model/sendReq.model.js");
 //Get all employees
+
 let getAllEmployees =(req,res)=>{
     EmployeeModel.find({},(err,result)=>{
         if(!err){
@@ -8,6 +9,7 @@ let getAllEmployees =(req,res)=>{
         }
     })
 }
+
 
 let updateEmployeePassword = (req,res)=>{
     let id = req.body.id;
@@ -22,6 +24,7 @@ let updateEmployeePassword = (req,res)=>{
         }
     })
 }
+
 
 let sendRequest = (req,res)=>{
     let request = new SendRequestModel({
@@ -40,4 +43,14 @@ let sendRequest = (req,res)=>{
 }
 
 
-module.exports={getAllEmployees,updateEmployeePassword,sendRequest};
+
+let getAllRequest =(req,res)=>{
+    SendRequestModel.find({},(err,result)=>{
+        if(!err){
+            res.json(result);
+        }
+    })
+}
+
+
+module.exports={getAllEmployees,updateEmployeePassword,sendRequest , getAllRequest};

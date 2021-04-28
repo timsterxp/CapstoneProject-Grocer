@@ -7,13 +7,14 @@ mongoose.Promise = global.Promise;
 // create schema 
 let TicketSchema = mongoose.Schema({
 
-    _id: String,
-    Description: String
+  
+    UserName : String ,
+    RequestTicket : String ,
+    RequestStatus : String
 
 })
 
 
-let UserModel = mongoose.model("", TicketSchema, "UserTicket");
+let TicketModel = mongoose.model("UserTicket", TicketSchema, "UserTicket");
 
-
-module.exports = UserModel;
+module.exports = TicketModel;
