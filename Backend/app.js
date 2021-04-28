@@ -11,7 +11,7 @@ let Employee = require("./router/emp.router.js");
 
 let testTicket = require("./router/ticket.router.js");
 let employeeDB = require("./router/employee.router.js");
-
+let cartDB = require("./router/cart.router.js");
 const mongooseDB = {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -39,6 +39,7 @@ app.use("/user", User);
 
 app.use("/userTest", testTicket);
 app.use("/employeedb", employeeDB);
+app.use("/userCart", cartDB);
 
 
 app.listen(9090, () => {
