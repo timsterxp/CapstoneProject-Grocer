@@ -19,14 +19,17 @@
                     <div class="btn-toolbar" role="toolbar">
                         <div class="btn-group btn-group-justified" role="group">
                             <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Refreshr" (click)="showItems()">Display Items</button>
+                                <button class="btn btn-primary" data-original-title="Display" (click)="showItems()">Display Items</button>
                             </div>
 
                             <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Password Reset" (click)="showCart()">Show Cart</button>
+                                <button class="btn btn-primary" data-original-title="Cart" (click)="showCart()">Show Cart</button>
                             </div>
                             <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Deactivate" (click)="showQuantity()">Update Quantity</button>
+                                <button class="btn btn-primary" data-original-title="Add Item" (click)="showAdd()">Add Item</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Quantity Update" (click)="showQuantity()">Update Quantity</button>
                             </div>
                             <div class="btn-group" role="group">
                                 <button class="btn btn-primary disabled" data-original-title="Activate">Checkout</button>
@@ -49,22 +52,24 @@
 
     </div>
     <br/>
-    <app-add-item-cart></app-add-item-cart>
-    <app-view-item></app-view-item>
+    <div style="padding-left:40px;">
+        <app-view-item></app-view-item>
+        <br/>
+        <br/>
+        <br/>
+        <app-show-cart></app-show-cart>
+        <br/>
+        <br/>
+        <app-add-item-cart></app-add-item-cart>
+        <br/><br/>
 
-    <br/>
-    <br/>
-
-    <app-show-cart></app-show-cart>
-    <br/><br/>
 
 
-    <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
+        <app-update-quantity></app-update-quantity>
+        <br/>
 
-    <app-delete-item-cart></app-delete-item-cart>
-    <br/>
-    <app-update-quantity></app-update-quantity>
-
+        <app-delete-item-cart></app-delete-item-cart>
+    </div>
 </body>
 
 </html>
