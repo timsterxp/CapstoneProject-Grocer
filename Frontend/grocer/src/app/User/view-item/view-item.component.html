@@ -12,11 +12,11 @@
                             <div class="card-body">
                                 <h5 class="card-title" id="itemOne">Rice</h5>
                                 <p class="card-text" id="itemOnePrice">$19999</p>
-                                <form #addRef="ngForm" (ngSubmit)="addToCart(addRef.value)">
+                                <form>
                                     <input type="hidden" class="form-control" name="Name" placeholder="Rice" ngModel />
                                     <input type="hidden" class="form-control" name="Price" placeholder="1999" ngModel/>
                                     <input type="hidden" class="form-control" name="Quantity" placeholder="1" ngModel/>
-                                    <input type="submit" class="form-control" class="btn btn-primary " value="Add to Cart" />
+                                    <input type="submit" class="form-control" class="btn btn-primary " value="Add to Cart" (click)="addToCart('Rice',19999,1)" />
                                 </form>
 
 
