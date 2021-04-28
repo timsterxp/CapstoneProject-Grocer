@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
   selector: 'app-view-item',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cartSer:CartService) { }
 
   ngOnInit(): void {
   }
+
+addToCart(addRef:any){
+  console.log("Attempt to add "+addRef);
+this.cartSer.addToCart(addRef).subscribe(result=>{
+  console.log(result);
+});
+}
 
 }
