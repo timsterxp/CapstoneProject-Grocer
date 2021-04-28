@@ -14,4 +14,6 @@ let sendTicket = (req, res) => {
     })
 }
 
+
 module.exports={sendTicket};
+
