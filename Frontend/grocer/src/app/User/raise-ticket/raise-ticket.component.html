@@ -1,15 +1,16 @@
 <div id="hideToggleTicket" style="display:none">
     <form class="form-signin" #ticketRef="ngForm" (ngSubmit)="sendTicket(ticketRef.value)">
-        <input type="email" class="form-control" placeholder="Email" ngModel/>
+        <input type="email" class="form-control" placeholder="Email" name="user" ngModel/>
         <br/>
-        <input type="text" class="form-control" placeholder="Reason" ngModel />
+        <input type="text" class="form-control" placeholder="Reason" name="description" ngModel />
         <br/>
         <div class="btn-toolbar pull-right form-group row">
             <button class="btn btn-lg btn-primary btn-block " type="submit">Send</button>
         </div>
         <br/>
-        <div class="btn-toolbar pull-right form-group row">
-            <button class="btn btn-lg btn-primary btn-block " type="button" (click)="hideMe()">Close</button>
-        </div>
     </form>
+    <div class="btn-toolbar pull-right form-group row">
+        <button class="btn btn-lg btn-primary btn-block " type="button" (click)="hideMe()">Close</button>
+    </div>
+
 </div>

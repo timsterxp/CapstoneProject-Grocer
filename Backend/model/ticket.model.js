@@ -13,7 +13,7 @@ let TicketSchema = mongoose.Schema({
 })
 
 
-let UserModel = mongoose.model("", TicketSchema, "UserTicket");
+let TicketModel = mongoose.model("UserTicket", TicketSchema, "UserTicket");
 
 
-module.exports = UserModel;
+module.exports = TicketModel;
