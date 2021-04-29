@@ -50,7 +50,7 @@ import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-statu
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import { AddItemCartComponent } from './User/add-item-cart/add-item-cart.component';
-
+import {FlexLayoutModule} from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +90,7 @@ import { AddItemCartComponent } from './User/add-item-cart/add-item-cart.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,HttpClientModule,MatTableModule, MatGridListModule, MatCardModule 
+    BrowserAnimationsModule,MatButtonModule,MatInputModule,FormsModule,MatFormFieldModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,HttpClientModule,MatTableModule, MatGridListModule, MatCardModule, FlexLayoutModule 
   ],
   providers: [MyAuthGuard],
   bootstrap: [AppComponent]

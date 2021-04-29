@@ -1,6 +1,7 @@
-<div class="container">
-    <h2>Login In</h2>
-    <form #EmpRef="ngForm" (ngSubmit)="Login(EmpRef.value)">
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="20">
+        <mat-toolbar color="primary">Employee Login</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" #EmpRef="ngForm" (ngSubmit)="Login(EmpRef.value)">
         <mat-form-field>
             <mat-label>Employee Id</mat-label>
             <input matInput type="text" name="id" ngModel/>
@@ -9,8 +10,8 @@
             <mat-label>Password</mat-label>
             <input matInput type="password" name="pass" ngModel/>
         </mat-form-field><br/>
-        <pre>
-<button mat-raised-button color="primary" type="submit">Sign In</button>  <button mat-raised-button color="primary" type="reset">Reset</button></pre>
+        <button mat-raised-button class="mt-5" color="primary" type="submit"><mat-icon>login</mat-icon>Login</button>
     </form>
     {{Msg}}
+</mat-card>
 </div>
