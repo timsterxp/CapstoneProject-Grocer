@@ -9,5 +9,6 @@ router.delete("/deleteItem/:ProductID", CartController.deleteItem)
 router.put("/update", CartController.updateItem)
 router.get("/maxQuantity/:ProductID", CartController.checkMax)
 router.get("/getItem/:ProductID", CartController.checkMax)
+router.get("/checkExist/:ProductID", CartController.alreadyExist)
 
 module.exports = router;
