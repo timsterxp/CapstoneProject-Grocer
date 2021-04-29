@@ -10,7 +10,7 @@
           if (!err) {
               res.send("Funds successfully added");
           } else {
-              res.send("Error");
+              res.send("Error" + err);
           }
       })
   }
