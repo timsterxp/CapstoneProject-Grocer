@@ -17,26 +17,28 @@
             <div class="row">
                 <div class="col-xs-offset 1 col-xs-11 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
                     <div class="btn-toolbar" role="toolbar">
-                      <div class="btn-group btn-group-justified" role="group">
-                        <div class="btn-group" role="group">
-                          <button class="btn btn-primary" data-original-title="Refreshr" (click)="showItems()">Display Items</button>
-                        </div>
 
-                        <div class="btn-group" role="group">
-                          <button class="btn btn-primary" data-original-title="Password Reset" (click)="showCart()">Show Cart</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                          <button class="btn btn-primary" data-original-title="Deactivate" (click)="showQuantity()">Update Quantity</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                          <button class="btn btn-primary" data-original-title="Activate" (click)="showCheckout()">Checkout</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                          <button class="btn btn-primary" data-original-title="fund" (click)="showFunds()">Funds</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                          <button class="btn btn-warning" data-original-title="Delete" (click)="showDelete()">Delete Item</button>
-                        </div>
+                        <div class="btn-group btn-group-justified" role="group">
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Display" (click)="showItems()">Display Items</button>
+                            </div>
+
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Cart" (click)="showCart()">Show Cart</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Add Item" (click)="showAdd()">Add Item</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Quantity Update" (click)="showQuantity()">Update Quantity</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary disabled" data-original-title="Activate">Checkout</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-warning" data-original-title="Delete" (click)="showDelete()">Delete Item</button>
+                            </div>
+
 
                       </div>
                     </div>
@@ -53,24 +55,26 @@
 
     </div>
     <br/>
-    <app-add-item-cart></app-add-item-cart>
-    <app-view-item></app-view-item>
-
-    <br/>
-    <br/>
-
-    <app-show-cart></app-show-cart>
-    <br/><br/>
+    <div style="padding-left:40px;">
+        <app-view-item></app-view-item>
+        <br/>
+        <br/>
+        <br/>
+        <app-show-cart></app-show-cart>
+        <br/>
+        <br/>
+        <app-add-item-cart></app-add-item-cart>
+        <br/><br/>
 
         <app-checkout></app-checkout>
         <app-funds></app-funds>
 
-    <!--Pull from backend database/array of user cart items, users should have an array of groceries currently in their cart-->
 
-    <app-delete-item-cart></app-delete-item-cart>
-    <br/>
-    <app-update-quantity></app-update-quantity>
+        <app-update-quantity></app-update-quantity>
+        <br/>
 
+        <app-delete-item-cart></app-delete-item-cart>
+    </div>
 </body>
 
 </html>
