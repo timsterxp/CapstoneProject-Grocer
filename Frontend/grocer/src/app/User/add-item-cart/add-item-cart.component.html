@@ -1,0 +1,16 @@
+<form #AddRef="ngForm" (ngSubmit)="addItem(AddRef.value)">
+    <label>Id</label>
+    <input type="number" name="ProductID" ngModel/> <br/>
+    <label>Product Name</label>
+    <input type="text" name="ProductName" ngModel/><br/>
+    <label>Quantity Wanted</label>
+    <input type="number" name="Quantity" ngModel/>
+    <label>Price</label>
+    <input type="number" name="ProductPrice" ngModel/>
+    <br/>
+    <br/>
+    <br/>
+
+    <button class="btn  btn-primary btn-block" type="submit">Add Item</button> <br /><br /><br />
+    <br/>
+</form>

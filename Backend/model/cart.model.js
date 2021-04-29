@@ -2,15 +2,15 @@ let mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 let CartSchema = mongoose.Schema({
-    UserEmail: String,
-    CartItems: [{
-        Name: String,
-        Price: String,
-        Quantity: String
-    }]
+    ProductID: Number,
+    ProductName: String,
+    Quantity: Number,
+    ProductPrice: Number
+
+
 
 })
-let CartModel = mongoose.model("Carted", CartSchema, "Carted");
+let CartModel = mongoose.model("CartedTest", CartSchema, "CartedTest");
 
 
 
