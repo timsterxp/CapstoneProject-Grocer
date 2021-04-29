@@ -91,6 +91,9 @@ let getAllRequest = (req, res) => {
     })
 }
 
+
+//Add an employee with a randomized employee ID and a defaultpass to be changed
+
 let addEmployee = (req, res) => {
     let empId = Math.floor(Math.random() * 100000000);
 
@@ -111,6 +114,7 @@ let addEmployee = (req, res) => {
 
 }
 
+//Delete Employee based on ID
 let deleteEmployee = (req, res) => {
     let empId = req.params.id
     EmployeeModel.deleteOne({ _id: empId }, (err, result) => {
@@ -128,28 +132,28 @@ let deleteEmployee = (req, res) => {
 
 
 
-let getOrderByNumber =(req,res)=>{
+let getOrderByNumber = (req, res) => {
     let num = req.params.num;
-    OrderModel.find({OrderNumber:num},(err,result)=>{
-        if(!err){
+    OrderModel.find({ OrderNumber: num }, (err, result) => {
+        if (!err) {
             res.json(result);
-        }else{
+        } else {
             res.send(err);
         }
     })
 }
 
-let RefundwithUserID = (req,res)=>{
+let RefundwithUserID = (req, res) => {
     let ID = req.body.userid;
     let refund = req.body.fund;
-    UserModel.updateOne({UserID:ID},{$inc:{funds:refund}},(err,result)=>{
-        if(!err){
+    UserModel.updateOne({ UserID: ID }, { $inc: { funds: refund } }, (err, result) => {
+        if (!err) {
             res.send("Refund Processed");
-        }else{
+        } else {
             res.send("Error");
         }
     })
 }
 
 
-module.exports={getAllEmployees,updateEmployeePassword,sendRequest,updateOrderStatus,getAllOrders, getAllRequest, getOrderByNumber,RefundwithUserID, addEmployee, deleteEmployee};
+module.exports = { getAllEmployees, updateEmployeePassword, sendRequest, updateOrderStatus, getAllOrders, getAllRequest, getOrderByNumber, RefundwithUserID, addEmployee, deleteEmployee };
