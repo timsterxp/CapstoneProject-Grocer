@@ -49,6 +49,7 @@ import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-pro
 import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { AddItemCartComponent } from './User/add-item-cart/add-item-cart.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import {MatCardModule} from '@angular/material/card';
     ShowCartComponent,
     UpdateQuantityComponent,
     UserEditProfileComponent,
-    EmpUpdateOrderStatusComponent
+    EmpUpdateOrderStatusComponent,
+    AddItemCartComponent
   ],
   imports: [
     BrowserModule,

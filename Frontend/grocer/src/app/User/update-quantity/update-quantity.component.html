@@ -2,12 +2,12 @@
 <div id="hideQuantity" style="display:none">
     <form #quantityRef="ngForm" (ngSubmit)="updateQuantity(quantityRef.value) ">
         <mat-form-field>
-            <mat-label>Product Name or ID</mat-label>
-            <input matInput type="text " name="searchValue " ngModel/>
+            <mat-label>Product ID</mat-label>
+            <input matInput type="number " name="ProductID" ngModel/>
         </mat-form-field><br/>
         <mat-form-field>
             <mat-label>Quantity Wanted</mat-label>
-            <input matInput type="number " name="quantity " ngModel/>
+            <input matInput type="number " name="Quantity" ngModel/>
 
         </mat-form-field>
         <br/>

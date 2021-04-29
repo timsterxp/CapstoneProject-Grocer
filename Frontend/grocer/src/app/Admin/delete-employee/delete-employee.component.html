@@ -1,11 +1,10 @@
-<p>delete-employee works!</p>
 <!--Easiest to just ask for id and delete in ts-->
 
 <form>
     <mat-form-field>
-        <mat-label>Enter the email ID of the employee to remove</mat-label>
-        <input matInput type="text" #emailRef ngModel/>
+        <mat-label>Enter the ID of the employee to remove</mat-label>
+        <input matInput type="text" name="id" #idRef ngModel/>
     </mat-form-field>
     <br/>
-    <input type="submit" value="Delete Employee" (click)="delete(emailRef.value)" />
+    <input type="submit" value="Delete Employee" (click)="delete(idRef.value)" />
 </form>

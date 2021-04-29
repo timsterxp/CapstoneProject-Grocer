@@ -14,10 +14,24 @@ export class UpdateQuantityComponent implements OnInit {
   ngOnInit(): void {
   }
   
+
   //updateQuantity to change quantity in cart (as well as double check that groceryList has enough quantity)
   updateQuantity(updateRef:any){
-    this.cartSer.updateQuantity(updateRef).subscribe((result:string)=>{
-      
-    })
+    let wantedQuantity=updateRef.Quantity;
+    let id=updateRef.ProductID;
+    this.cartSer.checkMax(id).subscribe(result=>{
+      console.log(result)
+      if (result?.length>0){
+        console.log("Max quantity is: " + result[0].Inventory);
+        if (result[0].Inventory>wantedQuantity){
+          this.cartSer.updateQuantity(updateRef).subscribe((result:string)=>{
+            console.log(result);
+          })
+        }
+      }else{
+
+      }    });
+    
+  
   }
 }

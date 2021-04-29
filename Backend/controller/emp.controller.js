@@ -4,78 +4,78 @@ let OrderModel = require("../model/order.model.js");
 let UserModel = require("../model/user.model.js");
 //Get all employees
 
-let getAllEmployees =(req,res)=>{
-    EmployeeModel.find({},(err,result)=>{
-        if(!err){
+let getAllEmployees = (req, res) => {
+    EmployeeModel.find({}, (err, result) => {
+        if (!err) {
             res.json(result);
         }
     })
 }
 
 
-let updateEmployeePassword = (req,res)=>{
+let updateEmployeePassword = (req, res) => {
     let id = req.body.id;
     let Newpass = req.body.Newpass;
-    EmployeeModel.updateOne({_id:id},{$set:{password:Newpass}},(err,result)=>{
-        if(!err){
-            if(result.nModified>0){
+    EmployeeModel.updateOne({ _id: id }, { $set: { password: Newpass } }, (err, result) => {
+        if (!err) {
+            if (result.nModified > 0) {
                 res.send("Password Updated Successfully!");
             }
-        }else{
-            res.send("Error"+err);
+        } else {
+            res.send("Error" + err);
         }
     })
 }
 
 
-let sendRequest = (req,res)=>{
+let sendRequest = (req, res) => {
     let request = new SendRequestModel({
-        Empid:req.body.Empid,
-        pname:req.body.pname,
-        request:req.body.request,
-        status:req.body.status
+        Empid: req.body.Empid,
+        pname: req.body.pname,
+        request: req.body.request,
+        status: req.body.status
     });
-    request.save((err,result)=>{
-        if(!err){
+    request.save((err, result) => {
+        if (!err) {
             res.send("Request sent");
-        }else{
+        } else {
             res.send("Error!");
         }
     })
 }
 
-let updateOrderStatus = (req,res)=>{
+let updateOrderStatus = (req, res) => {
     let orderNumber = req.body.ordernumber;
     let status = req.body.status;
-    if(!req.body.reason){
-    OrderModel.updateOne({OrderNumber:orderNumber},{$set:{Status:status}},(err,result)=>{
-        if(!err){
-            if(result.nModified>0){
-                res.send("Status Updated!");
+    if (!req.body.reason) {
+        OrderModel.updateOne({ OrderNumber: orderNumber }, { $set: { Status: status } }, (err, result) => {
+            if (!err) {
+                if (result.nModified > 0) {
+                    res.send("Status Updated!");
+                }
+            } else {
+                res.send("Error" + err);
             }
-        }else{
-            res.send("Error"+err);
-        }
-    });
-}else{
-    let orderNumber = req.body.ordernumber;
-    let status = req.body.status;
-    let reason = req.body.reason;
-    OrderModel.updateOne({OrderNumber:orderNumber},{$set:{Status:status,Reason:reason}},(err,result)=>{
-        if(!err){
-            if(result.nModified>0){
-                res.send("Status Updated!");
+        });
+    } else {
+        let orderNumber = req.body.ordernumber;
+        let status = req.body.status;
+        let reason = req.body.reason;
+        OrderModel.updateOne({ OrderNumber: orderNumber }, { $set: { Status: status, Reason: reason } }, (err, result) => {
+            if (!err) {
+                if (result.nModified > 0) {
+                    res.send("Status Updated!");
+                }
+            } else {
+                res.send("Error" + err);
             }
-        }else{
-            res.send("Error"+err);
-        }
-    });
-}
+        });
+    }
 }
 
-let getAllOrders = (req,res)=>{
-    OrderModel.find({},(err,result)=>{
-        if(!err){
+let getAllOrders = (req, res) => {
+    OrderModel.find({}, (err, result) => {
+        if (!err) {
             res.json(result);
         }
     })
@@ -83,13 +83,49 @@ let getAllOrders = (req,res)=>{
 
 
 
-let getAllRequest =(req,res)=>{
-    SendRequestModel.find({},(err,result)=>{
-        if(!err){
+let getAllRequest = (req, res) => {
+    SendRequestModel.find({}, (err, result) => {
+        if (!err) {
             res.json(result);
         }
     })
 }
+
+let addEmployee = (req, res) => {
+    let empId = Math.floor(Math.random() * 100000000);
+
+    let newEmployee = new EmployeeModel({
+        _id: empId,
+        password: 'DefaultPass',
+        fname: req.body.Fname,
+        lname: req.body.Lname,
+        email: req.body.email
+    });
+    newEmployee.save((err, result) => {
+        if (!err) {
+            res.send("New Employee ID: " + empId + " has been added");
+        } else {
+            res.send("Error");
+        }
+    })
+
+}
+
+let deleteEmployee = (req, res) => {
+    let empId = req.params.id
+    EmployeeModel.deleteOne({ _id: empId }, (err, result) => {
+        if (!err) {
+            if (result.deletedCount > 0) {
+                res.send("Successful removal of employee")
+            } else {
+                res.send("Cannot find employee");
+            }
+        } else {
+            res.send("Error: " + err);
+        }
+    })
+}
+
 
 
 let getOrderByNumber =(req,res)=>{
@@ -116,5 +152,4 @@ let RefundwithUserID = (req,res)=>{
 }
 
 
-module.exports={getAllEmployees,updateEmployeePassword,sendRequest,updateOrderStatus,getAllOrders, getAllRequest, getOrderByNumber,RefundwithUserID};
-
+module.exports={getAllEmployees,updateEmployeePassword,sendRequest,updateOrderStatus,getAllOrders, getAllRequest, getOrderByNumber,RefundwithUserID, addEmployee, deleteEmployee};

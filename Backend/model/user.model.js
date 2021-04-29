@@ -1,7 +1,7 @@
-let mongoose = require('mongoose') ;
+let mongoose = require('mongoose');
 
 // creating reference 
-mongoose.Promise = global.Promise;   
+mongoose.Promise = global.Promise;
 
 
 // create schema 
@@ -30,8 +30,7 @@ let UserSchema = mongoose.Schema({
 })
 
 
-let UserModel = mongoose.model("User" , UserSchema , "User") ;
+let UserModel = mongoose.model("User", UserSchema, "User");
 
 
-module.exports = UserModel ;
-
+module.exports = UserModel;

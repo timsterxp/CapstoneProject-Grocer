@@ -34,6 +34,11 @@ export class UserHomeComponent implements OnInit {
     toDisplay.style.display="";
   }
 
+  showAdd(){
+    var toDisplay=document.getElementById("hideAdd");
+    toDisplay.style.display="";
+  }
+
   showCart(){
     var toDisplay=document.getElementById("hideCart");
     toDisplay.style.display="";
