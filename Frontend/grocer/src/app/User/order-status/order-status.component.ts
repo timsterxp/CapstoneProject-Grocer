@@ -1,4 +1,3 @@
-  
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/Services/order.service';
 import { Order } from 'src/app/order.model';
@@ -20,7 +19,6 @@ export class OrderStatusComponent implements OnInit {
     this.orderSer.getOrders().subscribe((result: any) => {
       console.log("Orders", result);
       for (let i = 0; i < result.length; i++) {
-
         var OrderNumber = result[i].OrderNumber;
         var Status = result[i].Status;
         var Date = result[i].Date;

@@ -2,7 +2,7 @@ const OrderModel = require("../model/order.model")
 
 let addOrder = (req, res) => {
     let newOrder = new OrderModel({
-        OrderNumber: req.body.Number,
+        OrderNumber: req.body.OrderNumber,
         UserName: "User",
         Products: req.body.Products,
         Amount: req.body.Amount,
