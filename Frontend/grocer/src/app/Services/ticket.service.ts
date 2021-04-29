@@ -8,7 +8,7 @@ export class TicketService {
  
   constructor(public http:HttpClient) { }
 
-  storeTicketDetails(TicketRef:any){
+  storeTicketDetails(TicketRef:any):any{
     return this.http.post("http://localhost:9090/userTest/ticket",TicketRef,{responseType:'text'});
   }
 }

@@ -114,7 +114,7 @@ let lockAccount = (req,res)=>{
     UserModel.updateOne({Email:email},{$set:{Locked:true}},(err,result)=>{
         if(!err){
             if(result.nModified>0){
-                res.send("Your account has been locked!");
+                res.send("Account locked! Redirecting user to raise a ticket.");
             }
         }else{
             res.send(err);
