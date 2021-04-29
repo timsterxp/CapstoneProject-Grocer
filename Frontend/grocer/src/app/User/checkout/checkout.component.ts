@@ -29,10 +29,10 @@ export class CheckoutComponent implements OnInit {
     this.cartSer.getCart().subscribe((result: any) => {
       console.log(result);
       for (let i = 0; i < result.length ; i++) {
-        let temprice = Number(result[i].price);
-        let tempquan = Number(result[i].quantity)
+        let temprice = Number(result[i].ProductPrice);
+        let tempquan = Number(result[i].Quantity)
         let Item: item ={
-          Name: result[i].name,
+          Name: result[i].ProductName,
           Price: temprice,
           Quantity: tempquan
         }
