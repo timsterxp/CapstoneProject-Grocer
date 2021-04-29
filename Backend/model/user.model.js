@@ -15,7 +15,14 @@ let UserSchema = mongoose.Schema({
     DOB : Date ,
     PhoneNumber : String ,
     Address : String ,
- 
+    LoginAttempts:{
+        type: Number,
+        default : 0
+    },
+    Locked: {
+        type:Boolean,
+        default:false
+    }
 })
 
 

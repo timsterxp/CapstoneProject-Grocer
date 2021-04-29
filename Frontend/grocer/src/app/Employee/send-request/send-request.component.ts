@@ -13,7 +13,7 @@ export class SendRequestComponent implements OnInit {
   constructor(public empService:EmployeeService) { }
 
   ngOnInit(): void {
-    let Emp = sessionStorage.getItem('Emp');
+    let Emp = sessionStorage.getItem('EmpID');
     this.ID = parseInt(Emp);
   }
 

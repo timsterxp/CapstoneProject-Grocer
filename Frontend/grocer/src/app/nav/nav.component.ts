@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  ID:String;
+  User:String;
+  ID:Number;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -19,13 +20,15 @@ export class NavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver,public router:Router) {}
   ngOnInit(): void {
-    this.ID = sessionStorage.getItem('id');
-    sessionStorage.setItem('Emp',this.ID.toString());
+    this.User = sessionStorage.getItem('User');
+    this.ID = parseInt(sessionStorage.getItem('id'));
+    sessionStorage.setItem('EmpID',this.ID.toString());
+
   }
 
   Logout(){
     sessionStorage.removeItem('id');
-    sessionStorage.removeItem('Emp');
+    sessionStorage.removeItem('User');
     sessionStorage.removeItem('token');
     this.router.navigate(["EmpLogin"]);
   }
