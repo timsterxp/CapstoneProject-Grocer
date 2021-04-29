@@ -1,11 +1,11 @@
-let AdminModel = require("../model/admin.model.js");
+  let AdminModel = require("../model/admin.model.js");
 
-let getAllAdmins = (req, res) => {
-    AdminModel.find({}, (err, result) => {
-        if (!err) {
-            res.json(result);
-        }
-    })
-}
+  let getAllAdmins = (req, res) => {
+      AdminModel.find({}, (err, result) => {
+          if (!err) {
+              res.json(result);
+          }
+      })
+  }
 
-module.exports = { getAllAdmins };
+  module.exports = { getAllAdmins };
