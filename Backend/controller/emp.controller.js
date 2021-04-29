@@ -91,12 +91,10 @@ let getAllRequest = (req, res) => {
 }
 
 let addEmployee = (req, res) => {
-    EmployeeModel.find({}, { "password": 0, "fname": 0, "lname": 0, "email": 0 }).sort({ _id: -1 }).limit(1), (err, result) => {
-        if (!err) {
-            console.log("Previous Employee was  " + result);
-        }
-    }
+    let empId = Math.floor(Math.random() * 100000000);
+
     let newEmployee = new EmployeeModel({
+        _id: empId,
         password: 'DefaultPass',
         fname: req.body.Fname,
         lname: req.body.Lname,
@@ -104,16 +102,17 @@ let addEmployee = (req, res) => {
     });
     newEmployee.save((err, result) => {
         if (!err) {
-            res.send("Added New Employee");
+            res.send("New Employee ID: " + empId + " has been added");
         } else {
             res.send("Error");
         }
     })
+
 }
 
 let deleteEmployee = (req, res) => {
-    let empEmail = req.params.email
-    EmployeeModel.deleteOne({ email: empEmail }, (err, result) => {
+    let empId = req.params.id
+    EmployeeModel.deleteOne({ _id: empId }, (err, result) => {
         if (!err) {
             if (result.deletedCount > 0) {
                 res.send("Successful removal of employee")

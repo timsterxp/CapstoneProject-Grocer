@@ -7,7 +7,7 @@ import { AdminService } from 'src/app/Services/admin.service';
   styleUrls: ['./add-employee.component.css']
 })
 export class AddEmployeeComponent implements OnInit {
-
+  resultMsg?:string;
   constructor(public adminSer:AdminService) { }
 
   ngOnInit(): void {
@@ -15,6 +15,7 @@ export class AddEmployeeComponent implements OnInit {
   addEmployee(employeeRef:any){
    this.adminSer.addEmployee(employeeRef).subscribe(result=>{
      console.log(result);
+     this.resultMsg=result;
    });
   }
 }
