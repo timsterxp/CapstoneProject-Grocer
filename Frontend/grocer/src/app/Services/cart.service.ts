@@ -42,4 +42,8 @@ export class CartService {
     return this.http.get<Grocery[]>("http://localhost:9090/userCart/getItem/"+id);
   }
 
+  checkCart(id:any):Observable<Cart[]>{
+    return this.http.get<Cart[]>("http://localhost:9090/userCart/checkExist/"+id)
+  }
+
 }

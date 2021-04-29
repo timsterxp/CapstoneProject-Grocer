@@ -73,13 +73,15 @@ let checkMax = (req, res) => {
     })
 }
 
-let retrieveItem = (req, res) => {
+let alreadyExist = (req, res) => {
     let productID = req.params.ProductID;
-    ProductModel.find({ ProductID: productID }, (err, data) => {
+    CartModel.find({ ProductID: productID }, (err, data) => {
         if (!err) {
             res.json(data);
         }
     })
 }
 
-module.exports = { addToCart, getAllItems, getCart, deleteItem, updateItem, checkMax };
+
+
+module.exports = { addToCart, getAllItems, getCart, deleteItem, updateItem, checkMax, alreadyExist };
