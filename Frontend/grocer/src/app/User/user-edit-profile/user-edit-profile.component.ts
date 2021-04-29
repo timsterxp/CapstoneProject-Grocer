@@ -6,7 +6,7 @@ import { UserService } from 'src/app/Services/user.service';
   styleUrls: ['./user-edit-profile.component.css']
 })
 export class UserEditProfileComponent implements OnInit {
-
+  output = "";
   constructor(public userSer: UserService) { }
 
   ngOnInit(): void {
@@ -14,6 +14,8 @@ export class UserEditProfileComponent implements OnInit {
   updateInfo(updateRef: any) {
     this.userSer.updateUser(updateRef).subscribe((result: any) => {
       console.log(result);
+
     })
+    this.output = "User Details Updated Successfully!";
   }
 }

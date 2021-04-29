@@ -10,11 +10,11 @@
         <tbody>
         </tbody>
         <!--<tr *ngFor="let val of data">
-      <td>{{this.data.Name}}</td>
-      <td>{{temp}}</td>
-      <td>{{data.Quantity}}</td>
-      <td>10</td>
-    </tr>-->
+        <td>{{this.data.Name}}</td>
+        <td>{{temp}}</td>
+        <td>{{data.Quantity}}</td>
+        <td>10</td>
+      </tr>-->
     </table><br />
 
     <form #orderRef="ngForm" (ngSubmit)="addOrder(orderRef.value)">
@@ -29,6 +29,6 @@
         <!--<button class="btn  btn-primary btn-block" type="button" (click)="addFunds()">Add Funds</button> <br /><br /><br /> -->
         <input type="submit" value="Submit" />
     </form>
-    <button class="btn  btn-primary btn-block" type="button" (click)="checkout()">Checkout</button> <br /><br /><br />
-    <br /> {{output}}
+    <button class="btn  btn-primary btn-block" type="button" (click)="checkout()">Checkout</button> {{output}}<br /><br /><br />
+    <br />
 </div>
