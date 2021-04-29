@@ -29,10 +29,6 @@ export class UserHomeComponent implements OnInit {
     })
   }
 
-  showItems(){
-    var toDisplay=document.getElementById("hideItems");
-    toDisplay.style.display="";
-  }
 
   showAdd(){
     var toDisplay=document.getElementById("hideAdd");
