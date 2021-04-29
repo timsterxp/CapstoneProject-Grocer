@@ -1,0 +1,7 @@
+<form>
+    <mat-form-field>
+        <mat-label>Product Id</mat-label>
+        <input matInput type="text" name="ProductID" #idRef ngModel/>
+    </mat-form-field><br/>
+    <input type="submit" value="Delete Product" (click)="delete(idRef.value)" />
+</form>

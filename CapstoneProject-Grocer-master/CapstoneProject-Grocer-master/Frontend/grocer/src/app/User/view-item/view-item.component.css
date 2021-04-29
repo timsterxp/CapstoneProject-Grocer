@@ -1,0 +1,10 @@
+.addSpacing {
+    width: 10px;
+    height: auto;
+    display: inline-block;
+}
+
+table.mat-table {
+    display: table;
+    width: 100%;
+}

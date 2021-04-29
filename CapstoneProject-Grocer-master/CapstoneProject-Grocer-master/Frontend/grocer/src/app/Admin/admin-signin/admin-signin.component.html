@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Login In</h2>
+    <form #adminRef="ngForm" (ngSubmit)="adminLogin(adminRef.value)">
+        <mat-form-field>
+            <mat-label>Admin Id</mat-label>
+            <input matInput type="text" name="id" ngModel/>
+        </mat-form-field><br/>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="pass" ngModel/>
+        </mat-form-field><br/>
+        <pre>
+<button mat-raised-button color="primary" type="submit">Sign In</button>  <button mat-raised-button color="primary" type="reset">Reset</button></pre>
+    </form>
+    {{Msg}}
+</div>

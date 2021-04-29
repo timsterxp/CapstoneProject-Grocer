@@ -1,0 +1,25 @@
+<form #productRef="ngForm" (ngSubmit)="addItem(productRef.value)">
+    <mat-form-field>
+        <mat-label>Product Id</mat-label>
+        <input matInput type="text" name="ProductID" ngModel/>
+    </mat-form-field><br/>
+    <mat-form-field>
+        <mat-label>Product Name</mat-label>
+        <input matInput type="text" name="ProductName" ngModel/>
+    </mat-form-field><br/>
+    <mat-form-field>
+        <mat-label>Product Description</mat-label>
+        <input matInput type="text" name="ProductDescription" ngModel/>
+    </mat-form-field><br/>
+    <mat-form-field>
+        <mat-label>Product Price</mat-label>
+        <input matInput type="text" name="ProductPrice" ngModel/>
+    </mat-form-field><br/>
+    <mat-form-field>
+        <mat-label>Product Quantity</mat-label>
+        <input matInput type="text" name="Inventory" ngModel/>
+    </mat-form-field><br/>
+
+
+    <input type="submit" value="Add Product" />
+</form>

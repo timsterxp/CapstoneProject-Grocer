@@ -1,0 +1,22 @@
+<div id="hideAdd" style="display:none">
+    <form #AddRef="ngForm" (ngSubmit)="addItem(AddRef.value)">
+        <mat-form-field>
+            <mat-label>Id</mat-label>
+            <input matInput type="number" name="ProductID" ngModel/>
+        </mat-form-field><br/>
+
+        <mat-form-field>
+            <mat-label>Quantity Wanted</mat-label>
+            <input matInput type="number" name="Quantity" ngModel/>
+        </mat-form-field><br/>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <button class="btn  btn-primary btn-block" type="submit">Add Item</button> <br /> {{resultMsg}}
+        <br /><br />
+        <br/>
+    </form>
+
+</div>

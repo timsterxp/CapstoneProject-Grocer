@@ -1,0 +1,83 @@
+
+<!-- Similar to generate-reports, get from database-->
+
+<!--The following code is dependent on what service format is used and will be edited afterwards
+
+
+-->
+<!--Must add source which will be done after receiving information about requests-->
+<!-- <table mat-table class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Employee Id">
+        <th mat-header-cell *matHeaderCellDef>Employee Id</th>
+        <td mat-cell>Placeholder text</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Request">
+        <th mat-header-cell *matHeaderCellDef>Request</th>
+        <td mat-cell>Placeholder text</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row></tr> -->
+
+    <!--To do: Input the row names after we retrieve-->
+    <form #statusRef="ngForm" (ngSubmit)="Update(statusRef.value)">
+        <mat-form-field>
+            <mat-label>Employee Id</mat-label>
+            <input matInput type="text" name="Empid" required ngModel/>
+        </mat-form-field><br/>
+        <mat-form-field>
+            <mat-label>Product Name</mat-label>
+            <input matInput type="text" name="pname" required ngModel/>
+        </mat-form-field><br/>
+        <mat-form-field>
+            <mat-label>Status</mat-label>
+            <select matNativeControl name="status" [(ngModel)]="Option" >
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+        </mat-form-field><br/>
+        
+<pre><button mat-raised-button color="primary" type="submit">Update</button> </pre>
+{{Msg}}
+</form>
+
+        <mat-card >
+            <mat-card-header>
+                <mat-card-title>View Request</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <table class="myTable" id="orders">
+                                       
+                    <thead>
+                        <tr>
+                        <th>Employee id</th>
+                        <th>Product Name</th>
+                        <th>Request</th>
+                        <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let request of requests">
+                            <td>{{request.Empid}}</td>
+                            <td>{{request.pname}}</td>
+                            <td>{{request.request}}</td>
+                           
+                            <td>{{request.status}}</td>
+                            
+                        </tr>
+    
+                    </tbody>
+                </table>
+            </mat-card-content>
+        </mat-card><br/><br/>
+
+        <form  (ngSubmit)="back()">
+            <button type="submit">Back</button><br/>
+        </form>
+
+
+
+     
+    

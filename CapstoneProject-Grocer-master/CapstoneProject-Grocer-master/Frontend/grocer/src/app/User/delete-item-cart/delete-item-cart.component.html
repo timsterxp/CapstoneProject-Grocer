@@ -1,0 +1,11 @@
+<div id="hideDelete" style="display:none">
+    <mat-form-field>
+        <mat-label>Id To Delete</mat-label>
+        <input matInput type="text" name="ProductID" #deleteRef/>
+    </mat-form-field>
+    <br/>
+    <br/>
+
+    <button class="btn  btn-primary btn-block" type="button" (click)="deleteItem(deleteRef.value)">Delete Item</button> <br /><br /><br />
+    <br/>
+</div>
