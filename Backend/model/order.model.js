@@ -2,17 +2,15 @@ let mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 let OrderSchema = mongoose.Schema({
-    OrderNumber:Number,
-    UserID:String,
-    Products:Object,
-    Amount:Number,
-    Status:String,
-    Reason:{
-        type:String,
-        default:"ok"
-    }
+    OrderNumber: Number,
+    UserName: String,
+    Products: Object, //object
+    Amount: Number,
+    Status: String,
+    Reason: String,
+    Date: Date
 })
-let OrderModel = mongoose.model("Order",OrderSchema,"Order");
+let OrderModel = mongoose.model("Order", OrderSchema, "Order");
 
 
 

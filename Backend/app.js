@@ -18,7 +18,9 @@ const mongooseDB = {
     useUnifiedTopology: true
 }
 
-
+let order = require("./router/order.router.js");
+let funds = require("./router/funds.router.js");
+let users = require("./router/user.router.js");
 
 // connection to mongodb cloud database online 
 const uri = "mongodb+srv://admin:admin@cluster0.lb81w.mongodb.net/grocer-db?retryWrites=true&w=majority";
@@ -42,7 +44,9 @@ app.use("/product", Product);
 
 app.use("/userTest", testTicket);
 app.use("/userCart", cartDB);
-
+app.use("/order", order);
+app.use("/funds", funds);
+app.use("/Users", users);
 
 app.listen(9090, () => {
     console.log('Server Running on Port Number : 9090');
