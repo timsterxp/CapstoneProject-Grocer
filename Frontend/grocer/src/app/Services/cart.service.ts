@@ -46,4 +46,8 @@ export class CartService {
     return this.http.get<Cart[]>("http://localhost:9090/userCart/checkExist/"+id)
   }
 
+  getCart() {
+    return this.http.get("http://localhost:9090/userCart/getCart", {});
+  }
+
 }
