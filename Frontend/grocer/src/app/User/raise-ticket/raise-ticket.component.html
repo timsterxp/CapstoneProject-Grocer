@@ -1,16 +1,16 @@
-<div id="hideToggleTicket" style="display:none">
-    <form class="form-signin" #TicketRef="ngForm" (ngSubmit)="sendTicket(TicketRef.value)">
-        <input type="email" class="form-control" placeholder="Email" name="UserEmail" ngModel/>
-        <br/>
-        <input type="text" class="form-control" placeholder="Reason" name="Description" ngModel />
-        <br/>
-        <div class="btn-toolbar pull-right form-group row">
-            <button class="btn btn-lg btn-primary btn-block " type="submit">Send</button>
-        </div>
-        <br/>
+<div class="container">
+    <h2>User Ticket</h2>
+    <form #TicketRef="ngForm" (ngSubmit)="sendTicket(TicketRef.value)">
+        <mat-form-field>
+            <mat-label>Email ID</mat-label>
+            <input matInput type="text" name="UserEmail" [(ngModel)]="email" readonly="readonly"/>
+        </mat-form-field><br/>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput type="text" name="Description" ngModel/>
+        </mat-form-field><br/>
+        <pre>
+<button mat-raised-button color="primary" type="submit">Send</button>  <button mat-raised-button color="primary" type="reset">Reset</button></pre>
     </form>
-    <div class="btn-toolbar pull-right form-group row">
-        <button class="btn btn-lg btn-primary btn-block " type="button" (click)="hideMe()">Close</button>
-    </div>
-
+    {{Msg}}
 </div>

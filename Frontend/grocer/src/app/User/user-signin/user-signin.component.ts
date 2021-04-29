@@ -22,7 +22,10 @@ export class UserSigninComponent implements OnInit {
           if(userRef.inputEmail==result[i].Email){
             let email = result[i].Email;
             if(result[i].Locked==true){
-              this.Msg = "Account locked! Contact us to unlock."
+              this.Msg = "Account locked! Redirecting you to raise a ticket."
+              sessionStorage.setItem('user',userRef.inputEmail);
+              setTimeout(()=>{
+                this.router.navigate(["UserTicket"])},3000);
             }else{
               if(userRef.inputPassword==result[i].Password){
                 this.router.navigate(["UserHome"]);
@@ -34,6 +37,9 @@ export class UserSigninComponent implements OnInit {
                     if(res[0].LoginAttempts==3){
                       this.userService.lockAccount(userRef).subscribe((result2:String)=>{
                         this.Msg = result2;
+                        sessionStorage.setItem('user',userRef.inputEmail);
+                        setTimeout(()=>{
+                          this.router.navigate(["UserTicket"])},3000);
                       })
                     }
                 })

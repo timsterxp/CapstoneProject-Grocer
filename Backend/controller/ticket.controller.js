@@ -10,7 +10,7 @@ let sendTicket = (req, res) => {
     });
     newTicket.save((err, result) => {
         if (!err) {
-            res.send("Sent Ticket");
+            res.send("Ticket Sent.");
         } else {
             res.send("Error");
         }

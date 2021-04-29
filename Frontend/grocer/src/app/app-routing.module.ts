@@ -23,6 +23,8 @@ import { DeleteEmployeeComponent } from './Admin/delete-employee/delete-employee
 
 import { UnlockUserComponent } from './Employee/unlock-user/unlock-user.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
+
+import { RaiseTicketComponent } from './User/raise-ticket/raise-ticket.component';
 import { ViewRequestComponent } from './Admin/view-request/view-request.component';
 
 
@@ -47,6 +49,7 @@ const routes: Routes = [
   // User Sign Up
   {path:"\UserSignUp",component: UserSignupComponent} ,
   {path:"\UserHome",component:UserHomeComponent},
+  {path:"UserTicket",component:RaiseTicketComponent},
 
   // User Sign Up
   {path:"\AddItem",component:AddItemComponent},
