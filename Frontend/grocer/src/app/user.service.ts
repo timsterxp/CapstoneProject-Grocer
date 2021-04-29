@@ -24,7 +24,27 @@ export class UserService {
 
   lockAccount(userRef:any):any{
     return this.http.put("http://localhost:9090/user/lockAccount",userRef,{responseType:'text'});
+  
   }
+
+
+  storeUserDetails(productRef:any):any{
+   return this.http.post("http://localhost:9090/user/signup" , productRef , {responseType : 'text' });
+  
+
+
+    // updatePassword(PassRef:any):any{
+    //   return this.http.put("http://localhost:9090/employee/updateEmployeePassword",PassRef,{responseType:'text'});
+    // }
+
+
+    // storeProductDetailsInfo(productRef:any){
+    //   this.http.post(this.ipAddress+"/product/storeProductDetails",productRef,{responseType:"text"}).
+    //   subscribe(result=>console.log(result),error=>console.log(error));
+    // }
+  
+    
+} 
 
   
 }

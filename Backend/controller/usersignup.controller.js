@@ -4,18 +4,18 @@ let UserModel = require('../model/user.model') ;
 // UserSignUp 
 let storeUserDetails = (req,res)=> {
    
-    var UserIDtem = req.body.FirstName + req.body.LastName ;
+    var UserIDtem = req.body.firstName + req.body.lastName ;
     let User = new UserModel({
   
         UserID : UserIDtem ,
-        FirstName : req.body.FirstName ,
-        LastName : req.body.LastName ,
-        Email : req.body.Email ,
+        FirstName : req.body.firstName ,
+        LastName : req.body.lastName ,
+        Email : req.body.email ,
         Password : req.body.Password ,
-        DOB : req.body.DOB ,
-        PhoneNumber : req.body.PhoneNumber ,
-        Address : req.body.Address
-  
+        DOB : req.body.dob ,
+        PhoneNumber : req.body.phnumber,
+        Address : req.body.address
+   
   
     });
 
