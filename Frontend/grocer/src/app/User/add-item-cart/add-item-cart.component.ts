@@ -13,6 +13,7 @@ export class AddItemCartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Adds an item you want to your cart
   addItem(addRef:any){
     console.log(addRef);
     this.cartSer.addToCart(addRef).subscribe(result=>{

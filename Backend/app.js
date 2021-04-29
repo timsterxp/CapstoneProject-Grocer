@@ -12,7 +12,6 @@ let Admin = require("./router/admin.router.js");
 let Requests = require("./router/viewRequest.router.js");
 let Product = require("./router/product.router.js");
 let testTicket = require("./router/ticket.router.js");
-let employeeDB = require("./router/employee.router.js");
 let cartDB = require("./router/cart.router.js");
 const mongooseDB = {
     useNewUrlParser: true,
@@ -42,7 +41,6 @@ app.use("/request", Requests);
 app.use("/product", Product);
 
 app.use("/userTest", testTicket);
-app.use("/employeedb", employeeDB);
 app.use("/userCart", cartDB);
 
 

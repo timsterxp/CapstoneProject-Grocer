@@ -13,8 +13,9 @@ export class DeleteEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  delete(empEmail:any){
-    this.adminSer.deleteEmployee(empEmail).subscribe((result:string)=>{
+  //Delete an employee by ID
+  delete(empId:any){
+    this.adminSer.deleteEmployee(empId).subscribe((result:string)=>{
       console.log(result);
     })
     //Retrieve from database and delete

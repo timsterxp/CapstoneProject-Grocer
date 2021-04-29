@@ -12,7 +12,7 @@ export class UpdateQuantityComponent implements OnInit {
   constructor(public cartSer:CartService) { }
 
   ngOnInit(): void {
-  }
+  } 
   
 
   //updateQuantity to change quantity in cart (as well as double check that groceryList has enough quantity)

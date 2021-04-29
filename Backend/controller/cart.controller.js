@@ -1,9 +1,8 @@
 let CartModel = require("../model/cart.model")
 let ProductModel = require("../model/product.model.js")
-let UserModel = require("../model/user.model")
 
 
-
+// Creates a new Cart-Item for saving to cart
 let addToCart = (req, res) => {
 
     let newItem = new CartModel({
@@ -24,6 +23,7 @@ let addToCart = (req, res) => {
 
 }
 
+//Get all items in cart
 let getCart = (req, res) => {
     CartModel.find({}, (err, result) => {
         if (!err) {
@@ -32,7 +32,7 @@ let getCart = (req, res) => {
     })
 }
 
-
+//Display all available items
 let getAllItems = (req, res) => {
     ProductModel.find({}, (err, result) => {
         if (!err) {
@@ -41,6 +41,7 @@ let getAllItems = (req, res) => {
     })
 }
 
+//Deletes item from cart
 let deleteItem = (req, res) => {
     let productID = req.params.ProductID
     CartModel.deleteOne({ ProductID: productID }, (err, result) => {
@@ -51,6 +52,7 @@ let deleteItem = (req, res) => {
     })
 }
 
+//Updates quantity of item in your cart
 let updateItem = (req, res) => {
     let productID = req.body.ProductID;
     let updatedQuantity = req.body.Quantity;
@@ -61,6 +63,7 @@ let updateItem = (req, res) => {
     })
 }
 
+//Gets the max quantity available for an item
 let checkMax = (req, res) => {
     let productID = req.params.ProductID;
     ProductModel.find({ ProductID: productID }, (err, data) => {

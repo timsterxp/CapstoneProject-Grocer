@@ -12,6 +12,8 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  //Adds an employee and displays the employee id afterwards
   addEmployee(employeeRef:any){
    this.adminSer.addEmployee(employeeRef).subscribe(result=>{
      console.log(result);
