@@ -3,8 +3,6 @@
     <form #EmpRef="ngForm" (ngSubmit)="Login(EmpRef.value)">
         <mat-form-field>
             <mat-label>Employee Id</mat-label>
-            <!-- Sorry Kanak, throwing in some extra code to test-->
-            <!--<label>Employee ID</label> -->
             <input matInput type="text" name="id" ngModel/>
         </mat-form-field><br/>
         <mat-form-field>
@@ -14,4 +12,5 @@
         <pre>
 <button mat-raised-button color="primary" type="submit">Sign In</button>  <button mat-raised-button color="primary" type="reset">Reset</button></pre>
     </form>
+    {{Msg}}
 </div>

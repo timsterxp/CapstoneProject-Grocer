@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/Services/admin.service';
 
 @Component({
   selector: 'app-delete-employee',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteEmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public adminSer:AdminService) { }
 
   ngOnInit(): void {
+  }
+
+  delete(empEmail:any){
+    this.adminSer.deleteEmployee(empEmail).subscribe((result:string)=>{
+      console.log(result);
+    })
+    //Retrieve from database and delete
   }
 
 }

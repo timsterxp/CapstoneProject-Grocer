@@ -12,12 +12,29 @@ export class UserSigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signUp(){
+
+  checkUser(userRef: any) {
+
+  
+    // Values from Login Form
+    //  console.log(userRef.inputEmail) ;
+    //  console.log(userRef.inputPassword) ;
+     
+    
 
   }
-
-  getHelp(){
-    var showNow=document.getElementById("hideToggle");
-    showNow.style.display="";
+  ridirect() {
+    console.log("Hello9") ;
   }
+
+
+
+
+     getHelp(){
+     var showNow=document.getElementById("hideToggleTicket");
+     showNow.style.display="";
+  }
+
+
+
 }

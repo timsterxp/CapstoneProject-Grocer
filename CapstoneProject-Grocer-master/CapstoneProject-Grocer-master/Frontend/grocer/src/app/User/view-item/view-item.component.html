@@ -1,1 +1,34 @@
-<p>view-item works!</p>
+<!--Testing Branch-->
+<!--Place code into a for loop for item list, append item name, item price, and throw it onto a (click) function by id-->
+<!--Example item card-->
+<div id="hideItems" style="display:none">
+    <div class="container-fluid">
+        <form action="" class="form-group">
+            <div class="row">
+                <div class="col-2">
+                    <div class="col-sm-offset-12">
+                        <div class="card">
+                            <img class="card-img-top" alt="Placeholder image">
+                            <div class="card-body">
+                                <h5 class="card-title" id="itemOne">Rice</h5>
+                                <p class="card-text" id="itemOnePrice">$19999</p>
+                                <form #addRef="ngForm" (ngSubmit)="addToCart(addRef.value)">
+                                    <input type="hidden" class="form-control" name="Name" placeholder="Rice" ngModel />
+                                    <input type="hidden" class="form-control" name="Price" placeholder="1999" ngModel/>
+                                    <input type="hidden" class="form-control" name="Quantity" placeholder="1" ngModel/>
+                                    <input type="submit" class="form-control" class="btn btn-primary " value="Add to Cart" />
+                                </form>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

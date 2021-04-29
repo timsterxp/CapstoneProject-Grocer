@@ -1,0 +1,19 @@
+<div id="hideCart" style="display:none">
+    <table mat-table [dataSource]="cart" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="ProductName">
+            <th mat-header-cell *matHeaderCellDef>Product Name</th>
+            <td mat-cell *matCellDef="let element">{{element.productName}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Quantity">
+            <th mat-header-cell *matHeaderCellDef>Quantity</th>
+            <td mat-cell>Placeholder text</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
+
+        <!--To do: Input the row names after we retrieve-->
+    </table>
+</div>

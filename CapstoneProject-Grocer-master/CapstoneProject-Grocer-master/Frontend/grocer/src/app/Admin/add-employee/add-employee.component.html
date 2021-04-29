@@ -3,3 +3,20 @@
 <!--Add employee form: firstname,lastname,emailid
 
 Please generate the *same* password for every employee when adding. I recommend also putting a bool value for "first login"-->
+
+<form #employeeRef="ngForm" (ngSubmit)="addEmployee(employeeRef.value)">
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" name="Fname" ngModel/>
+    </mat-form-field><br/>
+    <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" name="Lname" ngModel/>
+    </mat-form-field><br/>
+    <mat-form-field>
+        <mat-label>EmailId</mat-label>
+        <input matInput type="email" name="email" ngModel/>
+    </mat-form-field><br/>
+
+    <input type="submit" value="Add Employee" />
+</form>

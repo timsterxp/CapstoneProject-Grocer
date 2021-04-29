@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/product.service';
 
 @Component({
   selector: 'app-add-item',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(public proService:ProductService) { }
 
   ngOnInit(): void {
+  }
+
+  addItem(productRef:any){
+    console.log(productRef);
+    this.proService.storeProductDetailsInfo(productRef);   
+
   }
 
 }
