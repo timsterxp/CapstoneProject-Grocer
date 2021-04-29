@@ -41,7 +41,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {HttpClientModule} from '@angular/common/http';
 import { MyAuthGuard } from './myauthguard';
-import { DeleteItemCartComponent } from './User/delete-item-cart/delete-item-cart.component';
 import { ShowCartComponent } from './User/show-cart/show-cart.component';
 import { UpdateQuantityComponent } from './User/update-quantity/update-quantity.component';
 import { MatTableModule} from '@angular/material/table';
@@ -49,7 +48,6 @@ import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-pro
 import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
-import { AddItemCartComponent } from './User/add-item-cart/add-item-cart.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 @NgModule({
   declarations: [
@@ -80,12 +78,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     FundsComponent,
     EmpPasswordResetComponent,
     NavComponent,
-    DeleteItemCartComponent,
     ShowCartComponent,
     UpdateQuantityComponent,
     UserEditProfileComponent,
     EmpUpdateOrderStatusComponent,
-    AddItemCartComponent
+   
   ],
   imports: [
     BrowserModule,
