@@ -1,9 +1,20 @@
-<h2>Available Funds: </h2>
+<div id="hideFunds" style="display:none">
+  <h2>Available Funds: </h2><h2>{{currentFund}}</h2>
 
-<!-- from user info, take in value for funds and display prettily-->
-<form>
-  <input type="number" name="toadd" />
-  <input type="button" value="Add Funds" />
-</form>
-<!--(click)="logout()" />-->
-<!--Pull fund from user info, display and have a "fake" add button-->
+  <!-- from user info, take in value for funds and display prettily-->
+  <form #fundRef="ngForm" (ngSubmit)="addFunds(fundRef.value)">
+    <mat-form-field>
+      <mat-label>User ID</mat-label>
+      <input matInput type="number" name="userid" ngModel/>
+    </mat-form-field> <br />
+    <mat-form-field>
+      <mat-label>Add Funds</mat-label>
+      <input matInput type="number" name="funds" ngModel/>
+    </mat-form-field> <br />
+
+    <!--<button class="btn  btn-primary btn-block" type="button" (click)="addFunds()">Add Funds</button> <br /><br /><br /> -->
+    <input type="submit" value="Submit" />
+  </form>
+  <!--(click)="logout()" />-->
+  <!--Pull fund from user info, display and have a "fake" add button-->
+</div>

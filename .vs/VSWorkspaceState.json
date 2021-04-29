@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Frontend",
+    "\\Frontend\\grocer",
+    "\\Frontend\\grocer\\src",
+    "\\Frontend\\grocer\\src\\app",
+    "\\Frontend\\grocer\\src\\app\\Admin",
+    "\\Frontend\\grocer\\src\\app\\Employee",
+    "\\Frontend\\grocer\\src\\app\\Employee\\send-request",
+    "\\Frontend\\grocer\\src\\app\\User",
+    "\\Frontend\\grocer\\src\\app\\User\\order-status"
+  ],
+  "SelectedNode": "\\Frontend\\grocer\\src\\app\\app-routing.module.ts",
+  "PreviewInSolutionExplorer": false
+}

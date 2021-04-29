@@ -18,4 +18,13 @@ let addToCart = (req, res) => {
     })
 }
 
-module.exports = { addToCart };
+let getCart = (req, res) => {
+    CartModel.find({}, (err, result) => {
+        if (!err) {
+            res.json(result);
+        } else {
+            console.log("error!")
+        }
+    })
+}
+module.exports = { addToCart, getCart };

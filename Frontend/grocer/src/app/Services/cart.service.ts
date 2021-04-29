@@ -20,5 +20,8 @@ export class CartService {
   updateQuantity(updateRef:any){
     return this.http.put("http://localhost:9090/user-home/update",updateRef) // to do, add code in back end
   }
+  getCart() {
+    return this.http.get("http://localhost:9090/userCart/getCart", {});
+  }
 
 }

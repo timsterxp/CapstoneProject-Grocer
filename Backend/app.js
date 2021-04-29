@@ -12,6 +12,10 @@ let Employee = require("./router/emp.router.js");
 let testTicket = require("./router/ticket.router.js");
 let employeeDB = require("./router/employee.router.js");
 let cartDB = require("./router/cart.router.js");
+
+let order = require("./router/order.router.js");
+let funds = require("./router/funds.router.js");
+let users = require("./router/user.router.js");
 const mongooseDB = {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -40,7 +44,9 @@ app.use("/user", User);
 app.use("/userTest", testTicket);
 app.use("/employeedb", employeeDB);
 app.use("/userCart", cartDB);
-
+app.use("/order", order);
+app.use("/funds", funds);
+app.use("/Users", users);
 
 app.listen(9090, () => {
     console.log('Server Running on Port Number : 9090');

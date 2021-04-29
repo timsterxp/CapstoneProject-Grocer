@@ -8,11 +8,11 @@ import { Grocery } from 'src/app/Services/model.grocery';
   styleUrls: ['./user-home.component.css']
 })
 export class UserHomeComponent implements OnInit {
-  addedMsg?:string;
-  groceryList?:Array<Grocery>
-  cartList?:Array<Grocery>
+  addedMsg?: string;
+  groceryList?: Array<Grocery>
+  cartList?: Array<Grocery>
 
-  constructor(public cartSer:CartService) { }
+  constructor(public cartSer: CartService) { }
 
   ngOnInit(): void {
   }
@@ -23,29 +23,49 @@ export class UserHomeComponent implements OnInit {
 
   //deleteById to remove from cart
 
-  deleteItem(id:any){
-    this.cartSer.deleteItem(id).subscribe((result:string)=>{
-      
+  deleteItem(id: any) {
+    this.cartSer.deleteItem(id).subscribe((result: string) => {
+
     })
   }
 
-  showItems(){
-    var toDisplay=document.getElementById("hideItems");
-    toDisplay.style.display="";
+  showItems() {
+    var toDisplay = document.getElementById("hideItems");
+    toDisplay.style.display = "";
   }
 
-  showCart(){
-    var toDisplay=document.getElementById("hideCart");
-    toDisplay.style.display="";
+  showCart() {
+    var toDisplay = document.getElementById("hideCart");
+    toDisplay.style.display = "";
   }
 
-  showQuantity(){
-    var toDisplay=document.getElementById("hideQuantity");
-    toDisplay.style.display="";
+  showQuantity() {
+    var toDisplay = document.getElementById("hideQuantity");
+    toDisplay.style.display = "";
   }
 
-  showDelete(){
-    var toDisplay=document.getElementById("hideDelete");
-    toDisplay.style.display="";
+  showDelete() {
+    var toDisplay = document.getElementById("hideDelete");
+    toDisplay.style.display = "";
+  }
+
+  showCheckout() {
+    var toDisplay = document.getElementById("hideCheckout");
+    toDisplay.style.display = "";
+  }
+
+  showFunds() {
+    var toDisplay = document.getElementById("hideFunds");
+    toDisplay.style.display = "";
+  }
+
+  showOrderStatus() {
+    var toDisplay = document.getElementById("hideOrderStatus");
+    toDisplay.style.display = "";
+  }
+
+  showEditProfile() {
+    var toDisplay = document.getElementById("hideEditProfile");
+    toDisplay.style.display = "";
   }
 }

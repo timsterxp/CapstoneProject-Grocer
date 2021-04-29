@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from 'src/app/Services/user.service';
 @Component({
   selector: 'app-user-edit-profile',
   templateUrl: './user-edit-profile.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userSer: UserService) { }
 
   ngOnInit(): void {
   }
-
+  updateInfo(updateRef: any) {
+    this.userSer.updateUser(updateRef).subscribe((result: any) => {
+      console.log(result);
+    })
+  }
 }
