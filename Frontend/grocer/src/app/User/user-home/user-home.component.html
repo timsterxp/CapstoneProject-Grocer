@@ -44,7 +44,9 @@
                             <div class="btn-group" role="group">
                                 <button class="btn btn-warning" data-original-title="Delete" (click)="showDelete()">Delete Item</button>
                             </div>
-
+                            <div class="btn-group" role="group">
+                              <button class="btn btn-secondary" data-original-title="profile" (click)="showEditProfile()">Edit Profile</button>
+                            </div>
 
                         </div>
                     </div>
@@ -62,25 +64,26 @@
     </div>
     <br/>
     <div style="padding-left:40px;">
-        <app-view-item></app-view-item>
-        <br/>
-        <br/>
-        <br/>
-        <app-show-cart></app-show-cart>
-        <br/>
-        <br/>
-        <app-add-item-cart></app-add-item-cart>
-        <br/><br/>
+      <app-view-item></app-view-item>
+      <app-user-edit-profile></app-user-edit-profile>
+      <br />
+      <br />
+      <br />
+      <app-show-cart></app-show-cart>
+      <br />
+      <br />
+      <app-add-item-cart></app-add-item-cart>
+      <br /><br />
 
-        <app-checkout></app-checkout>
+      <app-checkout></app-checkout>
 
 
-        <app-funds></app-funds>
-        <app-order-status></app-order-status>
-        <app-update-quantity></app-update-quantity>
-        <br/>
+      <app-funds></app-funds>
+      <app-order-status></app-order-status>
+      <app-update-quantity></app-update-quantity>
+      <br />
 
-        <app-delete-item-cart></app-delete-item-cart>
+      <app-delete-item-cart></app-delete-item-cart>
     </div>
 </body>
 

@@ -69,7 +69,7 @@ export class CheckoutComponent implements OnInit {
       console.log(result[0].Funds);
       if (result[0].Funds >= this.totalcost) {
         console.log("Purchase Successful!");
-        
+        this.output = "Order successfully placed!";
         let order: Order = {
           OrderNumber: this.ordernum,
           Products: this.allcart,
@@ -78,6 +78,7 @@ export class CheckoutComponent implements OnInit {
           Reason: "no issue",
           Date: new Date()
         }
+        console.log("Order Number:", this.ordernum);
         console.log(order);
         this.orderSer.addnewOrder(order).subscribe(result => {
           console.log(result);

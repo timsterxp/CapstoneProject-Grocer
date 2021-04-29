@@ -2,16 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Backend",
-    "\\Backend\\model",
+    "\\Backend\\router",
     "\\Frontend",
     "\\Frontend\\grocer",
     "\\Frontend\\grocer\\src",
     "\\Frontend\\grocer\\src\\app",
-    "\\Frontend\\grocer\\src\\app\\Admin",
     "\\Frontend\\grocer\\src\\app\\User",
-    "\\Frontend\\grocer\\src\\app\\User\\user-home",
-    "\\Frontend\\grocer\\src\\app\\User\\user-signin"
+    "\\Frontend\\grocer\\src\\app\\User\\funds",
+    "\\Frontend\\grocer\\src\\app\\User\\user-edit-profile"
   ],
-  "SelectedNode": "\\Frontend\\grocer\\src\\app\\Services",
+  "SelectedNode": "\\Backend\\controller\\funds.controller.js",
   "PreviewInSolutionExplorer": false
 }

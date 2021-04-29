@@ -2,7 +2,6 @@ let mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 let ProductSchema = mongoose.Schema({
-    _id: String,
     ProductName: String,
     ProductDescription: String,
     ProductPrice: Number,
