@@ -23,13 +23,13 @@ export class NavComponent {
     this.User = sessionStorage.getItem('User');
     this.ID = parseInt(sessionStorage.getItem('id'));
     sessionStorage.setItem('EmpID',this.ID.toString());
+    sessionStorage.removeItem('token');
 
   }
 
   Logout(){
     sessionStorage.removeItem('id');
     sessionStorage.removeItem('User');
-    sessionStorage.removeItem('token');
     this.router.navigate(["EmpLogin"]);
   }
 }
