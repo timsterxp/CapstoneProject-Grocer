@@ -63,4 +63,14 @@ export class UserHomeComponent implements OnInit {
     var toDisplay = document.getElementById("hideFunds");
     toDisplay.style.display = "";
   }
+
+  showOrderStatus() {
+    var toDisplay = document.getElementById("hideOrderStatus");
+    toDisplay.style.display = "";
+  }
+
+  showEditProfile() {
+    var toDisplay = document.getElementById("hideEditProfile");
+    toDisplay.style.display = "";
+  }
 }

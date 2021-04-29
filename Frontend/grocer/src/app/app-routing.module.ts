@@ -23,7 +23,9 @@ import { DeleteEmployeeComponent } from './Admin/delete-employee/delete-employee
 
 import { UnlockUserComponent } from './Employee/unlock-user/unlock-user.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
+
 import { RaiseTicketComponent } from './User/raise-ticket/raise-ticket.component';
+import { ViewRequestComponent } from './Admin/view-request/view-request.component';
 
 
 const routes: Routes = [
@@ -56,6 +58,7 @@ const routes: Routes = [
   { path: "\UserCheckout", component: CheckoutComponent },
   { path: "\UserEditProfile", component: UserEditProfileComponent },
   { path: "\OrderStatus", component: OrderStatusComponent },
+  { path: "viewRequest", component:  ViewRequestComponent},
 
   {path:"\AdminAddEmployee",component:AddEmployeeComponent},
   {path:"\AdminDeleteEmployee",component:DeleteEmployeeComponent}
