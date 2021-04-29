@@ -18,8 +18,9 @@ export class OrderStatusComponent implements OnInit {
   }
   showOrders() {
     this.orderSer.getOrders().subscribe((result: any) => {
-      console.log(result);
+      console.log("Orders", result);
       for (let i = 0; i < result.length; i++) {
+
         var OrderNumber = result[i].OrderNumber;
         var Status = result[i].Status;
         var Date = result[i].Date;
