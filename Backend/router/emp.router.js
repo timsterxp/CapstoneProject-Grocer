@@ -8,6 +8,10 @@ router.put("/updateOrderStatus",EmpController.updateOrderStatus);
 router.get("/getAllOrders",EmpController.getAllOrders);
 
 
+router.get("/allrequest",EmpController.getAllRequest);
+
+
+
 
 
 module.exports = router;

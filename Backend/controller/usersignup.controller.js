@@ -14,7 +14,7 @@ let storeUserDetails = (req,res)=> {
         Password : req.body.Password ,
         DOB : req.body.DOB ,
         PhoneNumber : req.body.PhoneNumber ,
-        Address : req.body.Address 
+        Address : req.body.Address
   
   
     });
@@ -83,10 +83,47 @@ let getUserById = (req,res) => {
         }
 })
 
-} 
+}
+
+let loginAttemptFail = (req,res)=>{
+    let email = req.body.inputEmail;
+    UserModel.updateOne({Email:email},{$inc:{LoginAttempts:1}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("Failed Login!")
+            }
+        }else{
+            res.send(err);
+        }
+    })
+}
+
+let getUserByEmail=(req,res)=>{
+    let email = req.params.email;
+    UserModel.find({Email:email},(err,data)=>{
+        if(!err){
+            res.json(data);
+        }else{
+            res.send(err);
+        }
+    })
+}
+
+let lockAccount = (req,res)=>{
+    let email = req.body.inputEmail;
+    UserModel.updateOne({Email:email},{$set:{Locked:true}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("Your account has been locked!");
+            }
+        }else{
+            res.send(err);
+        }
+    });
+}
 
 
 
 
 
-module.exports  = {  storeUserDetails  , getAllUserDetails , getUserById }
+module.exports  = {  storeUserDetails  , getAllUserDetails , getUserById, loginAttemptFail, getUserByEmail,lockAccount}

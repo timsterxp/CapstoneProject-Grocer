@@ -1,6 +1,7 @@
 let TicketModel = require("../model/ticket.model.js");
 
 let sendTicket = (req, res) => {
+
     let newTicket = new TicketModel({
         UserName: req.body.UserName,
         Description: req.body.Description
@@ -13,6 +14,7 @@ let sendTicket = (req, res) => {
         }
     })
 }
+
 
 
 module.exports = { sendTicket };
