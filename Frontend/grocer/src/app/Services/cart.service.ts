@@ -27,6 +27,11 @@ export class CartService {
   retrieveItems():Observable<Grocery[]>{
     return this.http.get<Grocery[]>("http://localhost:9090/userCart/showItems")
 
+    
+  }
+
+  checkMax(id:any):Observable<Grocery[]>{
+    return this.http.get<Grocery[]>("http://localhost:9090/userCart/maxQuantity/"+id);
   }
 
   retrieveCart():Observable<Cart[]>{

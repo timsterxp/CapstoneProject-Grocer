@@ -61,4 +61,14 @@ let updateItem = (req, res) => {
     })
 }
 
-module.exports = { addToCart, getAllItems, getCart, deleteItem, updateItem };
+let checkMax = (req, res) => {
+    let productID = req.params.ProductID;
+    ProductModel.find({ ProductID: productID }, (err, data) => {
+        if (!err) {
+            res.json(data);
+        }
+    })
+}
+
+
+module.exports = { addToCart, getAllItems, getCart, deleteItem, updateItem, checkMax };
