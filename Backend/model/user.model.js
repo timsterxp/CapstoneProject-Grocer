@@ -22,6 +22,10 @@ let UserSchema = mongoose.Schema({
     Locked: {
         type:Boolean,
         default:false
+    },
+    funds:{
+        type:Number,
+        default : 1000
     }
 })
 

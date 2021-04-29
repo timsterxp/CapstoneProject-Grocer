@@ -1,0 +1,27 @@
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+#tickets{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+#tickets td, #tickets th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tickets tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#tickets tr:hover {background-color: #ddd;}
+
+#tickets th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:rgb(62, 62, 216);
+    color: white;
+}

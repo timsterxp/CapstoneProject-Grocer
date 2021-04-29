@@ -20,6 +20,7 @@ import { AddEmployeeComponent } from './Admin/add-employee/add-employee.componen
 import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
 import { EditProfileComponent } from './Employee/edit-profile/edit-profile.component';
 import { DeleteEmployeeComponent } from './Admin/delete-employee/delete-employee.component';
+import { UnlockUserComponent } from './Employee/unlock-user/unlock-user.component';
 
 const routes: Routes = [
   {path:"",component:HomePageComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
   children:[
     {path:'SendRequest',component:SendRequestComponent},
     {path:'UpdateOrderStatus',component:EmpUpdateOrderStatusComponent},
-    {path:'EditProfile',component:EditProfileComponent}
+    {path:'EditProfile',component:EditProfileComponent},
+    {path:'UnlockUser',component:UnlockUserComponent}
   ]
 
 },

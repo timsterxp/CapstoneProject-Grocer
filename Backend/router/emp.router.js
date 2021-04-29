@@ -6,9 +6,9 @@ router.put("/updateEmployeePassword",EmpController.updateEmployeePassword);
 router.post("/sendRequest",EmpController.sendRequest);
 router.put("/updateOrderStatus",EmpController.updateOrderStatus);
 router.get("/getAllOrders",EmpController.getAllOrders);
-
-
 router.get("/allrequest",EmpController.getAllRequest);
+router.get("/getOrderbyNumber/:num",EmpController.getOrderByNumber);
+router.put("/userRefund",EmpController.RefundwithUserID);
 
 
 

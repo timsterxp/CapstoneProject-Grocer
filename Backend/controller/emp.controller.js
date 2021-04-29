@@ -1,6 +1,7 @@
 let EmployeeModel = require("../model/emp.model.js");
 let SendRequestModel = require("../model/sendReq.model.js");
 let OrderModel = require("../model/order.model.js");
+let UserModel = require("../model/user.model.js");
 //Get all employees
 
 let getAllEmployees =(req,res)=>{
@@ -91,7 +92,29 @@ let getAllRequest =(req,res)=>{
 }
 
 
-module.exports={getAllEmployees,updateEmployeePassword,sendRequest , getAllRequest};
+let getOrderByNumber =(req,res)=>{
+    let num = req.params.num;
+    OrderModel.find({OrderNumber:num},(err,result)=>{
+        if(!err){
+            res.json(result);
+        }else{
+            res.send(err);
+        }
+    })
+}
 
-module.exports={getAllEmployees,updateEmployeePassword,sendRequest,updateOrderStatus,getAllOrders, getAllRequest};
+let RefundwithUserID = (req,res)=>{
+    let ID = req.body.userid;
+    let refund = req.body.fund;
+    UserModel.updateOne({UserID:ID},{$inc:{funds:refund}},(err,result)=>{
+        if(!err){
+            res.send("Refund Processed");
+        }else{
+            res.send("Error");
+        }
+    })
+}
+
+
+module.exports={getAllEmployees,updateEmployeePassword,sendRequest,updateOrderStatus,getAllOrders, getAllRequest, getOrderByNumber,RefundwithUserID};
 

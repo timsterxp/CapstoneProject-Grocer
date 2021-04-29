@@ -3,11 +3,14 @@ mongoose.Promise = global.Promise;
 
 let OrderSchema = mongoose.Schema({
     OrderNumber:Number,
-    UserName:String,
+    UserID:String,
     Products:Object,
     Amount:Number,
     Status:String,
-    Reason:String
+    Reason:{
+        type:String,
+        default:"ok"
+    }
 })
 let OrderModel = mongoose.model("Order",OrderSchema,"Order");
 

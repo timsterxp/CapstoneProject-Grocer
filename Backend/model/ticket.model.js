@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise;
 // create schema 
 let TicketSchema = mongoose.Schema({
 
-    UserName: String,
+    UserEmail: String,
     Description: String
 
 

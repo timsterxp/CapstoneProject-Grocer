@@ -122,8 +122,21 @@ let lockAccount = (req,res)=>{
     });
 }
 
+let unlockAccount = (req,res)=>{
+    let email = req.body.email;
+    UserModel.updateOne({Email:email},{$set:{Locked:false,LoginAttempts:0}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("Acount Unlocked");
+            }else{
+                res.send("Error!");
+            }
+        }
+    })
+}
 
 
 
 
-module.exports  = {  storeUserDetails  , getAllUserDetails , getUserById, loginAttemptFail, getUserByEmail,lockAccount}
+
+module.exports  = {  storeUserDetails  , getAllUserDetails , getUserById, loginAttemptFail, getUserByEmail,lockAccount, unlockAccount};
