@@ -20,6 +20,17 @@ Orders?:Array<order>;
 
   Update(OrderRef:any){
     this.empService.updateOrderStatus(OrderRef).subscribe((result:String)=>{
+      if(OrderRef.status=="Cancelled"){
+        let num = OrderRef.ordernumber;
+        this.empService.getOrderByNum(num).subscribe(result=>{
+          type Details = {userid: String, fund:Number};
+          let order: Details = { userid:result[0].UserID, fund:result[0].Amount};
+          console.log(order);
+          this.empService.refundUser(order).subscribe((result:String)=>{
+            this.Msg = "Status Updated!"+ " "+ result;
+          })
+        });
+      }
       this.Msg = result;
     });
   }

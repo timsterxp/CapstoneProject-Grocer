@@ -3,7 +3,7 @@ let TicketModel = require("../model/ticket.model.js");
 let sendTicket = (req, res) => {
 
     let newTicket = new TicketModel({
-        UserName: req.body.UserName,
+        UserEmail: req.body.UserEmail,
         Description: req.body.Description
     });
     newTicket.save((err, result) => {
@@ -16,5 +16,28 @@ let sendTicket = (req, res) => {
 }
 
 
+let getAllTickets = (req,res)=>{
+    TicketModel.find({},(err,result)=>{
+        if(!err){
+            res.json(result);
+        }
+    })
+}
 
-module.exports = { sendTicket };
+
+let deleteByEmail = (req,res)=>{
+    let email = req.params.email;
+    TicketModel.deleteOne({UserEmail:email},(err,result)=>{
+        if(!err){
+            if(result.deletedCount>0){
+                res.send("Ticket Settled");
+            }
+        }else{
+            res.send("Error");
+        }
+    })
+}
+
+
+
+module.exports = { sendTicket, getAllTickets, deleteByEmail};

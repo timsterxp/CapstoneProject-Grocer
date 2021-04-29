@@ -18,6 +18,7 @@ router.post("/auth/:userid&:userpass" , usersignUpController.getUserById );
 router.put("/loginFail",usersignUpController.loginAttemptFail);
 router.get("/userByEmail/:email",usersignUpController.getUserByEmail);
 router.put("/lockAccount",usersignUpController.lockAccount);
+router.put("/unlockAccount",usersignUpController.unlockAccount);
 
 module.exports = router ;
 
