@@ -29,7 +29,7 @@ export class EmpSigninComponent implements OnInit {
       }
       if(loginSuccess){
         console.log("Logged in Successfully!");
-        if(result[passFinder].password=='Defaultpass'){
+        if(result[passFinder].password=='DefaultPass'){
           let tokenArray = new Uint32Array(1);
           crypto.getRandomValues(tokenArray);
           sessionStorage.setItem('token',tokenArray[0].toString());

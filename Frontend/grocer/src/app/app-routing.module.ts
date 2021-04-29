@@ -35,7 +35,7 @@ const routes: Routes = [
     {path:'UpdateOrderStatus',component:EmpUpdateOrderStatusComponent},
     {path:'EditProfile',component:EditProfileComponent},
     {path:'UnlockUser',component:UnlockUserComponent}
-  ]
+  ],canActivate:[MyAuthGuard]
 
 },
   {path:"\AdminLogin",component:AdminSigninComponent},
