@@ -40,7 +40,7 @@ export class CheckoutComponent implements OnInit {
         this.allcart.push(Item);
         console.log(this.allcart);
 
-        var name = result[i].name;
+        var name = result[i].ProductName;
         var price = temprice;
         var quantity = tempquan;
 
@@ -64,6 +64,7 @@ export class CheckoutComponent implements OnInit {
   }
   checkout() {
     this.fundSer.getFunds(this.userID).subscribe((result: any) => {
+      console.log("Funds" + result);
       this.accountbal = result[0].Funds;
       console.log(result[0].Funds);
       if (result[0].Funds >= this.totalcost) {
