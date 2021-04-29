@@ -13,15 +13,15 @@ export class CartService {
   constructor(public http:HttpClient) { }
 
   addToCart(addRef:any):any{
-    return this.http.post("http://localhost:9090/userCart/addToCart",addRef,{responseType:'text'}) // to do, add code in back end
+    return this.http.post("http://localhost:9090/userCart/addToCart",addRef,{responseType:'text'}) 
   }
 
   deleteItem(id:any):any{
-    return this.http.delete("http://localhost:9090/userCart/deleteItem/"+id,{responseType:'text'}) // to do, add code in back end
+    return this.http.delete("http://localhost:9090/userCart/deleteItem/"+id,{responseType:'text'}) 
   }
 
   updateQuantity(updateRef:any){
-    return this.http.put("http://localhost:9090/userCart/update",updateRef,{responseType:'text'}) // to do, add code in back end
+    return this.http.put("http://localhost:9090/userCart/update",updateRef,{responseType:'text'}) 
   }
 
   retrieveItems():Observable<Grocery[]>{
@@ -36,6 +36,10 @@ export class CartService {
 
   retrieveCart():Observable<Cart[]>{
     return this.http.get<Cart[]>("http://localhost:9090/userCart/getCart")
+  }
+  
+  retrieveItem(id:any):Observable<Grocery[]>{
+    return this.http.get<Grocery[]>("http://localhost:9090/userCart/getItem/"+id);
   }
 
 }
