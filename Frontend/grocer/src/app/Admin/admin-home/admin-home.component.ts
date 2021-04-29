@@ -39,6 +39,8 @@ export class AdminHomeComponent implements OnInit {
 
   viewRequests(){
 
+    this.router.navigate(["viewRequest"]);
+
   }
 
 }

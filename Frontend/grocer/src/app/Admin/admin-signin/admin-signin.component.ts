@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/admin.service';
 
 @Component({
   selector: 'app-admin-signin',
@@ -8,21 +9,31 @@ import { Router } from '@angular/router';
 })
 export class AdminSigninComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  constructor(public adminService:AdminService, public router:Router) { }
+  Msg?:String;
 
   ngOnInit(): void {
   }
 
-  login(loginRef:any){
-    //console.log("Event generated");
-    //console.log(loginRef)
-    let user1 = loginRef.user;
-    let pass1 = loginRef.pass;
-    if(user1 == "Admin" && pass1 == "12345"){
-      this.router.navigate(["AdminHome"]);
-    }else{
-      this.router.navigate(["AdminLogin"]);
-    }
-  }
+  adminLogin(adminRef1:any){
+    this.adminService.retrieveAllAdmins().subscribe(result=>{
+      let loginSuccess=false;
+      
+      for(let i =0;i<result.length;i++){
+        if(adminRef1.id==result[i]._id && adminRef1.pass==result[i].password){
+          loginSuccess=true;
+          
+          break;
+        }
+      }
+      if(loginSuccess){
+        console.log("Logged in Successfully!");
+       this.router.navigate(["AdminHome"]);
+        }
+      else{
+        this.Msg = "Invalid Credentials";
+      }
+  });
 
+  }
 }

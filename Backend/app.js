@@ -8,7 +8,9 @@ let cors = require('cors');
 
 var User = require('./router/grocer.router.js');
 let Employee = require("./router/emp.router.js");
-
+let Admin = require("./router/admin.router.js");
+let Requests = require("./router/viewRequest.router.js");
+let Product = require("./router/product.router.js");
 let testTicket = require("./router/ticket.router.js");
 let employeeDB = require("./router/employee.router.js");
 let cartDB = require("./router/cart.router.js");
@@ -35,7 +37,9 @@ mongoose.connection;
 
 app.use("/employee", Employee);
 app.use("/user", User);
-
+app.use("/admin", Admin);
+app.use("/request", Requests);
+app.use("/product", Product);
 
 app.use("/userTest", testTicket);
 app.use("/employeedb", employeeDB);
