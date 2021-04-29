@@ -8,6 +8,6 @@ router.get("/getCart", CartController.getCart)
 router.delete("/deleteItem/:ProductID", CartController.deleteItem)
 router.put("/update", CartController.updateItem)
 router.get("/maxQuantity/:ProductID", CartController.checkMax)
-
+router.get("/getItem/:ProductID", CartController.checkMax)
 
 module.exports = router;

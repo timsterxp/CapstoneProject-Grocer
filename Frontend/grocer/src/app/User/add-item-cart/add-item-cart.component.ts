@@ -17,11 +17,20 @@ export class AddItemCartComponent implements OnInit {
 
   addItem(addRef:any){
     console.log(addRef);
-    this.cartSer.addToCart(addRef).subscribe(result=>{
-      console.log(result);
-    });
+    this.cartSer.retrieveItem(addRef.ProductID).subscribe(result=>{
+      console.log(result)
+      if (result?.length>0){
+        console.log("Info is " +result[0].ProductName+result[0].ProductPrice);
+        var itemToAdd={ProductID:addRef.ProductID,ProductName:result[0].ProductName,ProductPrice:result[0].ProductPrice,Quantity:addRef.Quantity}
+        this.cartSer.addToCart(itemToAdd).subscribe(result=>{
+          console.log(result);
+         });
+      }
+    })
 
-    //
+   
+
+    // Backup code for checkout/order status
     var cartAdded = {"Name":addRef.ProductName, "Price":addRef.ProductPrice, "Quantity":addRef.Quantity};
     this.cart.push(cartAdded);
 
