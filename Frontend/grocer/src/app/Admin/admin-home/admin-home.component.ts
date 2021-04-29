@@ -43,4 +43,14 @@ export class AdminHomeComponent implements OnInit {
 
   }
 
+  showAddEmployee(){
+    var toDisplay=document.getElementById("hideAddEmployee");
+    toDisplay.style.display="";
+  }
+
+  showDeleteEmployee(){
+    var toDisplay=document.getElementById("hideDeleteEmployee");
+    toDisplay.style.display="";
+  }
+
 }

@@ -8,36 +8,45 @@
     <title>Document</title>
     <style>
         button {
-          background-color: black;
-          color: white;
-          padding: 14px 20px;
-          margin: 8px 0;
-          border: none;
-          cursor: pointer;
-          width: 25%;
+            background-color: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 25%;
         }
         
         button:hover {
-          opacity: 0.8;
+            opacity: 0.8;
         }
     </style>
 </head>
 
 <body>
-    <form  (ngSubmit)="addProduct()">
-        <button type="submit">Add Products</button><br/>
-    </form>
-    <form  (ngSubmit)="deleteProduct()">
-        <button type="submit">Delete Products</button><br/>
-    </form>
-    <form  (ngSubmit)="updateProduct()">
-        <button type="submit">Update Products</button><br/>
-    </form>
-    <form  (ngSubmit)="viewRequests()">
-        <button type="submit">View Requests</button><br/>
-    </form>
+    <div style="padding-left:30px">
+
+        <form (ngSubmit)="addProduct()">
+            <button type="submit">Add Products</button><br/>
+        </form>
+        <form (ngSubmit)="deleteProduct()">
+            <button type="submit">Delete Products</button><br/>
+        </form>
+        <form (ngSubmit)="updateProduct()">
+            <button type="submit">Update Products</button><br/>
+        </form>
+        <form (ngSubmit)="viewRequests()">
+            <button type="submit">View Requests</button><br/>
+        </form>
 
 
+        <button type="submit" (click)="showAddEmployee()">Add Employee</button>
+        <app-add-employee></app-add-employee>
+        <br/>
+        <button type="submit" (click)="showDeleteEmployee()">Delete Employee</button>
+        <app-delete-employee></app-delete-employee>
+
+    </div>
 </body>
 
 </html>
