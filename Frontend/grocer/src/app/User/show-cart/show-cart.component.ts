@@ -19,8 +19,27 @@ export class ShowCartComponent implements OnInit {
       console.log(this.cart);
     })
 
-  
+
     
+  }
+
+  updateQuantity(updateRef:any){
+    let wantedQuantity=updateRef.Quantity;
+    let id=updateRef.ProductID;
+    this.cartSer.checkMax(id).subscribe(result=>{
+      console.log(result)
+      if (result?.length>0){
+        console.log("Max quantity is: " + result[0].Inventory);
+        if (result[0].Inventory>wantedQuantity){
+          this.cartSer.updateQuantity(updateRef).subscribe((result:string)=>{
+            console.log(result);
+          })
+        }
+      }else{
+
+      }    });
+    
+  
   }
 
   deleteItem(id:any){
@@ -32,6 +51,12 @@ export class ShowCartComponent implements OnInit {
  
 
   
+  }
+  test(itemRef:any){
+    console.log(itemRef);
+  }
+  updateChanges(){
+    
   }
 
   refreshMe(){
