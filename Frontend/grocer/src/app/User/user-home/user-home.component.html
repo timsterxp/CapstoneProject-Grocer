@@ -2,89 +2,111 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <title>Document</title>
 
 </head>
 
 <body>
+  <!--
+      <div style="padding-left:30px">
+          <div class="container">
+              <div class="row">
+                  <div>
+                      <div class="btn-toolbar" role="toolbar" style="left:50%">
+                          <div class="btn-group btn-group-justified" role="group">
+                              <div class="btn-group" role="group">
+                                  <button class="btn btn-primary" data-original-title="Items" (click)="toggleFeature('hideItems')">Items</button>
+                              </div>
+                              <div class="btn-group" role="group">
+                                  <button class="btn btn-primary" data-original-title="Cart" (click)="toggleFeature('hideCart')">Cart</button>
+                              </div>
+                              <div class="btn-group " role="group ">
+                                  <button class="btn btn-primary " data-original-title="fund " (click)="toggleFeature('hideFunds') ">Funds</button>
+                              </div>
+                              <div class="btn-group " role="group ">
+                                  <button class="btn btn-primary " data-original-title="order " (click)="toggleFeature('hideOrderStatus') ">Orders</button>
+                              </div>
+                              <div class="btn-group " role="group ">
+                                  <button class="btn btn-primary " data-original-title="Activate " (click)="toggleFeature('hideCheckout') ">Checkout</button>
+                              </div>
+                              <div class="btn-group " role="group ">
+                                  <button class="btn btn-secondary " data-original-title="profile " (click)="toggleFeature('hideEditProfile')">Edit Profile</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  -->
 
-    <div style="padding-left:30px">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-offset 1 col-xs-11 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
-                    <div class="btn-toolbar" role="toolbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                        <div class="btn-group btn-group-justified" role="group">
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Display" (click)="showItems()">Display Items</button>
-                            </div>
-
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Cart" (click)="showCart()">Show Cart</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Add Item" (click)="showAdd()">Add Item</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="fund" (click)="showFunds()">Funds</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="order" (click)="showOrderStatus()">Orders</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Quantity Update" (click)="showQuantity()">Update Quantity</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Activate" (click)="showCheckout()">Checkout</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-warning" data-original-title="Delete" (click)="showDelete()">Delete Item</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                              <button class="btn btn-secondary" data-original-title="profile" (click)="showEditProfile()">Edit Profile</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+        <ul class="navbar-nav">
+          <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary" data-original-title="Items" (click)="toggleFeature('hideItems')">Items</button>
             </div>
-        </div>
+          </li>
+          <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+            <div class="btn-group" role="group">
+              <button class="btn btn-primary" data-original-title="Cart" (click)="toggleFeature('hideCart')">Cart</button>
+            </div>
+          </li>
+          <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+            <div class="btn-group " role="group ">
+              <button class="btn btn-primary " data-original-title="fund " (click)="toggleFeature('hideFunds') ">Funds</button>
+            </div>
+          </li>
+          <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+            <div class="btn-group " role="group ">
+              <button class="btn btn-primary " data-original-title="order " (click)="toggleFeature('hideOrderStatus') ">Orders</button>
+            </div>
+          </li>
+          <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+            <div class="btn-group " role="group ">
+              <button class="btn btn-primary " data-original-title="profile " (click)="toggleFeature('hideEditProfile')">Edit Profile</button>
+            </div>
+          </li>
+          <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+            <div class="btn-group " role="group ">
+              <button class="btn btn-secondary " data-original-title="Activate " (click)="toggleFeature('hideCheckout') ">Checkout</button>
+            </div>
+          </li>
+          <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+            <div class="btn-group " role="group ">
+              <button class="btn btn-secondary " data-original-title="Activate " (click)="Logout()">Logout</button>
+            </div>
+          </li>
 
-
-
-
-
-
-
-
+        </ul>
+      </div>
     </div>
-    <br/>
-    <div style="padding-left:40px;">
-      <app-view-item></app-view-item>
-      <app-user-edit-profile></app-user-edit-profile>
-      <br />
-      <br />
-      <br />
-      <app-show-cart></app-show-cart>
-      <br />
-      <br />
-      <app-add-item-cart></app-add-item-cart>
-      <br /><br />
+  </nav>
 
-      <app-checkout></app-checkout>
+  <br />
+  <div style="padding-left:40px; ">
+    <app-user-edit-profile></app-user-edit-profile>
+    <app-view-item></app-view-item>
+    <br />
+    <app-show-cart *ngIf="condition "></app-show-cart>
+    <br />
+    <br /><br />
+    <app-checkout></app-checkout>
+    <app-funds></app-funds>
+    <app-order-status></app-order-status>
 
-
-      <app-funds></app-funds>
-      <app-order-status></app-order-status>
-      <app-update-quantity></app-update-quantity>
-      <br />
-
-      <app-delete-item-cart></app-delete-item-cart>
-    </div>
+    <br />
+  </div>
 </body>
 
 </html>

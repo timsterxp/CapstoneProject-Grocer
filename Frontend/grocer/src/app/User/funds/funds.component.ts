@@ -8,11 +8,18 @@ import { FundsService } from 'src/app/Services/funds.service';
 })
 export class FundsComponent implements OnInit {
   output = "";
+  UserID = "";
   constructor(public fundSer: FundsService) { }
   currentFund = 0;
   ngOnInit(): void {
+    this.UserID = sessionStorage.getItem(sessionStorage.key(0))
+    this.fundSer.getFunds(this.UserID).subscribe((result: any) => {
+      console.log(result)
+      console.log("Output: " + result[0])
+      this.currentFund = result[0].funds;
+    })
   }
-  
+  /*
   addFunds(fundRef: any) {
     this.fundSer.addFund(fundRef).subscribe(result => {
       console.log(result);
@@ -20,12 +27,18 @@ export class FundsComponent implements OnInit {
     console.log(fundRef.funds);
     this.output = "Funds added succesfully!"
     this.currentFund += fundRef.funds;
-  }/*
+  }*/
   updateFunds(fundRef: any) {
-    this.fundSer.updateFunds(fundRef).subscribe((result: any) => {
+
+    this.fundSer.updateFunds(fundRef, this.UserID).subscribe((result: any) => {
       console.log(result);
     })
-    this.currentFund += fundRef.funds;
-  }*/
+    this.output = "Funds added succesfully!"
+    this.fundSer.getFunds(this.UserID).subscribe((result: any) => {
+      console.log(result)
+      console.log("Output: " + result[0])
+      this.currentFund = result[0].funds;
+    })
+  }
 
 }

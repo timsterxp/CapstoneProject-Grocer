@@ -1,25 +1,54 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/Services/cart.service';
+import { Grocery } from 'src/app/Services/model.grocery';
 
-import { UserHomeComponent } from './user-home.component';
+@Component({
+  selector: 'app-user-home',
+  templateUrl: './user-home.component.html',
+  styleUrls: ['./user-home.component.css']
+})
+export class UserHomeComponent implements OnInit {
+  addedMsg?: string;
+  groceryList?: Array<Grocery>
+  cartList?: Array<Grocery>
+  condition = true;
+  constructor(public cartSer: CartService, public router: Router) { }
 
-describe('UserHomeComponent', () => {
-  let component: UserHomeComponent;
-  let fixture: ComponentFixture<UserHomeComponent>;
+  ngOnInit(): void {
+  }
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ UserHomeComponent ]
+
+
+  deleteItem(id: any) {
+    this.cartSer.deleteItem(id).subscribe((result: string) => {
+
     })
-    .compileComponents();
-  });
+  }
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(UserHomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  refreshMe() {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['UserHome']);
+    });
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+
+  toggleFeature(id: any) {
+    var toDisplay = document.getElementById(id);
+    if (toDisplay.style.display == "none") {
+      toDisplay.style.display = "";
+    } else {
+      toDisplay.style.display = "none";
+    }
+  }
+
+  showFeature(id: any) {
+    var toDisplay = document.getElementById(id);
+    toDisplay.style.display = "";
+  }
+
+  Logout() {
+    this.router.navigate(["UserLogin"]);
+  }
+
+}

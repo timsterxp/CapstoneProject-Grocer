@@ -1,14 +1,15 @@
 const OrderModel = require("../model/order.model")
 
 let addOrder = (req, res) => {
+    console.log("request: " + req.body);
     let newOrder = new OrderModel({
         OrderNumber: req.body.OrderNumber,
-        UserName: "User",
+        UserID: req.body.UserID,
         Products: req.body.Products,
         Amount: req.body.Amount,
-        Status: "Placed",
         Reason: "Order placed",
-        Date: req.body.Date
+        Date: req.body.Date,
+        Status: req.body.Status
 
     });
     newOrder.save((err, result) => {

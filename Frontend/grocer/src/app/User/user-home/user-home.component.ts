@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/Services/cart.service';
 import { Grocery } from 'src/app/Services/model.grocery';
 
@@ -8,69 +9,46 @@ import { Grocery } from 'src/app/Services/model.grocery';
   styleUrls: ['./user-home.component.css']
 })
 export class UserHomeComponent implements OnInit {
-  addedMsg?:string;
-  groceryList?:Array<Grocery>
-  cartList?:Array<Grocery>
-
-  constructor(public cartSer:CartService) { }
+  addedMsg?: string;
+  groceryList?: Array<Grocery>
+  cartList?: Array<Grocery>
+  condition = true;
+  constructor(public cartSer: CartService, public router: Router) { }
 
   ngOnInit(): void {
   }
 
 
-  //groceryList will be retrieved from database to set up list of items to select
 
+  deleteItem(id: any) {
+    this.cartSer.deleteItem(id).subscribe((result: string) => {
 
-  //deleteById to remove from cart
-
-  deleteItem(id:any){
-    this.cartSer.deleteItem(id).subscribe((result:string)=>{
-      
     })
   }
 
-  showItems(){
-    var toDisplay=document.getElementById("hideItems");
-    toDisplay.style.display="";
+  refreshMe() {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['UserHome']);
+    });
   }
 
-  showAdd(){
-    var toDisplay=document.getElementById("hideAdd");
-    toDisplay.style.display="";
+
+  toggleFeature(id: any) {
+    var toDisplay = document.getElementById(id);
+    if (toDisplay.style.display == "none") {
+      toDisplay.style.display = "";
+    } else {
+      toDisplay.style.display = "none";
+    }
   }
 
-  showCart(){
-    var toDisplay=document.getElementById("hideCart");
-    toDisplay.style.display="";
-  }
-
-  showQuantity(){
-    var toDisplay=document.getElementById("hideQuantity");
-    toDisplay.style.display="";
-  }
-
-  showDelete(){
-    var toDisplay=document.getElementById("hideDelete");
-    toDisplay.style.display="";
-  }
-
-  showCheckout() {
-    var toDisplay = document.getElementById("hideCheckout");
+  showFeature(id: any) {
+    var toDisplay = document.getElementById(id);
     toDisplay.style.display = "";
   }
 
-  showFunds() {
-    var toDisplay = document.getElementById("hideFunds");
-    toDisplay.style.display = "";
+  Logout() {
+    this.router.navigate(["UserLogin"]);
   }
 
-  showOrderStatus() {
-    var toDisplay = document.getElementById("hideOrderStatus");
-    toDisplay.style.display = "";
-  }
-
-  showEditProfile() {
-    var toDisplay = document.getElementById("hideEditProfile");
-    toDisplay.style.display = "";
-  }
 }

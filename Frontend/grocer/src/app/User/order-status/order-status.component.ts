@@ -11,11 +11,37 @@ import { Order } from 'src/app/order.model';
 export class OrderStatusComponent implements OnInit {
 
   orders: Array<Order> = [];
+  UserID = sessionStorage.getItem("User")
   constructor(public orderSer: OrderService) { }
 
   ngOnInit(): void {
-    
-  }
+    this.orderSer.getOrders().subscribe((result: any) => {
+      console.log("Orders", result);
+      for (let i = 0; i < result.length; i++) {
+        console.log("USERID: " + result[i].UserID);
+        if (this.UserID == result[i].UserID) {
+            var OrderNumber = result[i].OrderNumber;
+            var UserID = result[i].UserID;
+            var Status = result[i].Status;
+            var Date = result[i].Date;
+
+            var table = document.getElementById("orderTable");
+            var body = table.getElementsByTagName("tbody")[0];
+            var newRow = body.insertRow();
+            var cell1 = newRow.insertCell();
+            cell1.innerHTML = OrderNumber;
+          
+            var cell2 = newRow.insertCell();
+            cell2.innerHTML = UserID;
+            var cell3 = newRow.insertCell();
+            cell3.innerHTML = Status;
+            var cell4 = newRow.insertCell();
+            cell3.innerHTML = String(Date);
+        }
+      }
+    })
+  
+  } /*
   showOrders() {
     this.orderSer.getOrders().subscribe((result: any) => {
       console.log("Orders", result);
@@ -36,6 +62,6 @@ export class OrderStatusComponent implements OnInit {
         
       }
     })
-  }
+  }*/
 
 }
