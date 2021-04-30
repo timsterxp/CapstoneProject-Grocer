@@ -20,8 +20,8 @@ let updateFunds = (req, res) => {
 }
 
 let getFunds = (req, res) => {
-    let userEmail = req.params.userEmail;
-    UserModel.find({ Email: userEmail }, (err, result) => {
+    let userID = req.params.UserID;
+    UserModel.find({ UserID: userID }, (err, result) => {
         if (!err) {
             res.json(result);
         } else {
