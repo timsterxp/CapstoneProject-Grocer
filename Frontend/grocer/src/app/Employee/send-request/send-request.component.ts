@@ -18,7 +18,7 @@ export class SendRequestComponent implements OnInit {
   }
 
   SendRequest(ProdRef:any){
-    this.empService.sendRequest(ProdRef).subscribe(result=>{
+    this.empService.sendRequest(ProdRef).subscribe(result=>{        // Pass the ProdRef wiht all the information form the user to a simple post function to add the request in the collection EmpRequest. 
         this.Msg=result;
     })
   }

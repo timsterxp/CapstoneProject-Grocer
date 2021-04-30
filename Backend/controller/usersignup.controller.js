@@ -85,7 +85,7 @@ let getUserById = (req,res) => {
 
 }
 
-let loginAttemptFail = (req,res)=>{
+let loginAttemptFail = (req,res)=>{                                            // Used the eamil address to keep count of the unsuccessful login attempts made by the user. Every time the count increases by 1.  
     let email = req.body.inputEmail;
     UserModel.updateOne({Email:email},{$inc:{LoginAttempts:1}},(err,result)=>{
         if(!err){
@@ -98,7 +98,7 @@ let loginAttemptFail = (req,res)=>{
     })
 }
 
-let getUserByEmail=(req,res)=>{
+let getUserByEmail=(req,res)=>{                      // Used the email address to retrieve a specific user.
     let email = req.params.email;
     UserModel.find({Email:email},(err,data)=>{
         if(!err){
@@ -109,7 +109,7 @@ let getUserByEmail=(req,res)=>{
     })
 }
 
-let lockAccount = (req,res)=>{
+let lockAccount = (req,res)=>{                                       // Used the Email to identify the user and set Locked to true tolock themout of their account on 3 unsuccessful attempts. 
     let email = req.body.inputEmail;
     UserModel.updateOne({Email:email},{$set:{Locked:true}},(err,result)=>{
         if(!err){
@@ -124,7 +124,7 @@ let lockAccount = (req,res)=>{
 
 let unlockAccount = (req,res)=>{
     let email = req.body.email;
-    UserModel.updateOne({Email:email},{$set:{Locked:false,LoginAttempts:0}},(err,result)=>{
+    UserModel.updateOne({Email:email},{$set:{Locked:false,LoginAttempts:0}},(err,result)=>{         // Use the emial to identify the user and set the Locked and LoginAttempts values to false and 0 respectively to unlock the account. 
         if(!err){
             if(result.nModified>0){
                 res.send("Acount Unlocked");
@@ -134,6 +134,7 @@ let unlockAccount = (req,res)=>{
         }
     })
 }
+
 
 
 

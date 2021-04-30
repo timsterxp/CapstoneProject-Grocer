@@ -21,7 +21,7 @@ export class EditProfileComponent implements OnInit {
     }else if(PassRef.Newpass=='Defaultpass'){
       this.Msg = "New Password cannot be the same as the default password";
     }else{
-      this.empService.updatePassword(PassRef).subscribe((result:String)=>{
+      this.empService.updatePassword(PassRef).subscribe((result:String)=>{         // calling a simple update function that updates the password in the database
         this.Msg=result;
       })
     }
