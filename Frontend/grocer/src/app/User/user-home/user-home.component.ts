@@ -47,4 +47,8 @@ export class UserHomeComponent implements OnInit {
     toDisplay.style.display="";
   }
 
+  Logout(){
+    this.router.navigate(["UserLogin"]);
+  }
+
 }

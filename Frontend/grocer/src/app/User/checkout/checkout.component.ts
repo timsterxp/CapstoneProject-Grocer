@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/Services/order.service';
 import { FundsService } from 'src/app/Services/funds.service';
 import { CartService } from 'src/app/Services/cart.service';
-import { Order } from 'src/app/order.model';
+import { order } from 'src/app/model.order';
 import { item } from 'src/app/item.model';
 //import { newArray } from '@angular/compiler/src/util';
 import { Observable } from 'rxjs';
@@ -16,7 +16,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class CheckoutComponent implements OnInit {
   
-  userID = 0;
+  userID?:String;
   ordernum = 0;
   totalcost = 0;
   output = "";
@@ -26,6 +26,7 @@ export class CheckoutComponent implements OnInit {
   constructor(public orderSer: OrderService, public fundSer: FundsService, public cartSer: CartService) { }
 
   ngOnInit(): void {
+    this.userID = sessionStorage.getItem("User");
     var cart = localStorage.getItem("cartItems");
     this.cartSer.getCart().subscribe((result: any) => {
       console.log(result);
@@ -63,7 +64,7 @@ export class CheckoutComponent implements OnInit {
     console.log("Cart:",this.allcart);
     
   }
-  checkout() {
+  addOrder(orderRef:any) {
     this.fundSer.getFunds(this.userID).subscribe((result: any) => {
       console.log("Funds" + result);
       this.accountbal = result[0].Funds;
@@ -71,10 +72,11 @@ export class CheckoutComponent implements OnInit {
       if (result[0].Funds >= this.totalcost) {
         console.log("Purchase Successful!");
         this.output = "Order successfully placed!";
-        let order: Order = {
-          OrderNumber: this.ordernum,
+        let order: order = {
+          UserID:this.userID,
+          OrderNumber: orderRef.ordernum,
           Products: this.allcart,
-          Amount: 0,
+          Amount: this.totalcost,
           Status: "good",
           Reason: "no issue",
           Date: new Date()
@@ -95,9 +97,5 @@ export class CheckoutComponent implements OnInit {
      // console.log(result);
     //})
     console.log("Checkout!")
-  }
-  addOrder(orderRef: any) {
-    this.userID = orderRef.userid;
-    this.ordernum = orderRef.ordernum;
   }
 }

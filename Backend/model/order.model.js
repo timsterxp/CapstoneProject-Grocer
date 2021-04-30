@@ -10,7 +10,10 @@ let OrderSchema = mongoose.Schema({
         type:String,
         default:"Order Placed"
     },
-    Reason:String,
+    Reason:{
+        type:String,
+        default:"NA"
+    },
     Date: Date
 })
 let OrderModel = mongoose.model("Order", OrderSchema, "Order");

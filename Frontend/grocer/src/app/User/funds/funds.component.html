@@ -6,7 +6,7 @@
     <form #fundRef="ngForm" (ngSubmit)="addFunds(fundRef.value)">
         <mat-form-field>
             <mat-label>User ID</mat-label>
-            <input matInput type="text" name="userid" ngModel/>
+            <input matInput type="text" name="userid" [(ngModel)]="UserID" readonly="readonly"/>
         </mat-form-field> <br />
         <mat-form-field>
             <mat-label>Add Funds</mat-label>

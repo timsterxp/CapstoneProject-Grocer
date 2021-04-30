@@ -7,9 +7,11 @@ import { FundsService } from 'src/app/Services/funds.service';
 })
 export class FundsComponent implements OnInit {
   output = "";
+  UserID?:String;
   constructor(public fundSer: FundsService) { }
   currentFund = 0;
   ngOnInit(): void {
+    this.UserID = sessionStorage.getItem("User");
   }
   
   addFunds(fundRef: any) {

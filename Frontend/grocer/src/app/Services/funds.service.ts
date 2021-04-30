@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Order } from 'src/app/order.model';
+import { order } from 'src/app/model.order';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ export class FundsService {
   addFund(fundRef: any) {
     return this.http.post("http://localhost:9090/funds/addFunds", fundRef, { responseType: "text" });
   }
-  getFunds(userID: number): Observable<Order[]>{
-    return this.http.get<Order[]>("http://localhost:9090/funds/getFunds/" + userID);
+  getFunds(userID: any): Observable<order[]>{
+    return this.http.get<order[]>("http://localhost:9090/funds/getFunds/" + userID);
   }
   
 }
