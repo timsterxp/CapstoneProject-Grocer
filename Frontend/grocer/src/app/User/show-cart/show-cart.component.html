@@ -1,30 +1,31 @@
+<!--Populate Cart with array in mat table with extra buttons to delete/update quantity-->
 <div id="hideCart" style="display:''">
     <h2>Cart:</h2>
     <table mat-table [dataSource]="cart" class="mat-elevation-z8, w-100">
+
+        <!--Product ID Column-->
         <ng-container matColumnDef="ProductID">
             <th mat-header-cell *matHeaderCellDef>ProductID</th>
             <td mat-cell *matCellDef="let item">{{item.ProductID}}</td>
         </ng-container>
 
+        <!--Product Name Column-->
         <ng-container matColumnDef="ProductName">
             <th mat-header-cell *matHeaderCellDef>Product Name</th>
             <td mat-cell *matCellDef="let item">{{item.ProductName}}</td>
         </ng-container>
-
+        <!--Product Price Column-->
         <ng-container matColumnDef="ProductPrice">
             <th mat-header-cell *matHeaderCellDef>Product Price</th>
             <td mat-cell *matCellDef="let item">{{item.ProductPrice}}</td>
         </ng-container>
 
+        <!--Quantity Column-->
         <ng-container matColumnDef="Quantity">
             <th mat-header-cell *matHeaderCellDef>Quantity</th>
             <td mat-cell *matCellDef="let item">
-                <!--
-                <button class="btn btn-default">-</button>
-                <input matInput type="number" name="quantity" id={{item.ProductID}} step="1" min="1" max="100000" value={{item.Quantity}}>
-                <button class="btn btn-default">+</button>
-                -->
 
+                <!--Allows changes in quantity-->
                 <input style="width:100px;" id={{item.ProductID}} type="number" name="quantity" value={{item.Quantity}}>
 
                 <button mat-raised-button color="primary" value="Update" (click)="updateQuantity(item)">Update</button>
@@ -35,8 +36,6 @@
         <ng-container matColumnDef=" ">
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let item "> <button mat-mini-fab color="warn" (click)="deleteItem(item) "><mat-icon>delete</mat-icon></button>
-
-
             </td>
 
         </ng-container>
@@ -44,7 +43,6 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns "></tr>
         <tr mat-row *matRowDef="let row; columns:displayedColumns "></tr>
 
-        <!--To do: Input the row names after we retrieve-->
     </table>
     <br/> {{resultMsg}}
 </div>
