@@ -11,11 +11,11 @@ export class FundsComponent implements OnInit {
   constructor(public fundSer: FundsService) { }
   currentFund = 0;
   ngOnInit(): void {
-    this.UserID = sessionStorage.getItem(sessionStorage.key(0))
+    this.UserID = sessionStorage.getItem("User")
     this.fundSer.getFunds(this.UserID).subscribe((result: any) => {
       console.log(result)
       console.log("Output: " + result[0])
-      this.currentFund = result[0].funds;
+      this.currentFund = result[0].Funds;
     })
   }
   /*
@@ -36,7 +36,7 @@ export class FundsComponent implements OnInit {
     this.fundSer.getFunds(this.UserID).subscribe((result: any) => {
       console.log(result)
       console.log("Output: " + result[0])
-      this.currentFund = result[0].funds;
+      this.currentFund = result[0].Funds;
     })
   }
 

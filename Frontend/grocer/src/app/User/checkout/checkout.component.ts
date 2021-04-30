@@ -16,23 +16,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  
+
   userID = "";
   ordernum = 0;
   totalcost = 0;
   output = "";
   accountbal = 0;
- 
+
   allcart: Array<item> = new Array();
   constructor(public orderSer: OrderService, public fundSer: FundsService, public cartSer: CartService) { }
 
   ngOnInit(): void {
     this.cartSer.getCart().subscribe((result: any) => {
       console.log(result);
-      for (let i = 0; i < result.length ; i++) {
+      for (let i = 0; i < result.length; i++) {
         let temprice = Number(result[i].ProductPrice);
         let tempquan = Number(result[i].Quantity)
-        let Item: item ={
+        let Item: item = {
           Name: result[i].ProductName,
           Price: temprice,
           Quantity: tempquan
@@ -60,8 +60,8 @@ export class CheckoutComponent implements OnInit {
         cell4.innerHTML = String(value);
       }
     })
-    console.log("Cart:",this.allcart);
-    
+    console.log("Cart:", this.allcart);
+
   }
   checkout() {
     this.fundSer.getFunds(this.userID).subscribe((result: any) => {
@@ -93,7 +93,7 @@ export class CheckoutComponent implements OnInit {
     })
     //OrderRef: any
     //this.orderSer.addOrder(OrderRef).subscribe(result => {
-     // console.log(result);
+    // console.log(result);
     //})
     console.log("Checkout!")
   }

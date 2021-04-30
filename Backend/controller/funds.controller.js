@@ -5,7 +5,7 @@ let updateFunds = (req, res) => {
     let userID = req.params.userID;
     let addfunds = req.body.funds;
     console.log("UserID: " + userID + " Add: " + addfunds);
-    UserModel.updateOne({ Email: userID }, {
+    UserModel.updateOne({ UserID: userID }, {
         $inc: {
             funds: addfunds
         },
@@ -20,8 +20,8 @@ let updateFunds = (req, res) => {
 }
 
 let getFunds = (req, res) => {
-    let userEmail = req.params.userEmail;
-    UserModel.find({ Email: userEmail }, (err, result) => {
+    let userID = req.params.UserID;
+    UserModel.find({ UserID: userID }, (err, result) => {
         if (!err) {
             res.json(result);
         } else {
@@ -31,33 +31,3 @@ let getFunds = (req, res) => {
 }
 
 module.exports = { getFunds, updateFunds };
-
-
-/*
- * 
- *const FundsModel = require("../model/funds.model.js")
-let addFunds = (req, res) => {
-    let newFunds = new FundsModel({
-        _id: req.body.userid,
-        Funds: req.body.funds
-    });
-    newFunds.save((err, result) => {
-        if (!err) {
-            res.send("Funds successfully added");
-        } else {
-            res.send("Error" + err);
-        }
-    })
-}
-let getFunds = (req, res) => {
-    let userID = req.params.userID;
-    FundsModel.find({ _id: userID }, (err, result) => {
-        if (!err) {
-            res.json(result);
-        } else {
-            console.log("error!")
-        }
-    })
-}
-module.exports = { addFunds, getFunds };
- */
