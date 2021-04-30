@@ -1,0 +1,52 @@
+<!--Testing Branch-->
+<!--Place code into a for loop for item list, append item name, item price, and throw it onto a (click) function by id-->
+
+<div id="hideItems" style="display:none">
+    <table mat-table [dataSource]="cart" class="mat-elevation-z8,w-100">
+
+        <ng-container matColumnDef="ProductId">
+            <th mat-header-cell *matHeaderCellDef>Product Id</th>
+            <td mat-cell *matCellDef="let item">{{item.ProductID}}</td>
+        </ng-container>
+        <ng-container matColumnDef="ProductName">
+            <th mat-header-cell *matHeaderCellDef>Product Name</th>
+            <td mat-cell *matCellDef="let item">{{item.ProductName}}</td>
+        </ng-container>
+        <ng-container matColumnDef="ProductDescription">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let item">{{item.ProductDescription}}</td>
+        </ng-container>
+        <ng-container matColumnDef="ProductPrice">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let item">{{item.ProductPrice}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="Inventory">
+            <th mat-header-cell *matHeaderCellDef>Quantity</th>
+            <td mat-cell *matCellDef="let item">{{item.Inventory}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
+
+
+    </table>
+</div>
+
+<!--
+<div>
+    <table border="1">
+        <tr>
+            <th>PId</th>
+            <th>ProductName</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let pp of cart">
+            <td>{{pp._id}}</td>
+            <td>{{pp.ProductName}}</td>
+            <td>{{pp.ProductPrice}}</td>
+        </tr>
+    </table>
+</div>
+-->
+<!--To do: Input the row names after we retrieve-->

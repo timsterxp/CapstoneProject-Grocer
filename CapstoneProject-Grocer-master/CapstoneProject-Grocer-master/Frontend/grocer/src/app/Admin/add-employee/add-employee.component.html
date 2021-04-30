@@ -1,0 +1,20 @@
+<div id="hideAddEmployee" style="display:none">
+
+    <form #employeeRef="ngForm" (ngSubmit)="addEmployee(employeeRef.value)">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" name="Fname" ngModel/>
+        </mat-form-field><br/>
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" name="Lname" ngModel/>
+        </mat-form-field><br/>
+        <mat-form-field>
+            <mat-label>EmailId</mat-label>
+            <input matInput type="email" name="email" ngModel/>
+        </mat-form-field><br/>
+
+        <input type="submit" value="Add Employee" /> {{resultMsg}}
+    </form>
+
+</div>

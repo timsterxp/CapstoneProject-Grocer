@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Portal</title>
+</head>
+
+<body>
+  <h2>Employee Panel </h2>
+
+  <a mat-raised-button href="emp-signin.component.html"> </a>
+  <div><a href='EmpReq.html'>Send New Request</a></div>
+  <div><a href="../update-order.component.html">Update Order Status</a></div>
+  <div><a href="unlock-user.component.html">Unlock Users</a></div>
+  <div><a href="edit-profile.component.html">Edit Profile</a></div>
+
+  <a routerLink="EmpReq">Send New Request</a>
+  <hr />
+  <a routerLink="EmpUpdate">Employee Page</a>
+  <hr />
+  <a routerLink="AdminLogin">Admin Page</a>
+
+
+
+
+  <input type="button" value="logout"
+         (click)="logout()" />
+</body>
+
+</html>

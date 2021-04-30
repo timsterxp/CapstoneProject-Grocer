@@ -1,0 +1,30 @@
+<div>
+
+    <body class="text-center">
+        <form class="form-signin" #UserRef="ngForm" (ngSubmit)="checkUser(UserRef.value)">
+            <img class="mb-4" src="assets/cart2.svg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">sign in</h1>
+            <!-- <label for="inputEmail" class="sr-only">Email address</label> -->
+            <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email Address" ngModel autofocus required/>
+
+            <!-- <label for="inputPassword" class="sr-only">Password</label> -->
+            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password" ngModel required/>
+
+            <!-- <div class="checkbox mb-3">
+           <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label> 
+          </div> -->
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> <br /><br /><br />
+            <a routerLink="/UserSignUp" routerLinkActive="active">Don't have an Account ? Sign Up now</a>
+            {{Msg}}
+            <p class="mt-5 mb-3 text-muted">&copy; Grocers : 2021-2022</p>
+
+            <input type="button" value="Locked Out Of Your Account? Click Here!" (click)="getHelp()" />
+            <br/> <br/>
+            <app-raise-ticket></app-raise-ticket>
+        </form>
+    </body>
+
+</div>

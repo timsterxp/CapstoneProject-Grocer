@@ -1,0 +1,9 @@
+#leftbox {
+    float: left;
+    width: 25%;
+    height: 280px;
+}
+
+#rightbox {
+    float: right;
+}
