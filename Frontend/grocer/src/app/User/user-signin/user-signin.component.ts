@@ -19,10 +19,10 @@ export class UserSigninComponent implements OnInit {
 
     this.userService.getAllusers().subscribe(result=>{
       for(let i=0;i<result.length;i++){
-          if(userRef.inputEmail==result[i].Email){
-            let email = result[i].Email;
-            if(result[i].Locked==true){
-              this.Msg = "Account locked! Redirecting you to raise a ticket."
+          if(userRef.inputEmail==result[i].Email){                          // First we check if the email used is present in the user collection if so we move forward in the code.
+            let email = result[i].Email;                                    // Store the email id used in a variable email.
+            if(result[i].Locked==true){                                     // Check if this particualr user is already locked out or not. 
+              this.Msg = "Account locked! Redirecting you to raise a ticket." // if true then redirect to user request page. 
               sessionStorage.setItem('user',userRef.inputEmail);
               let tokenArray = new Uint32Array(1);
               crypto.getRandomValues(tokenArray);
@@ -30,7 +30,7 @@ export class UserSigninComponent implements OnInit {
               setTimeout(()=>{
                 this.router.navigate(["UserTicket"])},3000);
             }else{
-              if(userRef.inputPassword==result[i].Password){
+              if(userRef.inputPassword==result[i].Password){                   // check if the pasword use is right if so redirect to UserHome.
                 let tokenArray = new Uint32Array(1);
                 crypto.getRandomValues(tokenArray);
                 sessionStorage.setItem('token',tokenArray[0].toString());
@@ -38,9 +38,9 @@ export class UserSigninComponent implements OnInit {
                 this.router.navigate(["UserHome"]);
              }else{
                 this.Msg = "Here";
-                this.userService.loginFail(userRef).subscribe((result1:String)=>{
-                this.Msg = result1;
-                this.userService.getUserByEmail(email).subscribe(res=>{
+                this.userService.loginFail(userRef).subscribe((result1:String)=>{            // else we increase the LoginCount of the user by 1 on the backend.
+                this.Msg = result1;                                                         
+                this.userService.getUserByEmail(email).subscribe(res=>{                      // Check if the LoginCount=3 if true set the Locked key of user to True and lock the user out and redirect them to the raise ticket page.
                     if(res[0].LoginAttempts==3){
                       this.userService.lockAccount(userRef).subscribe((result2:String)=>{
                         this.Msg = result2;
