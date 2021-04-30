@@ -19,10 +19,6 @@ export class UserHomeComponent implements OnInit {
   }
 
 
-  //groceryList will be retrieved from database to set up list of items to select
-
-
-  //deleteById to remove from cart
 
   deleteItem(id:any){
     this.cartSer.deleteItem(id).subscribe((result:string)=>{

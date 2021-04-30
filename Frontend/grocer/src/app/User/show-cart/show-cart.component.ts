@@ -12,7 +12,7 @@ import { Cart } from 'src/app/Services/model.cart';
 export class ShowCartComponent implements OnInit {
   cart?:Array<Cart>
   constructor(public cartSer:CartService, public router:Router) { }
-
+  resultMsg?:string;
   ngOnInit(): void {
     this.cartSer.retrieveCart().subscribe((results)=>{
       this.cart=results;
@@ -24,18 +24,24 @@ export class ShowCartComponent implements OnInit {
   }
 
   updateQuantity(updateRef:any){
-    let wantedQuantity=updateRef.Quantity;
     let id=updateRef.ProductID;
+    var wantedQuantity = <HTMLInputElement>document.getElementById(updateRef.ProductID);
+    if (+wantedQuantity.value<0){
+      this.resultMsg="Invalid quantity amount";
+      return;
+    }
+    let newRef={"ProductID":+id,"Quantity":+wantedQuantity.value};
     this.cartSer.checkMax(id).subscribe(result=>{
-      console.log(result)
       if (result?.length>0){
-        console.log("Max quantity is: " + result[0].Inventory);
-        if (result[0].Inventory>wantedQuantity){
-          this.cartSer.updateQuantity(updateRef).subscribe((result:string)=>{
-            console.log(result);
+        if (result[0].Inventory>+wantedQuantity.value){
+          this.cartSer.updateQuantity(newRef).subscribe((result:string)=>{
+            this.refreshMe();
           })
+        }else {
+          this.resultMsg="Not enough quantity for " + result[0].ProductName + ", please use a smaller number";
         }
       }else{
+        this.resultMsg="Cannot locate product in stock, please remove from cart";
 
       }    });
     
@@ -55,7 +61,8 @@ export class ShowCartComponent implements OnInit {
   test(itemRef:any){
     console.log(itemRef);
   }
-  updateChanges(){
+  updateChanges(value:any){
+    console.log(value);
     
   }
 
@@ -71,6 +78,7 @@ export class ShowCartComponent implements OnInit {
       console.log(this.cart);
     })
   }
+
 
 
  
