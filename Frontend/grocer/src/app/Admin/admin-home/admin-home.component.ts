@@ -58,4 +58,9 @@ export class AdminHomeComponent implements OnInit {
     toDisplay.style.display="";
   }
 
+
+  viewReports(){
+    this.router.navigate(["viewReport"]);
+  }
+
 }
