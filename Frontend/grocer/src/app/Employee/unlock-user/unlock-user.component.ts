@@ -20,6 +20,11 @@ export class UnlockUserComponent implements OnInit {
   Unlock(UserRef:any){
     this.empService.unlockAccount(UserRef).subscribe((result:String)=>{
         let email = UserRef.email;
+        for(let i=0;i<this.tickets.length;i++){
+          if(this.tickets[i].UserEmail==email){
+              this.tickets.splice(i,1);
+          }
+        }
         this.empService.deleteFromTable(email).subscribe((res:String)=>{
           console.log(res);
         })
