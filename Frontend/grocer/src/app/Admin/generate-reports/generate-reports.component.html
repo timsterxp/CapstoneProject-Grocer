@@ -1,2 +1,49 @@
-<p>generate-reports works!</p>
-<!--Table to retrieve from database-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br />
+<form  #dateref="ngForm" (ngSubmit) =  "generateReport(dateref.value)" >
+        <div class="mb-3" style="width: 300px;">
+        <label for="email"><span class="text-muted"> Enter the Date for the Report</span></label>
+        <input type="date" class="form-control" id="dateofReport" name="dateofReport" placeholder="" ngModel required>
+       </div>
+       <button class="btn btn-primary btn-lg btn-block" type="submit" >Report</button>
+    </form>
+
+    <!-- <form  #userref="ngForm" (ngSubmit) =  "generateReportByName(userref.value)" >
+
+       <div class="mb-3" style="width: 300px;">
+        <label for="email"><span class="text-muted">Enter User for Report</span></label>
+        <input type="text" class="form-control" id="nameofuser" name="nameofuser" placeholder="" ngModel required>
+       </div>
+       <button class="btn btn-primary btn-lg btn-block" type="submit" >Report</button>
+
+      </form>    -->
+
+<div class="table1">
+    <table style="border:1px;width: 500px;" id="details" class="table">
+        <thead>
+            <tr>
+                <th style="color: indianred;">Order</th>
+                <th style="color: indianred;">Date</th>
+                <th style="color: indianred;">User</th>
+                
+                <th style="color: indianred;">Amount</th>
+           </tr>
+        </thead>
+       <tbody>
+    
+
+       </tbody>
+    </table>
+    <!-- <hr /> -->
+    
+    </div>   
+</body>
+</html>
