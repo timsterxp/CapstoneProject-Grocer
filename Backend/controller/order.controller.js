@@ -3,12 +3,12 @@ const OrderModel = require("../model/order.model")
 let addOrder = (req, res) => {
     let newOrder = new OrderModel({
         OrderNumber: req.body.OrderNumber,
-        UserName: "User",
+        UserID: req.body.UserID,
         Products: req.body.Products,
         Amount: req.body.Amount,
-        Status: "Placed",
         Reason: "Order placed",
-        Date: req.body.Date
+        Date: req.body.Date,
+        Status: req.body.Status
 
     });
     newOrder.save((err, result) => {
@@ -30,4 +30,6 @@ let getOrders = (req, res) => {
     })
 }
 
-module.exports = { addOrder, getOrders };
+
+
+module.exports = { addOrder, getOrders};

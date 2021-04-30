@@ -34,6 +34,7 @@ export class UserSigninComponent implements OnInit {
                 let tokenArray = new Uint32Array(1);
                 crypto.getRandomValues(tokenArray);
                 sessionStorage.setItem('token',tokenArray[0].toString());
+                sessionStorage.setItem("User",result[i].UserID.toString());
                 this.router.navigate(["UserHome"]);
              }else{
                 this.Msg = "Here";
