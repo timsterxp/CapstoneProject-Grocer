@@ -17,8 +17,8 @@ export class FundsService {
   addFund(fundRef: any) {
     return this.http.post("http://localhost:9090/funds/addFunds", fundRef, { responseType: "text" });
   }*/
-  getFunds(userEmail: string): Observable<Order[]>{
-    return this.http.get<Order[]>("http://localhost:9090/funds/getFunds/" + userEmail);
+  getFunds(UserID: string): Observable<Order[]>{
+    return this.http.get<Order[]>("http://localhost:9090/funds/getFunds/" +UserID);
   }
   
 }

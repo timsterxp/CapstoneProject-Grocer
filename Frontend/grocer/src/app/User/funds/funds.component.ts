@@ -15,7 +15,7 @@ export class FundsComponent implements OnInit {
     this.fundSer.getFunds(this.UserID).subscribe((result: any) => {
       console.log(result)
       console.log("Output: " + result[0])
-      this.currentFund = result[0].Funds;
+      this.currentFund = result[0].funds;
     })
   }
   /*
