@@ -11,12 +11,12 @@
 </head>
 
 <body>
-
+    <!--
     <div style="padding-left:30px">
         <div class="container">
             <div class="row">
-                <div class="col-xs-offset 1 ">
-                    <div class="btn-toolbar" role="toolbar">
+                <div>
+                    <div class="btn-toolbar" role="toolbar" style="left:50%">
 
                         <div class="btn-group btn-group-justified" role="group">
 
@@ -55,6 +55,53 @@
 
 
     </div>
+-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                    <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-primary" data-original-title="Items" (click)="toggleFeature('hideItems')">Items</button>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+                        <div class="btn-group" role="group">
+                            <button class="btn btn-primary" data-original-title="Cart" (click)="toggleFeature('hideCart')">Cart</button>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+                        <div class="btn-group " role="group ">
+                            <button class="btn btn-primary " data-original-title="fund " (click)="toggleFeature('hideFunds') ">Funds</button>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+                        <div class="btn-group " role="group ">
+                            <button class="btn btn-primary " data-original-title="order " (click)="toggleFeature('hideOrderStatus') ">Orders</button>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+                        <div class="btn-group " role="group ">
+                            <button class="btn btn-primary " data-original-title="profile " (click)="toggleFeature('hideEditProfile')">Edit Profile</button>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="margin-left:5px;margin-right:5px;">
+                        <div class="btn-group " role="group ">
+                            <button class="btn btn-secondary " data-original-title="Activate " (click)="toggleFeature('hideCheckout') ">Checkout</button>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <br/>
     <div style="padding-left:40px; ">
         <app-user-edit-profile></app-user-edit-profile>
