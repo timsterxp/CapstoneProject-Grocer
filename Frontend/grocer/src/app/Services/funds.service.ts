@@ -7,13 +7,17 @@ import { Observable } from 'rxjs';
 })
 export class FundsService {
 
-  constructor(public http:HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  addFund(fundRef: any) {
-    return this.http.post("http://localhost:9090/funds/addFunds", fundRef, { responseType: "text" }); 
+  updateFunds(fundRef: any, userID: string) {
+    return this.http.put("http://localhost:9090/funds/updateFunds/" + userID, fundRef, { responseType: "text" });
   }
-  getFunds(userID: number): Observable<Order[]>{
-    return this.http.get<Order[]>("http://localhost:9090/funds/getFunds/" + userID);
+  /*
+  addFund(fundRef: any) {
+    return this.http.post("http://localhost:9090/funds/addFunds", fundRef, { responseType: "text" });
+  }*/
+  getFunds(UserID: string): Observable<Order[]> {
+    return this.http.get<Order[]>("http://localhost:9090/funds/getFunds/" + UserID);
   }
 
 }

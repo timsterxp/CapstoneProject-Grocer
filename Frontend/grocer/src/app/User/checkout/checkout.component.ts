@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/Services/order.service';
 import { FundsService } from 'src/app/Services/funds.service';
 import { CartService } from 'src/app/Services/cart.service';
-import { Order } from 'src/app/order.model';
+
+import { order } from 'src/app/model.order';
+
 import { item } from 'src/app/item.model';
-//import { newArray } from '@angular/compiler/src/util';
+
 import { Observable } from 'rxjs';
 
 
@@ -14,24 +16,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
-  
-  userID = 0;
+
+  userID = "";
   ordernum = 0;
   totalcost = 0;
   output = "";
   accountbal = 0;
-  //allcart: Observable<Object> = new Observable();
+
   allcart: Array<item> = new Array();
   constructor(public orderSer: OrderService, public fundSer: FundsService, public cartSer: CartService) { }
 
   ngOnInit(): void {
-    var cart = localStorage.getItem("cartItems");
     this.cartSer.getCart().subscribe((result: any) => {
       console.log(result);
-      for (let i = 0; i < result.length ; i++) {
+      for (let i = 0; i < result.length; i++) {
         let temprice = Number(result[i].ProductPrice);
         let tempquan = Number(result[i].Quantity)
-        let Item: item ={
+        let Item: item = {
           Name: result[i].ProductName,
           Price: temprice,
           Quantity: tempquan
@@ -59,25 +60,27 @@ export class CheckoutComponent implements OnInit {
         cell4.innerHTML = String(value);
       }
     })
-    console.log("Cart:",this.allcart);
-    
+    console.log("Cart:", this.allcart);
+
   }
   checkout() {
     this.fundSer.getFunds(this.userID).subscribe((result: any) => {
-      console.log("Funds" + result);
-      this.accountbal = result[0].Funds;
-      console.log(result[0].Funds);
-      if (result[0].Funds >= this.totalcost) {
+      console.log("Funds" + result[0].funds);
+      this.accountbal = result[0].funds;
+      console.log(result[0].funds);
+      if (result[0].funds >= this.totalcost) {
         console.log("Purchase Successful!");
-        
-        let order: Order = {
+        this.output = "Order successfully placed!";
+        let order: order = {
+          UserID: this.userID,
           OrderNumber: this.ordernum,
           Products: this.allcart,
-          Amount: 0,
+          Amount: this.totalcost,
           Status: "good",
           Reason: "no issue",
           Date: new Date()
         }
+        console.log("Order Number:", this.ordernum);
         console.log(order);
         this.orderSer.addnewOrder(order).subscribe(result => {
           console.log(result);
@@ -90,12 +93,14 @@ export class CheckoutComponent implements OnInit {
     })
     //OrderRef: any
     //this.orderSer.addOrder(OrderRef).subscribe(result => {
-     // console.log(result);
+    // console.log(result);
     //})
     console.log("Checkout!")
   }
   addOrder(orderRef: any) {
-    this.userID = orderRef.userid;
+    console.log(typeof sessionStorage.getItem("User"));
+    this.userID = sessionStorage.getItem("User");
+    //this.userID = orderRef.userid;
     this.ordernum = orderRef.ordernum;
   }
 }
