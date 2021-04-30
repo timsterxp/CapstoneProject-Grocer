@@ -24,10 +24,17 @@ export class UserSigninComponent implements OnInit {
             if(result[i].Locked==true){
               this.Msg = "Account locked! Redirecting you to raise a ticket."
               sessionStorage.setItem('user',userRef.inputEmail);
+              let tokenArray = new Uint32Array(1);
+              crypto.getRandomValues(tokenArray);
+              sessionStorage.setItem('token',tokenArray[0].toString());
               setTimeout(()=>{
                 this.router.navigate(["UserTicket"])},3000);
             }else{
               if(userRef.inputPassword==result[i].Password){
+                let tokenArray = new Uint32Array(1);
+                crypto.getRandomValues(tokenArray);
+                sessionStorage.setItem('token',tokenArray[0].toString());
+                sessionStorage.setItem("User",result[i].UserID.toString());
                 this.router.navigate(["UserHome"]);
              }else{
                 this.Msg = "Here";
@@ -38,6 +45,9 @@ export class UserSigninComponent implements OnInit {
                       this.userService.lockAccount(userRef).subscribe((result2:String)=>{
                         this.Msg = result2;
                         sessionStorage.setItem('user',userRef.inputEmail);
+                        let tokenArray = new Uint32Array(1);
+                        crypto.getRandomValues(tokenArray);
+                        sessionStorage.setItem('token',tokenArray[0].toString());
                         setTimeout(()=>{
                           this.router.navigate(["UserTicket"])},3000);
                       })
@@ -50,19 +60,5 @@ export class UserSigninComponent implements OnInit {
         }
       }
       })
-  }
-  ridirect() {
-    console.log("Hello9") ;
-  }
-
-
-
-
-     getHelp(){
-     var showNow=document.getElementById("hideToggleTicket");
-     showNow.style.display="";
-  }
-
-
-
+    }
 }

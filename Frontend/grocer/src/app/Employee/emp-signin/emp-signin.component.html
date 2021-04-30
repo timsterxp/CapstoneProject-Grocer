@@ -1,6 +1,11 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+</head>
+
+<section class="hero is-info is-fullheight">
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="20">
-        <mat-toolbar color="primary">Employee Login</mat-toolbar>
+        <mat-toolbar color="primary">Employee Login<mat-icon style="padding-left: 10px;">account_circle</mat-icon></mat-toolbar>
         <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" #EmpRef="ngForm" (ngSubmit)="Login(EmpRef.value)">
         <mat-form-field>
             <mat-label>Employee Id</mat-label>
@@ -15,3 +20,4 @@
     {{Msg}}
 </mat-card>
 </div>
+</section>

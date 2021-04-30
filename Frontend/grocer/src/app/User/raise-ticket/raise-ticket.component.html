@@ -10,7 +10,7 @@
             <input matInput type="text" name="Description" ngModel/>
         </mat-form-field><br/>
         <pre>
-<button mat-raised-button color="primary" type="submit">Send</button>  <button mat-raised-button color="primary" type="reset">Reset</button></pre>
+<button mat-raised-button color="primary" type="submit" [disabled]="clicked">Send</button>  <button mat-raised-button color="primary" type="reset">Reset</button></pre>
     </form>
     {{Msg}}
 </div>

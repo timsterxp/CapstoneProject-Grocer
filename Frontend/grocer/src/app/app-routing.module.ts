@@ -48,9 +48,9 @@ const routes: Routes = [
   
   
   // User Sign Up
-  {path:"\UserSignUp",component: UserSignupComponent} ,
-  {path:"\UserHome",component:UserHomeComponent},
-  {path:"UserTicket",component:RaiseTicketComponent},
+  {path:"\UserSignUp",component: UserSignupComponent},
+  {path:"\UserHome",component:UserHomeComponent,canActivate:[MyAuthGuard]},
+  {path:"UserTicket",component:RaiseTicketComponent,canActivate:[MyAuthGuard]},
 
   // User Sign Up
   {path:"\AddItem",component:AddItemComponent},
