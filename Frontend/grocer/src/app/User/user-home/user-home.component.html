@@ -20,26 +20,25 @@
 
                         <div class="btn-group btn-group-justified" role="group">
 
-
                             <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Cart" (click)="showCart()">Show Cart</button>
+                                <button class="btn btn-primary" data-original-title="Cart" (click)="toggleFeature('hideItems')">Toggle Items</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" data-original-title="Cart" (click)="toggleFeature('hideCart')">Toggle Cart</button>
                             </div>
 
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="fund" (click)="showFunds()">Funds</button>
+                            <div class="btn-group " role="group ">
+                                <button class="btn btn-primary " data-original-title="fund " (click)="toggleFeature('hideFunds') ">Funds</button>
                             </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="order" (click)="showOrderStatus()">Orders</button>
+                            <div class="btn-group " role="group ">
+                                <button class="btn btn-primary " data-original-title="order " (click)="toggleFeature('hideOrderStatus') ">Orders</button>
                             </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Quantity Update" (click)="showQuantity()">Update Quantity</button>
-                            </div>
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-primary" data-original-title="Activate" (click)="showCheckout()">Checkout</button>
+                            <div class="btn-group " role="group ">
+                                <button class="btn btn-primary " data-original-title="Activate " (click)="toggleFeature('hideCheckout') ">Checkout</button>
                             </div>
 
-                            <div class="btn-group" role="group">
-                                <button class="btn btn-secondary" data-original-title="profile" (click)="showEditProfile()">Edit Profile</button>
+                            <div class="btn-group " role="group ">
+                                <button class="btn btn-secondary " data-original-title="profile " (click)="toggleFeature('hideEditProfile')">Edit Profile</button>
                             </div>
 
                         </div>
@@ -57,11 +56,11 @@
 
     </div>
     <br/>
-    <div style="padding-left:40px;">
+    <div style="padding-left:40px; ">
         <app-user-edit-profile></app-user-edit-profile>
         <app-view-item></app-view-item>
         <br/>
-        <app-show-cart></app-show-cart>
+        <app-show-cart *ngIf="condition "></app-show-cart>
         <br/>
         <br/><br/>
         <app-checkout></app-checkout>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/Services/cart.service';
 import { Grocery } from 'src/app/Services/model.grocery';
 
@@ -11,7 +12,7 @@ import { Grocery } from 'src/app/Services/model.grocery';
 export class ViewItemComponent implements OnInit {
   cart?:Array<Grocery>
   resultMsg?:string
-  constructor(public cartSer:CartService) {
+  constructor(public cartSer:CartService,public router:Router) {
  
    }
 
@@ -27,11 +28,15 @@ export class ViewItemComponent implements OnInit {
 
     this.addToCart(itemObj);
   }
-
+  refreshMe(){
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['UserHome']);
+      this.resultMsg="Item has been added to cart"
+  }); 
+  }
   addToCart(addRef:any){
 
     let ProductID=addRef.ProductID
-    let Quantity=addRef.Quantity;
     this.cartSer.checkCart(ProductID).subscribe(result=>{
       if (result?.length>0){
         this.resultMsg="Item already exists in your cart, please use Update Quantity instead";
@@ -46,7 +51,9 @@ export class ViewItemComponent implements OnInit {
             this.cartSer.addToCart(itemToAdd).subscribe(result=>{
               console.log(result);
               this.ngOnInit()
+              this.refreshMe();
               this.resultMsg="Item has been added to cart"
+              
              });
          
         }
