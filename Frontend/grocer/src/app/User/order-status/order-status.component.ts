@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from 'src/app/Services/order.service';
-import { order } from 'src/app/model.order';
+import { Order } from 'src/app/order.model';
 
 @Component({
   selector: 'app-order-status',
@@ -8,37 +8,58 @@ import { order } from 'src/app/model.order';
   styleUrls: ['./order-status.component.css']
 })
 export class OrderStatusComponent implements OnInit {
-  UserID?:String;
-  orders: Array<order> = [];
+
+  orders: Array<Order> = [];
+  UserID = sessionStorage.getItem("User")
   constructor(public orderSer: OrderService) { }
 
   ngOnInit(): void {
-    this.UserID = sessionStorage.getItem("User");
-  }
-  showOrders(fundRef:any) {
-    this.orderSer.getOrders().subscribe(result=>{
+    this.orderSer.getOrders().subscribe((result: any) => {
       console.log("Orders", result);
       for (let i = 0; i < result.length; i++) {
-      if(fundRef.userid==result[i].UserID){
-          var OrderNumber = result[i].OrderNumber;
-          var UserID = result[i].UserID;
-          var Status = result[i].Status;
-          var Date = result[i].Date;
+        console.log("USERID: " + result[i].UserID);
+        if (this.UserID == result[i].UserID) {
+            var OrderNumber = result[i].OrderNumber;
+            var UserID = result[i].UserID;
+            var Status = result[i].Status;
+            var Date = result[i].Date;
 
+            var table = document.getElementById("orderTable");
+            var body = table.getElementsByTagName("tbody")[0];
+            var newRow = body.insertRow();
+            var cell1 = newRow.insertCell();
+            cell1.innerHTML = OrderNumber;
+          
+            var cell2 = newRow.insertCell();
+            cell2.innerHTML = UserID;
+            var cell3 = newRow.insertCell();
+            cell3.innerHTML = Status;
+            var cell4 = newRow.insertCell();
+            cell3.innerHTML = String(Date);
+        }
+      }
+    })
+  
+  } /*
+  showOrders() {
+    this.orderSer.getOrders().subscribe((result: any) => {
+      console.log("Orders", result);
+      for (let i = 0; i < result.length; i++) {
+        var OrderNumber = result[i].OrderNumber;
+        var Status = result[i].Status;
+        var Date = result[i].Date;
         var table = document.getElementById("orderTable");
         var body = table.getElementsByTagName("tbody")[0];
         var newRow = body.insertRow();
         var cell1 = newRow.insertCell();
-        cell1.innerHTML = OrderNumber.toString();
+        cell1.innerHTML = OrderNumber;
         var cell2 = newRow.insertCell();
-        cell2.innerHTML = UserID.toString();
+        cell2.innerHTML = Status;
         var cell3 = newRow.insertCell();
-        cell3.innerHTML = Status.toString();
-        var cell4 = newRow.insertCell();
-        cell4.innerHTML = String(Date);
-      }
+        cell3.innerHTML = String(Date);
+        
       }
     })
-  }
+  }*/
 
 }

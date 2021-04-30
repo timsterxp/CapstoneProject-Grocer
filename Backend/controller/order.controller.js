@@ -32,4 +32,4 @@ let getOrders = (req, res) => {
 
 
 
-module.exports = { addOrder, getOrders};
+module.exports = { addOrder, getOrders };
