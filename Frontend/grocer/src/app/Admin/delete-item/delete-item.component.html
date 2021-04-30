@@ -1,7 +1,48 @@
-<form>
-    <mat-form-field>
-        <mat-label>Product Id</mat-label>
-        <input matInput type="text" name="ProductID" #idRef ngModel/>
-    </mat-form-field><br/>
-    <input type="submit" value="Delete Product" (click)="delete(idRef.value)" />
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container"><br/><br/>
+        <input class='btn btn-primary pull-right' type="button" value="Back" (click)="back()" />
+        <br/><br/>
+        <h2>View Products</h2>
+        <br/>{{Msg}}<br/><br/>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                    <th>Inventory</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pp of products">
+                    <td>{{pp.ProductID}}</td>
+                    <td>{{pp.ProductName}}</td>
+                    <td>{{pp.ProductDescription}}</td>
+                    <td>{{pp.ProductPrice}}</td>
+                    <td>{{pp.Inventory}}</td>
+                    <td><input class='btn btn-primary pull-right' type="submit" value="Delete Product" (click)="delete(pp.ProductID)" />
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

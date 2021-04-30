@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/product.service';
 
 @Component({
@@ -11,7 +12,8 @@ import { ProductService } from 'src/app/product.service';
 export class UpdateItemComponent implements OnInit {
 
   updateMsg?:string;
-  constructor(public prodSer:ProductService) { }
+  Msg?:any
+  constructor(public prodSer:ProductService, public router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +24,7 @@ export class UpdateItemComponent implements OnInit {
       this.updateMsg=result;
     });
   }
-
+  back(){
+    this.router.navigate(["AdminHome"]);
+  }
 }
