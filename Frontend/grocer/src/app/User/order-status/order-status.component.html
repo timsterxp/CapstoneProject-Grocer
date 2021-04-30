@@ -1,30 +1,34 @@
 <div id="hideOrderStatus" style="display:none">
     <table border="1" id="orderTable">
         <tr>
-            <th style="width:12%;">Order Number</th>
+            <th style="width:12%;">Order Id</th>
             <th style="width:12%;">User ID</th>
             <th style="width:12%;">Status</th>
             <th style="width:12%;">Date of Order</th>
         </tr>
         <tbody>
-
         </tbody>
-        <!--
-    <tr *ngFor="let data of orders">
-      <td>{{data.OrderNumber}}</td>
-      <td>{{data.Status}}</td>
-      <td>{{data.Date}}</td>
-    </tr>
-    */-->
+
+        <tr *ngFor="let data of orders">
+            <td>{{data.OrderNumber}}</td>
+            <td>{{data.UserID}}</td>
+            <td>{{data.Status}}</td>
+            <td>{{data.Date}}</td>
+        </tr>
+
     </table>
 
-    <form #fundRef="ngForm" (ngSubmit)="showOrders(fundRef.value)">
-        <mat-form-field>
-            <mat-label>User ID</mat-label>
-            <input matInput type="text" name="userid" [(ngModel)]="UserID" readonly="readonly" />
-        </mat-form-field> <br />
-        <!--<button class="btn  btn-primary btn-block" type="button" (click)="addFunds()">Add Funds</button> <br /><br /><br /> -->
-        <input type="submit" value="Submit" />
-    </form>
+
 </div>
 <!--Pull all orders from user, display order status-->
+<!--
+  <form #fundRef="ngForm" (ngSubmit)="showOrders()">
+        <br /><br />
+          <!--<mat-form-field>
+              <mat-label>User ID</mat-label>
+              <input matInput type="number" name="userid" ngModel />
+          </mat-form-field> <br />
+  <!--<button class="btn  btn-primary btn-block" type="button" (click)="addFunds()">Add Funds</button> <br /><br /><br /> 
+  <input type="submit" value="Submit" />
+      </form>
+  -->
