@@ -10,6 +10,7 @@ import { TicketService } from 'src/app/Services/ticket.service';
 export class RaiseTicketComponent implements OnInit {
 email?:String;
 Msg?:String;
+clicked=false;
   constructor(public ticketSer:TicketService,public router:Router) { }
 
   ngOnInit(): void {
@@ -18,9 +19,11 @@ Msg?:String;
   
  sendTicket(TicketRef:any){
   console.log(TicketRef);
+  this.clicked=true;
   this.ticketSer.storeTicketDetails(TicketRef).subscribe((result:String)=>{
     this.Msg = result+" "+"Redirecting to Login Page";
     sessionStorage.removeItem("user");
+    sessionStorage.removeItem("token");
     setTimeout(()=>{
       this.router.navigate(["UserLogin"])},3000);
     })
