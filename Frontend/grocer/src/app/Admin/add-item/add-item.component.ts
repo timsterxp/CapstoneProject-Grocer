@@ -1,6 +1,5 @@
-
-  
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/product.service';
 
 @Component({
@@ -10,15 +9,21 @@ import { ProductService } from 'src/app/product.service';
 })
 export class AddItemComponent implements OnInit {
 
-  constructor(public proService:ProductService) { }
+  constructor(public proService:ProductService, public router:Router) { }
+  Msg:any;
 
   ngOnInit(): void {
   }
 
   addItem(productRef:any){
     console.log(productRef);
-    this.proService.storeProductDetailsInfo(productRef);   
+    this.proService.storeProductDetailsInfo(productRef); 
+    this.Msg="Product Stored"  
 
   }
+  back(){
+    this.router.navigate(["AdminHome"]);
+  }
+  
 
 }

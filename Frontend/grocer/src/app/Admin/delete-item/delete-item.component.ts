@@ -1,5 +1,7 @@
-
+  
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Product } from 'src/app/model.product';
 import { ProductService } from 'src/app/product.service';
 
 @Component({
@@ -9,15 +11,26 @@ import { ProductService } from 'src/app/product.service';
 })
 export class DeleteItemComponent implements OnInit {
 
-  constructor(public proService:ProductService) { }
+  products?:Array<Product>
+  Msg?:any
+
+  constructor(public proService:ProductService, public router:Router) { }
 
   ngOnInit(): void {
+    this.proService.retrieveAllProductDetails().subscribe(result=>this.products=result);
   }
 
   delete(id:any){
     this.proService.deleteProductById(id).subscribe((result:string)=>{
       console.log(result);
-    })
+      
+    }) 
+    this.Msg="Product Deleted"
+    this.router.navigate(["DeleteItem"]);
+}
 
+
+back(){
+  this.router.navigate(["AdminHome"]);
 }
 }

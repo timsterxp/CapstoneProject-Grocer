@@ -1,3 +1,4 @@
+  
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
@@ -28,6 +29,9 @@ export class AdminSigninComponent implements OnInit {
       }
       if(loginSuccess){
         console.log("Logged in Successfully!");
+        let tokenArray = new Uint32Array(1);
+          crypto.getRandomValues(tokenArray);
+          sessionStorage.setItem('token',tokenArray[0].toString());
        this.router.navigate(["AdminHome"]);
         }
       else{

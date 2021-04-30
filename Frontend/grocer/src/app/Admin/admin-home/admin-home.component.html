@@ -21,10 +21,19 @@
             opacity: 0.8;
         }
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
 </head>
 
 <body>
-    <div style="padding-left:30px">
+    <div style="padding-left:30px" class="container"><br/><br/>
+        <input class='btn btn-primary pull-right' type="button" value="logout" (click)="logout()" />
+        <br/><br/>
 
         <form (ngSubmit)="addProduct()">
             <button type="submit">Add Products</button><br/>
@@ -50,4 +59,3 @@
 </body>
 
 </html>
-© 2021 GitHub, Inc.

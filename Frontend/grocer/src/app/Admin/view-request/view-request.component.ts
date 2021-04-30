@@ -1,4 +1,3 @@
-  
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ViewRequestService } from './view-request.service';
@@ -20,7 +19,13 @@ export class ViewRequestComponent implements OnInit {
   constructor(private viewService: ViewRequestService, public router:Router) { }
   requests:any;
   Msg:any;
+  Msg1?:any;
   Option:String;
+
+  logout() {
+    sessionStorage.removeItem("token");
+    this.router.navigate(["AdminLogin"]);
+  }
 
   ngOnInit(): void {
     this.getRequests();
@@ -33,6 +38,8 @@ export class ViewRequestComponent implements OnInit {
       this.getRequests();
       
     });
+
+    this.Msg1 = "Status Updated"   
 
     
   }

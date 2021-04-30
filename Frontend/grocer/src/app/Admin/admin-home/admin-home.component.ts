@@ -13,6 +13,11 @@ export class AdminHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout() {
+    sessionStorage.removeItem("token");
+    this.router.navigate(["AdminLogin"]);
+  }
+
   addProduct(){
     //console.log("Event generated");
     //console.log(loginRef)
