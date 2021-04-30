@@ -1,6 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,10 @@ export class OrderService {
   getOrders() {
     return this.http.get("http://localhost:9090/order/getOrders", {});
   }
+
+  getAllOrders():Observable<order[]>{
+    return this.http.get<order[]>("http://localhost:9090/employee/getAllOrders");
+  }
+
   
 }
