@@ -42,7 +42,6 @@ import { MatListModule } from '@angular/material/list';
 import {HttpClientModule} from '@angular/common/http';
 import { MyAuthGuard } from './myauthguard';
 import { ShowCartComponent } from './User/show-cart/show-cart.component';
-import { UpdateQuantityComponent } from './User/update-quantity/update-quantity.component';
 import { MatTableModule} from '@angular/material/table';
 import { UserEditProfileComponent } from './User/user-edit-profile/user-edit-profile.component';
 import { EmpUpdateOrderStatusComponent } from './Employee/emp-update-order-status/emp-update-order-status.component';
@@ -79,7 +78,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     EmpPasswordResetComponent,
     NavComponent,
     ShowCartComponent,
-    UpdateQuantityComponent,
     UserEditProfileComponent,
     EmpUpdateOrderStatusComponent,
    
