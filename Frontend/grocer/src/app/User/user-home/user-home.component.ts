@@ -19,20 +19,22 @@ export class UserHomeComponent implements OnInit {
   }
 
 
-
+  //Deletes item by ID, is connected with delete icon
   deleteItem(id:any){
     this.cartSer.deleteItem(id).subscribe((result:string)=>{
       
     })
   }
+  
 
+  //Called when deleting/adding
   refreshMe(){
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate(['UserHome']);
   }); 
   }
 
-
+  //Toggle feature by changing style to none or ''
   toggleFeature(id:any){
     var toDisplay=document.getElementById(id);
     if (toDisplay.style.display=="none"){
@@ -42,11 +44,7 @@ export class UserHomeComponent implements OnInit {
     }
   }
 
-  showFeature(id:any){
-    var toDisplay=document.getElementById(id);
-    toDisplay.style.display="";
-  }
-
+  //Logout
   Logout(){
     this.router.navigate(["UserLogin"]);
   }

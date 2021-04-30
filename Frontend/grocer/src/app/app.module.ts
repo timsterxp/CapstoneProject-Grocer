@@ -27,7 +27,6 @@ import { GenerateReportsComponent } from './Admin/generate-reports/generate-repo
 import { SendRequestComponent } from './Employee/send-request/send-request.component';
 import { UnlockUserComponent } from './Employee/unlock-user/unlock-user.component';
 import { EditProfileComponent } from './Employee/edit-profile/edit-profile.component';
-import { SelectItemComponent } from './User/select-item/select-item.component';
 import { ViewItemComponent } from './User/view-item/view-item.component';
 import { CheckoutComponent } from './User/checkout/checkout.component';
 import { OrderStatusComponent } from './User/order-status/order-status.component';
@@ -70,7 +69,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     SendRequestComponent,
     UnlockUserComponent,
     EditProfileComponent,
-    SelectItemComponent,
     ViewItemComponent,
     CheckoutComponent,
     OrderStatusComponent,
