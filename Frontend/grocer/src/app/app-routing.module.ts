@@ -26,6 +26,7 @@ import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 
 import { RaiseTicketComponent } from './User/raise-ticket/raise-ticket.component';
 import { ViewRequestComponent } from './Admin/view-request/view-request.component';
+import { GenerateReportsComponent } from './Admin/generate-reports/generate-reports.component';
 
 
 const routes: Routes = [
@@ -61,7 +62,9 @@ const routes: Routes = [
   { path: "viewRequest", component:  ViewRequestComponent},
 
   {path:"\AdminAddEmployee",component:AddEmployeeComponent},
-  {path:"\AdminDeleteEmployee",component:DeleteEmployeeComponent}
+  {path:"\AdminDeleteEmployee",component:DeleteEmployeeComponent},
+
+  {path:"viewReport",component: GenerateReportsComponent}
 
 
   
